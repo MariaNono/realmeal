@@ -1,0 +1,46 @@
+
+<div class="container min-height">
+    <h2 class="title-index-page">Upcoming experiences</h2>
+  <div class="index-grid-with-filter">
+    <div>
+      <div class="filter-box">
+        <div class="line-of-buttons pa-0 ">
+          <button class="btn button" id="tools-list-button">List</button>
+          <button class="btn button button-unselected" id="tools-map-button">Map</button>
+        </div>
+        <%cuisine = params[:events][:cuisine] if !params[:events].nil?%>
+        <%number_of_guests = params[:events][:guests] if !params[:events].nil?%>
+        <%tdate = params[:events][:date] if !params[:events].nil?%>
+
+        <div class="filter">
+         <%#= render 'shared/searchform', event: event %>
+          <%= simple_form_for :events, url: events_path, method: "get" do |f| %>
+            <%= f.label :cuisine, 'Cuisine type' %>
+            <%= f.input :cuisine, as: :string, label: false, required: false, input_html: {value: cuisine, class: "select2"}, collection: ['', 'Chinese', 'French', 'German',' Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Spanish'] %>
+            <%= f.label :date, 'Dates' %>
+            <%= f.input :date, label: false, required: false, input_html: {value: date, class: "datepicker"} %>
+            <%= f.label :guests, 'Number of guests' %>
+            <%= f.input :guests, as: :string, label: false, input_html: {value: number_of_guests, class: "select2"}, collection: ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] %>
+            <%= f.button :submit, "Find experiences", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="map-container"  class="hidden">
+        <%= render 'shared/map' %>
+      </div>
+      <div id="events-list-show" class="">
+        <div class="cards-grid">
+          <% @events.each do |event| %>
+            <%= render 'shared/event_card', event: event%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
