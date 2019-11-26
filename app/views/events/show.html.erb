@@ -1,0 +1,32 @@
+<%if @event.photo? %>
+    <%= cl_image_tag @event.photo %>
+  <% else %>
+    <%= image_tag ("https://images.unsplash.com/photo-1489710020360-66e504159b43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80") %>
+  <% end %>
+
+<div class="container-listing">
+  <div class="row listing-content">
+      <div class="listing-title">
+        <h3><strong><%= @event.title %></strong></h3>
+      </div><br>
+
+      <div class="listing-details">
+        <div class="row-content">
+          <p><strong>Description</strong></p>
+        </div>
+          <%= @event.description %>
+        </div>
+          <br><br>
+      </div>
+
+      <div class="booking-form">
+        <%= render "bookings/new", event: @event, booking: @booking %>
+      </div>
+
+      <!--div class="listing-map">
+        <%# render 'map' %>
+      </div-->
+
+</div>
+
+
