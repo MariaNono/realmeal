@@ -7,9 +7,9 @@ class DashoboardsController < ApplicationController
     @past = []
     bookings.each do |booking|
       if booking.event.event_date < DateTime.now
-        @past << booking
+        @past_events << booking.event
       else
-        @upcoming << booking
+        @upcoming_bookings << booking
       end
     end
   end
