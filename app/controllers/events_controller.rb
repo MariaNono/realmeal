@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -41,6 +42,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:events).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address)
+    params.require(:events).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :photo)
   end
 end
