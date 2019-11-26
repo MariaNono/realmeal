@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_144932) do
+ActiveRecord::Schema.define(version: 2019_11_25_152109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.string "status", default: "pending"
+    t.integer "number_of_guests"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_bookings_on_event_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "event_date"
+    t.string "cuisine"
+    t.integer "max_guests"
+    t.integer "booked_guests", default: 0
+    t.float "price_per_guest"
+    t.string "status", default: "open"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "booking_id"
+    t.boolean "read"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_notifications_on_booking_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,10 +70,22 @@ ActiveRecord::Schema.define(version: 2019_11_25_144932) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.text "description"
+    t.integer "events_hosted"
+    t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "events"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "events", "users"
+  add_foreign_key "notifications", "bookings"
+  add_foreign_key "notifications", "users"
+  add_foreign_key "reviews", "bookings"
 end
