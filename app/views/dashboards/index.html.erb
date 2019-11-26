@@ -1,8 +1,19 @@
 <h3 class='dashboard_title'>upcoming events</h3>
-<div class="my-bookings-card">
-  <% @upcoming_bookings.each do |booking| %>
-  <%= booking.event.name %>
-  <%= booking.event.cuisine %>
-</div>
 
-<h3 class='dashboard_title'>upcoming events</h3>
+  <% @upcoming_bookings.each do |b| %>
+   <p> <%= b.event.name %> </p>
+  <% end %>
+
+<h3 class='dashboard_title'>past events</h3>
+
+<div class="past-events"></div>
+  <% @past_events.each do |e| %>
+    <div class="past-event-card">
+      <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="food">
+      <div class="infos">
+        <p> <%= e.name %> </p>
+        <p> <%= e.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -18,7 +18,7 @@ districts = ['Neukölln', 'Mitte', 'Kreuzberg', 'Wedding', 'Charlottenburg', 'Mo
 
 puts '🌱 Creating users...'
 
-30.times do
+5.times do
   user = User.new(
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
