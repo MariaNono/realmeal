@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
   resources :reviews, only: [:index, :new, :create]
+  resources :users, only: [:show]
   #resources :notifications, only: [:index, :new, :create]
 
   get '/my-bookings',  to: 'dashboards#index'
