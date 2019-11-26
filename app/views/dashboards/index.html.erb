@@ -1,0 +1,8 @@
+<h3 class='dashboard_title'>upcoming events</h3>
+<div class="my-bookings-card">
+  <% @upcoming_bookings.each do |booking| %>
+  <%= booking.event.name %>
+  <%= booking.event.cuisine %>
+</div>
+
+<h3 class='dashboard_title'>upcoming events</h3>
