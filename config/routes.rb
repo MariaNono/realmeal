@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy]
   resources :reviews, only: [:index, :new, :create]
   #resources :notifications, only: [:index, :new, :create]
+  #get '/profile' to "bookings#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
