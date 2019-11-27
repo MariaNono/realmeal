@@ -1,10 +1,13 @@
-<div class="container-event">
-    <h3>Add your event</h3>
-    <%= link_to "Browse all events", events_path(events: {address: ''}) %>
+
+<div class="container mt-3 mb-5">
+  <div class="mt-1 d-flex justify-content-between align-items-center">
+      <h3>Add your event</h3>
+    <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn btn-warning" %>
   </div>
   <div class="row">
-      <div class="form-login">
-        <%= simple_form_for @event do |f| %>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="form-login text-dark mt-3 mb-3">
+       <%= simple_form_for @event do |f| %>
           <%= f.input :cuisine %>
           <%= f.input :event_date %>
           <%= f.input :name %>
@@ -14,7 +17,7 @@
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.submit "Create Event"%>
-        <% end %>
+          <% end %>
       </div>
     </div>
   </div>
