@@ -1,0 +1,22 @@
+<div>
+  <% @events.each do |event| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="mx-3 my-3" >
+        <div class="card-product">
+          <%if event.photo? %>
+            <%= cl_image_tag event.photo, height: 700, width: 500, crop: :fill %>
+          <% else %>
+            <%= image_tag ("http://thespaces.com/wp-content/uploads/2017/02/electroposive-NYC-coworking-space.jpg") %>
+          <% end %>
+          <div class="card-product-infos">
+            <p class='profile-card-name'><%= event.name %></p>
+            <%= link_to "View all bookings", event_bookings_path(event), class: "link_profile_bookings" %>
+            <%#= link_to "Update", , class: "btn btn-success mr-2" %>
+            <%#= link_to "Delete", space_path(space), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-sm btn-success mr-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
