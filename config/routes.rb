@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   #resources :notifications, only: [:index, :new, :create]
 
-  get '/my-bookings',  to: 'dashboards#index'
+  get '/mybookings',  to: 'dashboards#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

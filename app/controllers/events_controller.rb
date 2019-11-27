@@ -3,14 +3,19 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    #@events = Event.all
-
     @events = Event.geocoded
+    unless params[:events].nil?
+      if params[:events][:cuisine].present?
+        @events = @events.select { |event| event.cuisine.capitalize == params[:events][:cuisine]}
+      end
+    end
+    @events = @events.select { |event| event.status == "open" }
 
     @markers = @events.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
   end
