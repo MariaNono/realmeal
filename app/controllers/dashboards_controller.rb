@@ -20,14 +20,14 @@ class DashboardsController < ApplicationController
     @past_events = sort_by_date(past_events).reverse_each
   end
 
+  def list
+    @events = Event.where(user_id: current_user)
+  end
+
   private
 
   def sort_by_date(bookings)
     r = bookings.sort_by { |b| b.event.event_date }
-  end
-
-  def list
-    @events = Event.where(user_id: current_user)
   end
 
 end
