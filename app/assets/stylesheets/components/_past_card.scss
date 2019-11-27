@@ -1,11 +1,18 @@
 .dashboard_container {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+}
 
+
+.dashboard_container h3 {
+  margin-top: 50px;
 }
 
 .events {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 0;
   grid-auto-rows: auto;
 
 }
@@ -15,7 +22,7 @@
   overflow: hidden;
   background: white;
   width: 300px;
-  margin: 20px 40px;
+  margin: 20px 0;
 }
 
 .event-card > img {
@@ -27,4 +34,5 @@
 .event-card > .infos {
   padding: 16px;
   position: relative;
+  text-align: center;
 }

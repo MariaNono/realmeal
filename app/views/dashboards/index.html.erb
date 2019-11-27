@@ -8,7 +8,7 @@
         <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="food">
         <div class="infos">
           <p> <%= b.event.name %> </p>
-          <p> <%= b.event.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+          <p> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
           <p> Booked for <%= b.number_of_guests %> </p>
           <p> <%= b.status %> </p>
           <%= link_to 'cancel', booking_path(b), method: 'delete' %>
@@ -24,8 +24,13 @@
       <div class="event-card">
         <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="food">
         <div class="infos">
-          <p> <%= e.name %> </p>
-          <p> <%= e.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+          <p> <%= e.event.name %> </p>
+          <p> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
+          <% if e.review %>
+            <%= e.review.rating %>
+          <% else %>
+            <%= link_to 'Review Host', new_review_path %>
+          <% end %>
         </div>
       </div>
     <% end %>
