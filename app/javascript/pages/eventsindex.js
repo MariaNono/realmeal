@@ -13,10 +13,10 @@ const buttonActivationMap = () => {
       mapButton.classList.toggle("button-unselected");
       listShow.classList.toggle("hidden");
       mapShow.classList.toggle("hidden");
-      if(mapButton.value == "Show Map") {
-        mapButton.value == "Show List";
+      if(mapButton.innerText == "Show Map") {
+        mapButton.innerText = "Show List";
       } else {
-        mapButton.value == "Show Map";
+        mapButton.innerText = "Show Map";
       }
       initMapbox();
     });

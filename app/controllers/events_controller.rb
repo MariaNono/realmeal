@@ -4,6 +4,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.geocoded
+    unless params[:events].nil?
+      if params[:events][:cuisine].present?
+        @events = @events.select { |event| event.cuisine.capitalize == params[:events][:cuisine]}
+      end
+    end
+    @events = @events.select { |event| event.status == "open" }
 
     @markers = @events.map do |event|
       {
