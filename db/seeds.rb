@@ -40,7 +40,7 @@ puts '🌱 Creating events...'
 20.times do
   event = Event.new(
     name: Faker::Restaurant.name,
-    event_date: DateTime.new([2018,2019,2020].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
     description: Faker::Restaurant.description,
     cuisine: cuisine_types.sample,
     max_guests: (6..20).to_a.sample,
@@ -76,7 +76,7 @@ puts "🎉 Added bookings"
 
 puts '🌱 Creating reviews...'
 
-40.times do
+30.times do
   review = Review.new(
     booking_id: Booking.all.sample.id,
     rating: (1..5).to_a.sample,
