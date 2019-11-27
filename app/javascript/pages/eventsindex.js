@@ -11,11 +11,13 @@ const buttonActivationMap = () => {
   if (mapButton) {
     mapButton.addEventListener("click", (event) => {
       mapButton.classList.toggle("button-unselected");
-      console.log("button")
       listShow.classList.toggle("hidden");
-      console.log("hide list")
       mapShow.classList.toggle("hidden");
-      console.log("hide map")
+      if(mapButton.value == "Show Map") {
+        mapButton.value == "Show List";
+      } else {
+        mapButton.value == "Show Map";
+      }
       initMapbox();
     });
   }

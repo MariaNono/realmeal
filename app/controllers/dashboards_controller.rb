@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
   def index
     bookings = Booking.where(user_id: current_user)
+    #@user_event_bookings = Booking.own_event_bookings(current_user)
     @upcoming_bookings = []
     @past_events = []
 
