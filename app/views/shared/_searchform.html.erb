@@ -3,10 +3,10 @@
   <%= simple_form_for :events, url: events_path, method: "get" do |f| %>
     <%= f.label :cuisine, 'Cuisine type' %>
     <%= f.input :cuisine, as: :string, label: false, required: false, input_html: {class: "select2"}, collection: ['', 'Chinese', 'French', 'German',' Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Spanish'] %>
-    <%= f.label :date, 'Dates' %>
+    <%= f.label :date, 'Date' %>
     <%= f.input :date, label: false, required: false, input_html: {class: "datepicker"} %>
     <%= f.label :guests, 'Number of guests' %>
-    <%= f.input :guests, label: false, input_html: {class: "select2"}, collection: ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] %>
+    <%= f.input :guests, as: :integer, label: false, input_html: {class: "select2"}, collection: 1..10 %>
     <%= f.button :submit, "Find experiences", class: "btn btn-success" %>
   <% end %>
 </div>

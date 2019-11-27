@@ -15,7 +15,11 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @booking.user = current_user
     @booking.event = @event
-    #redirect...
+    if @booking.save
+      redirect_to mybookings_path
+    else
+      render :new
+    end
   end
 
   def destroy
