@@ -6,6 +6,9 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(event_id: params[:event_id])
   end
 
+  def show
+  end
+
   def new
     @booking = Booking.new
   end
@@ -22,6 +25,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to myhostings_path
+  end
+
   def destroy
     @booking.destroy
     #redirect...
@@ -34,6 +43,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:number_of_guests)
+    params.require(:booking).permit(:number_of_guests, :status)
   end
 end

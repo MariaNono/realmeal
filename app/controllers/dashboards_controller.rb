@@ -15,7 +15,10 @@ class DashboardsController < ApplicationController
         @upcoming_bookings << booking
       end
     end
+  end
 
+  def list
+    @events = Event.where(user_id: current_user)
   end
 
 end
