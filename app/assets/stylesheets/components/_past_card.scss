@@ -1,7 +1,30 @@
-.past_events {
-  display: flex;
+.dashboard_container {
+
 }
 
-.past-event-card {
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-auto-rows: auto;
+
+}
+
+.event-card {
+  justify-self: center;
+  overflow: hidden;
+  background: white;
   width: 300px;
+  margin: 20px 40px;
+}
+
+.event-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.event-card > .infos {
+  padding: 16px;
+  position: relative;
 }
