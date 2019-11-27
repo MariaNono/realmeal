@@ -1,3 +1,4 @@
+
 <div class="user-card">
 
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar" %>
@@ -6,10 +7,12 @@
     <br>
     <%= @user.username %>
     <br>
+    <%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %><br>
     Berlin
   </div>
 
   <div class="panel-Description">User Description:<br>
     <%=  @user.description %>
+
   </div>
 </div>
