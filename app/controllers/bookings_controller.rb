@@ -2,8 +2,9 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @event = Event.find(params[:event_id])
-    @bookings = Booking.where(event_id: params[:event_id])
+    # @event = Event.find(params[:event_id])
+    # @bookings = Booking.where(event_id: params[:event_id])
+    @events = Event.where(user_id: current_user)
   end
 
   def new

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #resources :notifications, only: [:index, :new, :create]
 
   get '/mybookings',  to: 'dashboards#index'
+  get '/myhostings',  to: 'bookings#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

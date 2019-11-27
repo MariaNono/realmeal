@@ -73,3 +73,27 @@
   height: 100%;
   z-index: 1;
 }
+
+.card-product {
+  overflow: hidden;
+  min-height: 200px;
+  width: 45vw;
+  display: flex;
+  align-items: center;
+  color: black;
+  border-bottom: 1px solid #00FF97;
+}
+
+.card-product .card-product-infos {
+  padding: 40px;
+}
+
+.card-product .profile-card-name {
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.link_profile_bookings {
+  margin: 12px 0 15px 0;
+  display: block;
+}
