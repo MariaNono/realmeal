@@ -2,9 +2,11 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @event = Event.find(params[:event_id])
-    # @bookings = Booking.where(event_id: params[:event_id])
-    @events = Event.where(user_id: current_user)
+    @event = Event.find(params[:event_id])
+    @bookings = Booking.where(event_id: params[:event_id])
+  end
+
+  def show
   end
 
   def new
@@ -23,6 +25,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to myhostings_path
+  end
+
   def destroy
     @booking.destroy
     #redirect...
@@ -35,6 +43,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:number_of_guests)
+    params.require(:booking).permit(:number_of_guests, :status)
   end
 end
