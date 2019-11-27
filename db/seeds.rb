@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Review.destroy_all
+Review.destroy_all
 Booking.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -40,7 +40,7 @@ puts '🌱 Creating events...'
 20.times do
   event = Event.new(
     name: Faker::Restaurant.name,
-    event_date: Faker::Time.between(from: DateTime.new(2018,2,3,4,5,6) - 1, to: DateTime.new(2020,5,3,4,5,6)),
+    event_date: DateTime.new([2018,2019,2020].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
     description: Faker::Restaurant.description,
     cuisine: cuisine_types.sample,
     max_guests: (6..20).to_a.sample,
@@ -74,16 +74,16 @@ puts "🎉 Added bookings"
 
 ##############################################################################
 
-# puts '🌱 Creating reviews...'
+puts '🌱 Creating reviews...'
 
-# 40.times do
-#   review = Review.new(
-#     booking_id: Booking.all.sample.id,
-#     rating: (1..5).to_a.sample,
-#     content: Faker::Restaurant.review,
-#   )
-#   review.save!
-# end
+40.times do
+  review = Review.new(
+    booking_id: Booking.all.sample.id,
+    rating: (1..5).to_a.sample,
+    content: Faker::Restaurant.review,
+  )
+  review.save!
+end
 
-# puts "🎉 Added reviews"
+puts "🎉 Added reviews"
 
