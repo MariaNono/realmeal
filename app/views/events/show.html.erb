@@ -1,27 +1,29 @@
+
+<div class="card-show">
+  <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn btn-warning" %>
 <%if @event.photo? %>
-    <%= cl_image_tag @event.photo %>
-  <% else %>
-    <%= image_tag ("https://images.unsplash.com/photo-1489710020360-66e504159b43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80") %>
-  <% end %>
+      <%= cl_image_tag @event.photo %>
+    <% else %>
+      <%= image_tag ("https://images.unsplash.com/photo-1489710020360-66e504159b43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80") %>
+    <% end %>
+  <h2 class="name"><%= @event.name %></h2>
+  <h3 class="location"><%= @event.address %></h3>
+  <p class="name"><%= @event.description %></p>
+  <p style='font-weight: 600; font-size: 24px; color: #ffe231'><%= @event.price_per_guest %>€/person</p>
+  <!-- <div class="col-sm-12 col-md-6"> -->
+  <div class="booking-form">
+    <%= render "bookings/new", event: @event, booking: @booking %>
+  </div>
 
-<div class="container-listing">
-  <div class="row listing-content">
-      <div class="listing-title">
-        <h3><strong><%= @event.name %></strong></h3>
-      </div><br>
-
-      <div class="listing-details">
-        <div class="row-content">
-          <p><strong>Description</strong></p>
-        </div>
-          <%= @event.description %>
-        </div>
-          <br><br>
-      </div>
-
-      <div class="booking-form">
-        <%= render "bookings/new", event: @event, booking: @booking %>
-      </div>
+  <div class="card-product">
+  <img src="https://findicons.com/files/icons/376/the_blacy/128/grimace.png" />
+  <div class="card-product-infos">
+    <h2>User name</h2>
+    <p>Hey I am Ryan <strong>Take a look at my profile</strong></p>
+    <%#= render 'user', user: user%>
+  </div>
+  </div>
+</div>
 
       <div class="profile-form">
         <%= link_to 'user', user_path(@event.user_id) %>
@@ -30,6 +32,6 @@
         <%# render 'map' %>
       </div-->
 
-</div>
+
 
 
