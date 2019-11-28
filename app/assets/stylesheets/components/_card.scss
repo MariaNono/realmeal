@@ -64,6 +64,11 @@
   z-index: 1;
 }
 
+.zindex {
+  z-index: 20;
+  position:relative;
+}
+
 .card-show {
   width: 85%;
   margin: 55px auto;
