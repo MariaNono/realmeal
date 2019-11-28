@@ -1,0 +1,24 @@
+<div class="container">
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar" %>
+  <div class="panel-title">
+    <br>
+    <%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %><br>
+    Berlin
+  </div>
+
+  <div class="panel-Description"><br>
+    <%= @user.description %>
+  </div>
+
+  <div>
+    <h2>Reviews:</h2>
+    <ul style="list-style-type: none;">
+      <% @user_events.each do |event| %>
+        <% @reviews = event.reviews %>
+        <% @reviews.each do |review| %>
+          <li><%= review.content %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
