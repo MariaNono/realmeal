@@ -28,15 +28,16 @@
 }
 
 .form-booking {
-  border: 1px solid #ffe231;
-  margin-top: 50px;
-  margin-left: 50px;
   padding: 10px 20px;
   border-radius: 0px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.container {
-  margin-left: 0px;
+.event-form-container {
+  width: 50%;
+  float: left;
+  padding-left: 50px;
 }
 
 .form-review {

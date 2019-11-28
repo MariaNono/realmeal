@@ -1,7 +1,5 @@
-<div class="container mt-3 mb-5">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <div class="form-booking text-dark mt-3 mb-3 mx-n3">
+
+      <div class="form-booking">
         <%= simple_form_for [event, booking] do |f| %>
           <%= f.label :number_of_guests, 'Number of guests' %>
           <%= f.input :number_of_guests, label: false, input_html: {class: "select2"}, collection: 1..10, selected: params[:events][:guests].to_i, id: "guests" %>
@@ -10,10 +8,10 @@
           <%= f.submit "Reserve now", class: "btn btn-warning", id: "reserve-button" %>
         <% end %>
       </div>
-    </div>
-  </div>
+
 
   <div id="message" class="hidden">
    <p>Your booking has been sent to the host and is awaiting confirmation. We will inform you when it gets accepted. You can also check the booking details in your profile.</p>
   </div>
 </div>
+
