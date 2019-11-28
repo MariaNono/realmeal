@@ -8,11 +8,17 @@
         <%= link_to "", event_path(id: b.event.id, events: {guests: ''}), class:"link" %>
         <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9" alt="food">
         <div class="infos">
-          <p> <%= b.event.name %> </p>
+          <p><strong><%= b.event.name %></strong></p>
           <p> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-          <p> Booked for <%= b.number_of_guests %> </p>
-          <p> <%= b.status %> </p>
-          <%= link_to 'cancel', booking_path(b), method: 'delete', class:"zindex" %>
+          <p> Booked for <%= b.number_of_guests %> guests </p>
+          <% if b.status == "pending" %>
+            <p><strong>Status:</strong> Awaiting confirmation from host</p>
+          <% elsif b.status == "accepted" %>
+            <p><strong>Status:</strong> Booking confirmed</p>
+          <% else %>
+            <p><strong>Status:</strong> Booking declined </p>
+          <% end %>
+          <%= link_to 'Cancel booking', booking_path(b), method: 'delete', class: "btn btn-success zindex" %>
         </div>
 
       </div>
@@ -30,9 +36,11 @@
           <p> <%= e.event.name %> </p>
           <p> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
           <% if e.review %>
-            <%= e.review.rating %>
+            <% e.review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
           <% else %>
-            <%= link_to 'Review Host', new_review_path, class:"zindex" %>
+            <%= link_to 'Review Host', new_booking_review_path(e) %>
           <% end %>
         </div>
       </div>
