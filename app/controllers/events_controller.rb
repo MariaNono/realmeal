@@ -45,8 +45,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @space.destroy
-    #redirect...
+    @event.destroy
+    redirect_to mybookings_path
   end
 
   private
