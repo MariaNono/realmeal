@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to request.referrer
+    redirect_to request.referrer, notice: "Your booking is updated"
   end
 
   def destroy

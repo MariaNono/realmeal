@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     #@event = Event.find(params[:event_id])
     @event.user = current_user
     if @event.save!
-      redirect_to myhostings_path
+      redirect_to myhostings_path, notice: "Event created successfully"
     else
       render :new
     end
@@ -45,11 +45,16 @@ class EventsController < ApplicationController
   end
 
   def update
+    if @event.update(event_params)
+      redirect_to myhostings_path, notice: "Event updated successfully"
+    else
+      render :edit
+    end
   end
 
   def destroy
     @event.destroy
-    redirect_to mybookings_path
+    redirect_to myhostings_path, notice: "Event deleted successfully"
   end
 
   private
