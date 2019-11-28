@@ -6,11 +6,11 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSelect2 } from '../components/dropdown';
-// import { calculatePrice } from '../pages/newbooking';
+import { calculatePrice } from '../pages/newbooking';
 
 
 buttonActivationMap();
 // showMessage();
 initSelect2();
-// calculatePrice();
+calculatePrice();
 // initMapbox();
