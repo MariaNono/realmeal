@@ -1,8 +1,13 @@
 .button-unselected {
-  background-color: green;
+  background-color: black;
   color: white;
 }
 
 .btn-cancel {
   color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
 }
