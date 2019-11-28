@@ -9,8 +9,8 @@
           <%= f.input :cuisine, as: :select, label: false, required: false, input_html: { class: "select2"}, collection: ['', 'Chinese', 'French', 'German',' Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Spanish'], selected: params[:events][:cuisine] %>
           <%= f.label :date, 'Dates' %>
           <%= f.input :date, label: false, required: false, input_html: {value: date, class: "datepicker"} %>
-          <%= f.label :guests, 'Number of guests' %>
-          <%= f.input :guests, label: false, input_html: { class: "select2" }, collection: 1..10, selected: params[:events][:guests] %>
+          <%= f.label :number_of_guests, 'Number of guests' %>
+          <%= f.input :number_of_guests, label: false, input_html: { class: "select2" }, collection: 1..10, selected: params[:events][:number_of_guests] %>
           <%= f.button :submit, "Find experiences", class: "btn btn-success" %>
         <% end %>
       </div>
