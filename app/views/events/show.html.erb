@@ -1,37 +1,38 @@
 
-<div class="card-show">
+<div class="card-event">
   <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn btn-warning" %>
-<%if @event.photo? %>
+    <%if @event.photo? %>
       <%= cl_image_tag @event.photo %>
     <% else %>
       <%= image_tag ("https://images.unsplash.com/photo-1489710020360-66e504159b43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80") %>
     <% end %>
 
-    <h2 class="name"><%= @event.name %></h2>
+  <h2 class="name"><%= @event.name %></h2>
   <h3 class="location"><%= @event.address %></h3>
 
 <div class="container-content">
-  <div class="container-description">
-
   <p class="description"><%= @event.description %></p>
   <p style='font-weight: 600; font-size: 24px; color: #ffe231'><%= @event.price_per_guest %>€/person</p>
-  </div>
-  <!-- <div class="col-sm-12 col-md-6"> -->
+</div>
+
+<div class="event-form-container">
   <div class="booking-form">
     <%= render "bookings/new", event: @event, booking: @booking %>
   </div>
 
-  <div class="card-product">
-  <img src="https://findicons.com/files/icons/376/the_blacy/128/grimace.png" />
+  <div class="card-event-product">
+  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" />
   <div class="card-product-infos">
     <h2>User name</h2>
     <p>Hey I am Ryan <strong>Take a look at my profile</strong></p>
-    <%= link_to 'user', user_path(@event.user_id) %>
+    <%= link_to 'user', user_path(@event.user_id), class: "btn btn-warning ml-2"%>
     <%#= render 'user', user: user%>
+    </div>
+    </div>
   </div>
-  </div>
+
 </div>
-</div>
+
 
 
       <!--div class="listing-map">
