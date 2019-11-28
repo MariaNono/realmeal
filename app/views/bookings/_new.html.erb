@@ -2,8 +2,8 @@
   <p><strong>Booking for <%= event.name %> on <%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></strong></p>
   <%= simple_form_for [event, booking] do |f| %>
     <%= f.label :number_of_guests, 'Number of guests' %>
-    <%= f.input :number_of_guests, label: false, collection: 1..10, selected: params[:events][:number_of_guests].to_i, id: "guests" %>
-    <p id="price-per-guest">Price:<%= event.price_per_guest %>€/person</p>
+    <%= f.input :number_of_guests, label: false, collection: 1..10, selected: params[:events][:number_of_guests].to_i %>
+    <p id="price-per-guest" data="<% event.price_per_guest %>">Price:<%= event.price_per_guest %>€/person</p>
     <p id="total-price">Total Price:<%= event.price_per_guest %>€</p>
     <%#= f.label :date, 'Date' %>
     <%#= f.input :date, label: false, required: false, input_html: {value: event.event_date, class: "datepicker"} %>
