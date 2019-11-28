@@ -4,10 +4,6 @@
   margin: auto;
 }
 
-.container h3 {
-  margin-top: 50px;
-}
-
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -21,6 +17,10 @@
   background: white;
   width: 300px;
   margin: 20px 0;
+}
+
+#map .event-card {
+  width: 100%;
 }
 
 .event-card img {
