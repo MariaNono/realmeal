@@ -1,23 +1,41 @@
 <div class="container">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar" %>
-  <div class="panel-title">
-    <br>
-    <%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %><br>
-    Berlin
+  <!-- <div class="user-info-card"> -->
+  <!-- <div class="user-info"> -->
+  <div class="user-info">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large" %>
+      <div class="panel-title">
+        <br>
+        <%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %><br>
+        Berlin
+      </div>
   </div>
+    <!-- </div> -->
+  <!-- </div> -->
 
   <div class="panel-Description"><br>
     <%= @user.description %>
   </div>
 
   <div>
-    <h2>Reviews:</h2>
+    <br>
+    <h2>Reviews</h2>
+    <br>
     <ul style="list-style-type: none;">
       <% @user_events.each do |event| %>
         <% @reviews = event.reviews %>
-        <% @reviews.each do |review| %>
-          <li><%= review.content %></li>
+        <% if @reviews.any? %>
+          <% @reviews.each do |review| %>
+            <p><strong>Posted by:</strong> <%= review.booking.user.first_name %></p>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <li><%= review.content %></li>
+            <br>
+          <% end %>
         <% end %>
+      <% end %>
+      <% unless @reviews.any? %>
+        <p>There are no reviews for the host yet</p>
       <% end %>
     </ul>
   </div>

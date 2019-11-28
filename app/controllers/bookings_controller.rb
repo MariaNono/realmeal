@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    #redirect...
+    redirect_to mybookings_path, notice: "Your booking is cancelled"
   end
 
   private

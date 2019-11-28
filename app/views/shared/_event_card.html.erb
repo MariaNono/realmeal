@@ -9,7 +9,7 @@
     <p> <%= event.cuisine %> </p>
     <div>
       <p><%= event.name %></p>
-      <p><%= event.event_date %></p>
+      <p><%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></p>
     </div>
     <p class="price">€<%='%.2f' % event.price_per_guest.to_f%>/guest</p>
   </div>
