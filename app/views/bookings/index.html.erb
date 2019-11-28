@@ -1,40 +1,68 @@
 <div class="container">
-  <div class="d-flex justify-content-between mt-3 page-heading">
-    <h3 class = "ml-4">Booking History for <strong><%= @event.name %></strong></h3>
-    <%= link_to 'Back to my hostings', myhostings_path, class: "btn btn-success" %>
-  </div>
-  <% if @bookings.any? %>
-    <% @bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="mx-3 my-3" >
-          <div class="card-product">
-            <div class="card-product-infos">
-              <% if booking.status == "pending" %>
-                <p>Status: Waiting for confirmation from host</p>
-              <% elsif booking.status == "accepted" %>
-                <p>Status: Booking confirmed</p>
-              <% else %>
-                <p>Status: Booking declined</p>
+  <h3 class = "section-title">Bookings for <strong><%= @event.name %></strong></h3>
+
+  <h3 class = "section-subtitle">Pending</h3>
+  <% if @pending.any? %>
+    <div class="cards-grid">
+      <% @pending.each do |booking| %>
+        <div class="event-card">
+          <div class="infos">
+            <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
+            <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
+            <div class="buttons">
+              <%= simple_form_for([@event, booking]) do |f| %>
+                <%= f.input :status, :as => :hidden, :input_html => { :value => "accepted" }%>
+                <%= f.button :submit, 'Accept', class: 'btn btn-success' %>
               <% end %>
-              <p>User: <%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
-              <p>Number of guests <strong><%= booking.number_of_guests %></strong></p>
-              <% if booking.status == "pending" %>
-                <%= simple_form_for([@event, booking]) do |f| %>
-                  <%= f.input :status, :as => :hidden, :input_html => { :value => "accepted" }%>
-                  <%= f.button :submit, 'Accept Booking', class: 'btn btn-success' %>
-                <% end %>
-                <%= simple_form_for([@event, booking]) do |f| %>
-                  <%= f.input :status, :as => :hidden, :input_html => { :value => "declined" }%>
-                  <%= f.button :submit, 'Decline Booking', class: 'btn btn-success' %>
-                <% end %>
+              <%= simple_form_for([@event, booking]) do |f| %>
+                <%= f.input :status, :as => :hidden, :input_html => { :value => "declined" }%>
+                <%= f.button :submit, 'Decline', class: 'btn btn-success' %>
               <% end %>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% else %>
-    <p class="ml-4">There are no bookings for this event.</p>
+    <p >There are no pending requests for this event.</p>
   <% end %>
+
+  <h3 class = "section-subtitle">Accepted</h3>
+  <% if @accepted.any? %>
+    <div class="cards-grid">
+      <% @accepted.each do |booking| %>
+        <div class="event-card">
+          <div class="infos">
+            <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
+            <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
+            <p>Status: Confirmed</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>There are no accepted booking requests for this event.</p>
+  <% end %>
+
+  <h3 class = "section-subtitle">Declined</h3>
+  <% if @declined.any? %>
+    <div class="cards-grid">
+      <% @declined.each do |booking| %>
+        <div class="event-card">
+          <div class="infos">
+            <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
+            <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
+            <p>Status: Declined</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>There are no declined booking requests for this event.</p>
+  <% end %>
+
+  <br>
+  <br>
+  <br>
+
 </div>
-<br><br>

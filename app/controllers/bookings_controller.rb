@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @bookings = Booking.where(event_id: params[:event_id])
+    @pending = @bookings.select { |b| b.status == 'pending' }
+    @accepted = @bookings.select { |b| b.status == 'accepted' }
+    @declined = @bookings.select { |b| b.status == 'declined' }
   end
 
   def show
@@ -28,7 +31,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to myhostings_path
+    redirect_to request.referrer
   end
 
   def destroy

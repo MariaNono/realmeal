@@ -12,7 +12,31 @@
 
 <div class="container-content">
   <p class="description"><%= @event.description %></p>
+  <br>
+<div class="menu-content">
+  <h3 style="text-decoration: underline;">Menu</h3>
+
+<h4>Appetizers</h4>
+<p>Salami and roman cheese</p>
+<p>Black pig salami served with raw milk cheese from Roman countryside</p>
+
+<h4>Starters</h4>
+<p>Chickpeas and chestnuts soup</p>
+<p>Chickpeas and chestnuts soup served with breadcrumbs</p>
+
+<h4>Main courses</h4>
+<p>Homemade tagliolini with lamb meatballs and stir-fry vegetables</p>
+<p>Roman style wild boar ancient recipe with pine-nuts, vinegar, tomato and chocolate</p>
+
+<h4>Dessert</h4>
+<p>Tiramisù</p>
+
+<h4>Drinks & Beverages</h4>
+<p>Red Wine, White Wine, Beer, Digestif, Aperitif, Sparkling Wine</p>
+
   <p style='font-weight: 600; font-size: 24px; color: #ffe231'><%= @event.price_per_guest %>€/person</p>
+  <br>
+</div>
 </div>
 
 <div class="event-form-container">
@@ -20,23 +44,28 @@
     <%= render "bookings/new", event: @event, booking: @booking %>
   </div>
 
-  <div class="card-event-product">
+
+<% link_to 'user', profile_path(@event.user_id)%>
+<div class="card-event-product">
   <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" />
   <div class="card-product-infos">
     <h2>User name</h2>
-    <p>Hey I am Ryan <strong>Take a look at my profile</strong></p>
-    <%= link_to 'user', user_path(@event.user_id), class: "btn btn-warning ml-2"%>
-    <%#= render 'user', user: user%>
+    <p>Hey I am Ryan<br>Take a look at my profile</p>
+    <%#= link_to 'user', profile_path(@event.user_id)%>
     </div>
     </div>
+
+  <div class="event-member">
+    <h2>Attending guests</h2>
+    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" />
+    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" />
+    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" />
   </div>
 
+  </div>
 </div>
 
-      <div class="profile-form">
-        <%#= link_to 'user', user_path(@event.user_id) %>
-        <%= link_to 'user', profile_path(@event.user_id) %>
-      </div>
+
 
       <!--div class="listing-map">
         <%# render 'map' %>
