@@ -1,7 +1,7 @@
 <div class="event-card relative">
   <%= link_to "", event_path(event, request.query_parameters), class:"link" %>
-  <%if event.photo? %>
-    <%= cl_image_tag event.photo %>
+  <% if event.photo? %>
+    <%= cl_image_tag (event.photo) %>
   <% else %>
     <%= image_tag ("https://www.washingtonian.com/wp-content/uploads/2019/06/unnamed-1-2048x1365.jpg") %>
   <% end %>
