@@ -7,7 +7,23 @@
   font-variant: small-caps;
 }
 
-
 .review-stars {
   margin-bottom: 10px;
+}
+
+.small-uppercase {
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.event-name {
+  font-family: 'Calistoga', 'Georgia', serif;
+}
+
+.underline {
+  // border-bottom: 1px solid black;
 }

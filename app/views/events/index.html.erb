@@ -1,5 +1,4 @@
 <div class="container">
-    <div>
       <%cuisine = params[:events][:cuisine] if !params[:events].nil?%>
       <%number_of_guests = params[:events][:guests] if !params[:events].nil?%>
       <%date = params[:events][:date] if !params[:events].nil?%>
@@ -11,13 +10,14 @@
           <%= f.input :date, label: false, required: false, input_html: {value: date, class: "datepicker"} %>
           <%= f.label :number_of_guests, 'Number of guests' %>
           <%= f.input :number_of_guests, label: false, input_html: { class: "select2" }, collection: 1..10, selected: params[:events][:number_of_guests] %>
-          <%= f.button :submit, "Find experiences", class: "btn btn-success" %>
+          <%= f.button :submit, "Find experiences", class: "btn btn-danger" %>
         <% end %>
       </div>
       <!-- <p class = "btn btn-success" id="events-map-button">Map</p> -->
-      <button class="btn btn-success" value="Show Map", id="events-map-button">Show Map</button>
-      <h3 class="section-title">Upcoming experiences</h3>
-    </div>
+      <div class="buttons" style='align-items: baseline; justify-content: space-between; padding: 0 10px'>
+        <h3 class="section-subtitle" style='margin-top: 30px;'>Upcoming experiences</h3>
+      <button class="btn outline-btn" value="Show Map", id="events-map-button">Show Map</button>
+      </div>
 
     <div>
       <div id="map-container"  class="hidden">
