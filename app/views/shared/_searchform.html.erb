@@ -2,7 +2,7 @@
   <h3>Find an experience near you</h3>
   <%= simple_form_for :events, url: events_path, method: "get" do |f| %>
     <%= f.label :cuisine, 'Cuisine type' %>
-    <%= f.input :cuisine, as: :select, label: false, required: false, input_html: {class: "select2"}, collection: ['', 'Chinese', 'French', 'German', 'Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Spanish'] %>
+    <%= f.input :cuisine, as: :select, label: false, required: false, input_html: {class: "select2"}, collection: ['', 'Chinese', 'French', 'German', 'Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Portugese', 'Spanish'] %>
     <%= f.label :date, 'Date' %>
     <%= f.input :date, label: false, required: false, input_html: {class: "datepicker"} %>
     <%= f.label :number_of_guests, 'Number of guests' %>

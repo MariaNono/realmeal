@@ -10,7 +10,7 @@ const buttonActivationMap = () => {
 
   if (mapButton) {
     mapButton.addEventListener("click", (event) => {
-      mapButton.classList.toggle("button-unselected");
+      // mapButton.classList.toggle("button-unselected");
       listShow.classList.toggle("hidden");
       mapShow.classList.toggle("hidden");
       if(mapButton.innerText == "Show Map") {
