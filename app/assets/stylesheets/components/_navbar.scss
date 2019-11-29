@@ -20,3 +20,11 @@
    color: white;
    font-family: 'Montserrat', sans-serif;
 }
+
+.navbar-expand-sm .navbar-nav {
+  padding-right: 0px !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ffec42;;
+}

@@ -1,3 +1,5 @@
+require 'date'
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
@@ -9,7 +11,14 @@ class EventsController < ApplicationController
         @events = @events.select { |event| event.cuisine.capitalize == params[:events][:cuisine]}
       end
     end
-    @events = @events.select { |event| event.status == "open" }
+    # @events = @events.select { |event| event.status == "open" }
+    if params[:events][:date].present?
+      @events = @events.select { |event| event.event_date >= params[:events][:date]}
+    else
+      @events = @events.select { |event| event.event_date >= DateTime.now }
+    end
+
+    @events = sort_by_date(@events)
 
     @markers = @events.map do |event|
       {
@@ -65,5 +74,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :photo)
+  end
+
+  def sort_by_date(events)
+    events.sort_by { |event| event.event_date }
   end
 end

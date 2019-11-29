@@ -20,6 +20,7 @@
             <p><strong>Status:</strong> Awaiting confirmation from host</p>
           <% elsif b.status == "accepted" %>
             <p><strong>Status:</strong> Booking confirmed</p>
+            <p>Address: <%= b.event.address %></p>
           <% else %>
             <p><strong>Status:</strong> Booking declined </p>
           <% end %>

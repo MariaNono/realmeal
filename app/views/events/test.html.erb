@@ -1,14 +1,13 @@
-
 <div class="card-event">
-  <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn outline-btn" %>
+  <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn btn-warning" %>
     <%if @event.photo? %>
       <%= cl_image_tag @event.photo %>
     <% else %>
       <%= image_tag ("https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
     <% end %>
 
-  <h3 class="event-name" style='font-size: 30px;'><%= @event.name %></h3>
-  <h4 class="event-location small-uppercase"><%= @event.address %></h4>
+  <h3 class="event-name"><%= @event.name %></h3>
+  <h4 class="event-location"><%= @event.address %></h4>
 
 <div class="container-content">
   <p class="description"><%= @event.description %></p>
@@ -40,11 +39,9 @@ can find in Portugal, especially during holiday seasons. </p>
 </div>
 
 <div class="event-form-container">
-  <% unless @event.user == current_user %>
-    <div class="booking-form">
-      <%= render "bookings/new", event: @event, booking: @booking %>
-    </div>
-  <% end %>
+  <div class="booking-form">
+    <%= render "bookings/new", event: @event, booking: @booking %>
+  </div>
 
 
 <div class="card-event-product">
@@ -57,24 +54,12 @@ can find in Portugal, especially during holiday seasons. </p>
     </div>
     </div>
 
-
-  <% if @event.user == current_user  %>
-    <% if !@event.bookings.empty? %>
-      <div class="event-member">
-        <h2>Attending guests</h2>
-        <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" />
-        <img src="https://images.unsplash.com/photo-1521117660421-ce701ed42966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-        <img src="https://images.unsplash.com/photo-1534339480783-6816b68be29c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-      </div>
-    <% end %>
-  <% else %>
-    <div class="event-member">
-        <h2>Attending guests</h2>
-        <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" />
-        <img src="https://images.unsplash.com/photo-1521117660421-ce701ed42966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-        <img src="https://images.unsplash.com/photo-1534339480783-6816b68be29c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-      </div>
-  <% end %>
+  <div class="event-member">
+    <h2>Attending guests</h2>
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+    <img src="https://images.unsplash.com/photo-1521146764736-56c929d59c83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+    <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+  </div>
 
   </div>
 </div>
