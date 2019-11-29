@@ -32,6 +32,54 @@ puts '🌱 Creating users...'
   user.save!
 end
 
+user6 = User.new(
+    email: "johnmathew@example.com",
+    first_name: "John",
+    last_name: "Mathew",
+    password: '123456',
+    password_confirmation: '123456',
+    username: Faker::Internet.username,
+    description: Faker::Restaurant.description,
+    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm"
+  )
+user6.save!
+
+user7 = User.new(
+  email: "monica@example.com",
+    first_name: "Monica",
+    last_name: "Geller",
+    password: '123456',
+    password_confirmation: '123456',
+    username: Faker::Internet.username,
+    description: Faker::Restaurant.description,
+    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm"
+  )
+user7.save!
+
+user8 = User.new(
+  email: "ross@example.com",
+    first_name: "Ross",
+    last_name: "Geller",
+    password: '123456',
+    password_confirmation: '123456',
+    username: Faker::Internet.username,
+    description: Faker::Restaurant.description,
+    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm"
+  )
+user8.save!
+
+user9 = User.new(
+  email: "paulo@example.com",
+    first_name: "Paulo",
+    last_name: "Silva",
+    password: '123456',
+    password_confirmation: '123456',
+    username: Faker::Internet.username,
+    description: "I'm a 39 year old Chef. I am passionate about food, travel, and music. I love to talk about different cuisines, culture and traditions.",
+    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm"
+  )
+user9.save!
+
 puts "🎉 Added users"
 
 ####################################################################################################
@@ -115,6 +163,21 @@ event5 = Event.new(
   )
   event5.remote_photo_url = "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   event5.save!
+
+  event6 = Event.new(
+    name: Faker::Restaurant.name,
+    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories."
+    cuisine: 'Portugese',
+    max_guests: (1..10).to_a.sample,
+    booked_guests: (4..8).to_a.sample,
+    price_per_guest: (5..20).to_a.sample,
+    user_id: user9.id,
+    status: 'open',
+    address: districts.sample
+  )
+  event6.remote_photo_url = "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  event6.save!
 puts '🎉 Added Events'
 
 #############################################################################
@@ -130,6 +193,27 @@ puts '🌱 Creating bookings...'
   booking.save!
 end
 
+booking11 = Booking.new(
+  user_id: user6.id,
+  event_id: event6.id,
+  number_of_guests: (1..3).to_a.sample,
+  )
+booking11.save!
+
+booking12 = Booking.new(
+  user_id: user7.id,
+  event_id: event6.id,
+  number_of_guests: (1..3).to_a.sample,
+  )
+booking12.save!
+
+booking13 = Booking.new(
+  user_id: user8.id,
+  event_id: event6.id,
+  number_of_guests: (1..3).to_a.sample,
+  )
+booking13.save!
+
 puts "🎉 Added bookings"
 
 ##############################################################################
@@ -144,6 +228,27 @@ puts '🌱 Creating reviews...'
   )
   review.save!
 end
+
+review11 = Review.new(
+   booking_id: booking11.id,
+   rating: (4..5).to_a.sample,
+   content: "Paulo and his family were such a joy to spend time with. We got to know them personally and learn more about Portugese history. There were so many amazing courses that we could barely walk out afterwards."
+   )
+review11.save!
+
+review12 = Review.new(
+   booking_id: booking12.id,
+   rating: (4..5).to_a.sample,
+   content: "Absolutely delicious and heartwarming experience. Paulo made classic comfort food which you can't get in restaurants. Would definitely recommend!"
+   )
+review12.save!
+
+review13 = Review.new(
+   booking_id: booking13.id,
+   rating: (4..5).to_a.sample,
+   content: "Great food and wonderful host! Paulo was warm ad welcoming from the very start and we had a wonderful evening with her. The food was fantastic and I really appreciated her making the extra effort to create vegetarian dishes for me, and telling me how to adapt traditional dishes to make them meat-free."
+   )
+review13.save!
 
 # puts "🎉 Added reviews"
 
