@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+.homepage-banner {
+  display: block;
+  height: 550px;
+}
+.container-red {
+  width: 50%;
+  height: 100%;
+  background-color: $red;
+  float: left;
+}
+
+.container-yellow {
+  padding: 60px;
+  width: 50%;
+  height: 100%;
+  background-color: $yellow;
+  float: left;
+  text-align: center;
+}
+
+.home-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+}
+
+.container-yellow h1 {
+  font-weight: 900;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 70px;
+  margin-top: 50px;
+  letter-spacing: 2px;
+}
+
+.container-yellow h2 {
+  font-family: 'Calistoga';
+  text-align: center;
+  font-size: 50px;
+}
+
+.container-yellow p {
+  text-align: center;
+  font-size: 21px;
+}
+

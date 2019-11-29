@@ -6,11 +6,11 @@
     <%= image_tag ("https://www.washingtonian.com/wp-content/uploads/2019/06/unnamed-1-2048x1365.jpg") %>
   <% end %>
   <div class="infos">
-    <p> <%= event.cuisine %> </p>
+    <p class='small-uppercase' style='font-size: 21px;'>  <span class="underline"> <%= event.cuisine %> </span></p>
     <div>
-      <p><%= event.name %></p>
-      <p><%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></p>
+      <p class='event-name' style='font-size: 24px;'><%= event.name %></p>
+      <p style='text-transform: uppercase; font-size: 14px;'><%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></p>
     </div>
-    <p class="price">€<%='%.2f' % event.price_per_guest.to_f%>/guest</p>
+    <p class="price">€<%='%.2f' % event.price_per_guest.to_f%> / Guest</p>
   </div>
 </div>

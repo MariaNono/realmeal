@@ -1,7 +1,4 @@
-.button-unselected {
-  background-color: black;
-  color: white;
-}
+
 
 .btn-cancel {
   color: black;
@@ -10,4 +7,23 @@
 .buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+.btn {
+  font-weight: 700;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+
+.btn-info:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
+.outline-btn {
+  height: 100%;
+  background-color: none;
+  border: 1px black solid;
+  transform: translateY(-5px);
 }

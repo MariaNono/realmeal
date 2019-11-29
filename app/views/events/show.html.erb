@@ -1,14 +1,14 @@
 
 <div class="card-event">
-  <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn btn-warning" %>
+  <%= link_to "Browse all events", events_path(events: {address: ''}), class: "btn outline-btn" %>
     <%if @event.photo? %>
       <%= cl_image_tag @event.photo %>
     <% else %>
       <%= image_tag ("https://images.unsplash.com/photo-1489710020360-66e504159b43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80") %>
     <% end %>
 
-  <h3 class="event-name"><%= @event.name %></h3>
-  <h4 class="event-location"><%= @event.address %></h4>
+  <h3 class="event-name" style='font-size: 30px;'><%= @event.name %></h3>
+  <h4 class="event-location small-uppercase"><%= @event.address %></h4>
 
 <div class="container-content">
   <p class="description"><%= @event.description %></p>
