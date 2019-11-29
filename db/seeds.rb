@@ -88,10 +88,10 @@ puts '🌱 Creating events...'
 
 
   event1 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Taiwanese Family Dinner",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
-    description: Faker::Restaurant.description,
-    cuisine: 'Indian',
+    description: "You will be eating home comfort food, which you may not be able to eat it if you are not invited to a Taiwanese family.It will be vegetarian and vegan since we need to also share our love and care to the environment and animals. However, don't you worry, it will still be very delicious!",
+    cuisine: 'Chinese',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
     price_per_guest: (5..20).to_a.sample,
@@ -99,14 +99,14 @@ puts '🌱 Creating events...'
     status: 'open',
     address: districts.sample
   )
-  event1.remote_photo_url = "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  event1.remote_photo_url = "https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   event1.save!
 
   event2 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Traditional Peruvian dinner",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
-    description: Faker::Restaurant.description,
-    cuisine: 'Indian',
+    description: "Eric and I welcome you to our home! You will enjoy your amuse bouche with a piano and electronics live performance from Eric in our home studio-living room. Afterwards, we will go to the dining room, where you will enjoy the rest of the Menu. The menu is inspired on some of the most emblematic dishes from Perú, my native country.",
+    cuisine: 'Peruvian',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
     price_per_guest: (5..20).to_a.sample,
@@ -119,9 +119,9 @@ puts '🌱 Creating events...'
 
 
   event3 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Welcome to Italy!",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
-    description: Faker::Restaurant.description,
+    description: "Ossobuco with risotto or pasta. Start with some appetizer and then you will be amazed if you eat our ossobuco with risotto or garlic oil pasta. ",
     cuisine: 'Italian',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
@@ -134,10 +134,10 @@ puts '🌱 Creating events...'
   event3.save!
 
   event4 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Japanese Dinner",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
-    description: Faker::Restaurant.description,
-    cuisine: 'Mexican',
+    description: "Discover and taste the individual and characteristic peculiarities and flavors of the Orange Wine in combination with the Japanese menu.",
+    cuisine: 'Japanese',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
     price_per_guest: (5..20).to_a.sample,
@@ -145,15 +145,15 @@ puts '🌱 Creating events...'
     status: 'open',
     address: districts.sample
   )
-  event4.remote_photo_url = "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+  event4.remote_photo_url = "https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1071&q=80"
   event4.save!
 
 
 event5 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Enjoy the dumplings",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
-    description: Faker::Restaurant.description,
-    cuisine: 'Mexican',
+    description: "Savor the Pierogi which is made by wrapping unleavened dough around a sweet filling.",
+    cuisine: 'Polish',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
     price_per_guest: (5..20).to_a.sample,
@@ -161,11 +161,11 @@ event5 = Event.new(
     status: 'open',
     address: districts.sample
   )
-  event5.remote_photo_url = "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  event5.remote_photo_url = "https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=622&q=80"
   event5.save!
 
   event6 = Event.new(
-    name: Faker::Restaurant.name,
+    name: "Enjoy traditional Portugese food",
     event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Portugese',
@@ -176,9 +176,39 @@ event5 = Event.new(
     status: 'open',
     address: districts.sample
   )
-  event6.remote_photo_url = "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  event6.remote_photo_url = "https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   event6.save!
-puts '🎉 Added new Events'
+
+  event7 = Event.new(
+    name: "Let's eat a sausage together!",
+    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
+    cuisine: 'German',
+    max_guests: (1..10).to_a.sample,
+    booked_guests: (4..8).to_a.sample,
+    price_per_guest: (5..20).to_a.sample,
+    user_id: user9.id,
+    status: 'open',
+    address: districts.sample
+  )
+  event7.remote_photo_url = "https://images.unsplash.com/photo-1547424450-75ec164925ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  event7.save!
+
+  event8 = Event.new(
+    name: "Friends don't let friends go Taco-less!",
+    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
+    cuisine: 'Mexican',
+    max_guests: (1..10).to_a.sample,
+    booked_guests: (4..8).to_a.sample,
+    price_per_guest: (5..20).to_a.sample,
+    user_id: user9.id,
+    status: 'open',
+    address: districts.sample
+  )
+  event8.remote_photo_url = "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+  event8.save!
+puts '🎉 Added Events'
 
 #############################################################################
 
@@ -214,7 +244,7 @@ booking13 = Booking.new(
   )
 booking13.save!
 
-puts "🎉 Added new bookings"
+puts "🎉 Added bookings"
 
 ##############################################################################
 
@@ -250,6 +280,6 @@ review13 = Review.new(
    )
 review13.save!
 
- puts "🎉 Added new reviews"
+# puts "🎉 Added reviews"
 
 
