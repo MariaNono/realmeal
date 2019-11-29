@@ -1,4 +1,5 @@
 const numberOfGuests = document.querySelector('#booking_number_of_guests');
+
 console.log(numberOfGuests);
 
 
@@ -17,6 +18,7 @@ const calculatePrice = () => {
   };
 
 numberOfGuests.addEventListener('change', calculatePrice);
+
 
 export { calculatePrice };
 

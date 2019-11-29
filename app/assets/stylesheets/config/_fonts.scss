@@ -1,12 +1,15 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,300,700");
+// @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,300,700");
+@import url('https://fonts.googleapis.com/css?family=Calistoga');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Work Sans", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "Helvetica", "sans-serif";
+$headers-font: "Montserrat", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
+//  @font-face {
 //   font-family: "Font Name";
 //   src: font-url('FontFile.eot');
 //   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),

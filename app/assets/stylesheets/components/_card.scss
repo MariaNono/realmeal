@@ -91,7 +91,7 @@
   overflow: hidden;
   height: 120px;
   background: white;
-    border: 1px solid #ffe231;
+  border: 1px solid #ffe231;
   display: flex;
   align-items: center;
 }
@@ -140,8 +140,17 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 50px;
+  position: relative;
+}
+
+.card-event-product .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .card-event-product img {
@@ -179,6 +188,25 @@
   text-align: center;
 }
 
+.menu-content h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 19px;
+/* or 160% */
+  color: #FF5A5A;
+}
+
+.menu-content p {
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 19px;
+/* or 222% */
+
+color: #000000;
+}
+
 .event-member img {
   width: 60px;
   height: 60px;
@@ -191,3 +219,4 @@
   margin: 0;
   margin-left: 8px;
 }
+
