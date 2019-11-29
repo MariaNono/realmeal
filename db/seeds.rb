@@ -130,7 +130,7 @@ puts '🌱 Creating events...'
     status: 'open',
     address: districts.sample
   )
-  event3.remote_photo_url = "https://unsplash.com/photos/-F_5g8EEHYE"
+  event3.remote_photo_url = "https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
   event3.save!
 
   event4 = Event.new(
@@ -167,7 +167,7 @@ event5 = Event.new(
   event6 = Event.new(
     name: Faker::Restaurant.name,
     event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
-    description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories."
+    description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Portugese',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
@@ -178,7 +178,7 @@ event5 = Event.new(
   )
   event6.remote_photo_url = "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   event6.save!
-puts '🎉 Added Events'
+puts '🎉 Added new Events'
 
 #############################################################################
 
@@ -214,7 +214,7 @@ booking13 = Booking.new(
   )
 booking13.save!
 
-puts "🎉 Added bookings"
+puts "🎉 Added new bookings"
 
 ##############################################################################
 
@@ -250,6 +250,6 @@ review13 = Review.new(
    )
 review13.save!
 
-# puts "🎉 Added reviews"
+ puts "🎉 Added new reviews"
 
 
