@@ -1,24 +1,56 @@
 <div class='container'>
-  <h3 class='section-title'>My Hostings</h3>
-  <div class="cards-grid">
-    <% @events.each do |event| %>
-      <div class="event-card relative">
-        <%= link_to "", event_path(id: event, events: {guests: ''}), class:"link" %>
-        <% if event.photo? %>
-          <%= cl_image_tag event.photo, height: 700, width: 500, crop: :fill %>
-        <% else %>
-          <%= image_tag ("http://thespaces.com/wp-content/uploads/2017/02/electroposive-NYC-coworking-space.jpg") %>
-        <% end %>
-        <div class="infos">
-          <%#= link_to event.name, event_path(id: event, events: {guests: ''}) %>
-          <p> <%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-          <%= link_to "View all bookings", event_bookings_path(event), class: "link_profile_bookings zindex" %>
-          <div class="buttons">
-            <%= link_to "Update", edit_event_path(event) , class: "btn btn-success mt-2 zindex" %>
-            <%= link_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success mt-2 zindex" %>
+  <h3 class='section-title'>Events you are hosting</h3>
+  <% if @upcoming_hostings.any? %>
+    <div class="cards-grid">
+      <% @upcoming_hostings.each do |event| %>
+        <div class="event-card relative">
+          <%= link_to "", event_path(id: event, events: {guests: ''}), class:"link" %>
+          <% if event.photo? %>
+            <%= cl_image_tag event.photo %>
+          <% else %>
+            <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
+          <% end %>
+          <div class="infos">
+            <p class='event-name'><strong><%= event.name %></strong></p>
+            <%#= link_to event.name, event_path(id: event, events: {guests: ''}) %>
+            <p class='event_date'> <%= event.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+            <div class="block">
+              <%= link_to "View all bookings", event_bookings_path(event), class: "host_bookings_link underline zindex"%>
+            </div>
+            <div class="buttons">
+              <%= link_to "Update", edit_event_path(event) , class: "btn-padding btn outline-btn zindex" %>
+              <%= link_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-padding outline-btn zindex" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div style="padding: 50px 0;">
+      <p style="margin-bottom: 30px;">You are not hosting any events in the future.</p>
+      <%= link_to 'Create a new event', new_event_path, class: "btn-padding btn btn-danger"%> %>
+    </div>
+  <% end %>
+
+  <% if @past_hostings.any? %>
+    <h3 class='section-title'>Events you've hosted</h3>
+    <div class="cards-grid">
+      <% @past_hostings.each do |event| %>
+        <div class="event-card relative">
+          <%= link_to "", event_path(id: event, events: {guests: ''}), class:"link" %>
+          <% if event.photo? %>
+            <%= cl_image_tag event.photo, height: 700, width: 500, crop: :fill %>
+          <% else %>
+            <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
+          <% end %>
+          <div class="infos">
+            <p class='event-name'><strong><%= event.name %></strong></p>
+            <%#= link_to event.name, event_path(id: event, events: {guests: ''}) %>
+            <p class='event-date'> <%= event.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+            <p> You had <%= event.booked_guests %> guests</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

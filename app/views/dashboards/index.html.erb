@@ -9,53 +9,53 @@
         <% if b.event.photo? %>
           <%= cl_image_tag (b.event.photo) %>
         <% else %>
-          <%= image_tag ("https://www.washingtonian.com/wp-content/uploads/2019/06/unnamed-1-2048x1365.jpg") %>
+          <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
         <% end %>
-        <!-- <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9" alt="food"> -->
         <div class="infos">
-          <p><strong><%= b.event.name %></strong></p>
-          <p> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-          <p> Booked for <%= b.number_of_guests %> guests </p>
+          <p class="event-name"><strong><%= b.event.name %></strong></p>
+          <p class='event-date'> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
+          <p> Booked for <strong><%= b.number_of_guests %></strong> guests </p>
           <% if b.status == "pending" %>
-            <p><strong>Status:</strong> Awaiting confirmation from host</p>
+            <p class='status'>Awaiting confirmation from host</p>
           <% elsif b.status == "accepted" %>
-            <p><strong>Status:</strong> Booking confirmed</p>
             <p>Address: <%= b.event.address %></p>
+            <p class='status-confirmed'>Booking confirmed</p>
           <% else %>
-            <p><strong>Status:</strong> Booking declined </p>
+            <p class='status'>Booking declined </p>
           <% end %>
-          <%= link_to 'Cancel booking', booking_path(b), method: 'delete', class: "btn btn-success zindex" %>
+          <%= link_to 'Cancel booking', booking_path(b), method: 'delete', class: "btn outline-btn zindex" %>
         </div>
 
       </div>
     <% end %>
   </div>
 
-  <h3 class='section-title'>Past events</h3>
 
-  <div class="cards-grid">
-    <% @past_events.each do |e| %>
-      <div class="event-card relative">
-        <%= link_to "", event_path(id: e.event.id, events: {guests: ''}), class:"link" %>
-        <% if e.event.photo? %>
-          <%= cl_image_tag (e.event.photo) %>
-        <% else %>
-          <%= image_tag ("https://www.washingtonian.com/wp-content/uploads/2019/06/unnamed-1-2048x1365.jpg") %>
-        <% end %>
-        <!-- <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9" alt="food"> -->
-        <div class="infos">
-          <p> <%= e.event.name %> </p>
-          <p> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-          <% if e.review %>
-            <% e.review.rating.times do %>
-              <i class="fas fa-star"></i>
+  <% if @past_events.any? %>
+    <h3 class='section-title'>Past events</h3>
+
+    <div class="cards-grid">
+      <% @past_events.each do |e| %>
+        <div class="event-card relative">
+          <%= link_to "", event_path(id: e.event.id, events: {guests: ''}), class:"link" %>
+          <% if e.event.photo? %>
+            <%= cl_image_tag (e.event.photo) %>
+          <% else %>
+            <%= image_tag ("https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
+          <% end %>
+          <div class="infos">
+            <p> <%= e.event.name %> </p>
+            <p> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
+            <% if e.review %>
+              <% e.review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% else %>
+              <%= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-info zindex" %>
             <% end %>
-          <% else %>
-            <%= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-success zindex" %>
-          <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
+      <% end %>
+    </div>
+  <% end %>
 </div>
