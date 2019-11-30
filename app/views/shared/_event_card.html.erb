@@ -8,8 +8,8 @@
   <div class="infos">
     <p class='small-uppercase' style='font-size: 21px;'>  <span class="underline"> <%= event.cuisine %> </span></p>
     <div>
-      <p class='event-name' style='font-size: 24px;'><%= event.name %></p>
-      <p style='text-transform: uppercase; font-size: 14px;'><%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></p>
+      <p class='event-name'><%= event.name %></p>
+      <p class='event-date'><%= event.event_date.strftime('%a, %B %d, %I:%M %p') %></p>
     </div>
     <p class="price">€<%='%.2f' % event.price_per_guest.to_f%> / Guest</p>
   </div>

@@ -2,13 +2,12 @@
   <h3 class="text-left">Add a review</h3>
     <div class="form-review">
       <%= simple_form_for [@booking, @review] do |f| %>
-        <%= f.label :content, 'Content' %>
+        <%= f.label :content, "Tell us about your experience." %>
         <%= f.input :content, label: false %>
-        <%= f.label :rating, 'Rating' %>
+        <%= f.label :rating, 'How would you rate it?' %>
         <%= f.input :rating, label: false, required: true, input_html: {class: "select2"} %>
-        <%= f.submit "Post review", class: "btn btn-success" %>
-        <%= link_to "Cancel", mybookings_path, class: "btn btn-secondary btn-cancel" %>
+        <%= f.submit "Post review", class: "btn btn-info" %>
+        <%= link_to "Cancel", mybookings_path, class: "btn outline-btn btn-cancel" %>
       <% end %>
     </div>
 </div>
-

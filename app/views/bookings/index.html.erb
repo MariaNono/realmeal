@@ -5,18 +5,18 @@
   <% if @pending.any? %>
     <div class="cards-grid">
       <% @pending.each do |booking| %>
-        <div class="event-card">
+        <div class="request-card">
           <div class="infos">
-            <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
+            <p style='font-weight: 600;'><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
             <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
             <div class="buttons">
               <%= simple_form_for([@event, booking]) do |f| %>
                 <%= f.input :status, :as => :hidden, :input_html => { :value => "accepted" }%>
-                <%= f.button :submit, 'Accept', class: 'btn btn-success' %>
+                <%= f.button :submit, 'Accept', class: 'btn btn-info' %>
               <% end %>
               <%= simple_form_for([@event, booking]) do |f| %>
                 <%= f.input :status, :as => :hidden, :input_html => { :value => "declined" }%>
-                <%= f.button :submit, 'Decline', class: 'btn btn-success' %>
+                <%= f.button :submit, 'Decline', class: 'btn btn-danger' %>
               <% end %>
             </div>
           </div>

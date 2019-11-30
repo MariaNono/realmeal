@@ -20,6 +20,7 @@
   // border: 1px black solid;
 }
 
+
 #map .event-card {
   width: 100%;
 }
@@ -40,6 +41,16 @@
   text-align: center;
   border: 1px black solid;
   border-top: 0;
+}
+
+.request-card {
+  border: 1px black solid;
+  justify-self: center;
+  overflow: hidden;
+  background: white;
+  width: 300px;
+  margin: 20px 0;
+  padding: 16px;
 }
 
 .category-tag {
@@ -206,7 +217,6 @@ font-weight: normal;
 font-size: 13px;
 line-height: 19px;
 /* or 222% */
-
 color: #000000;
 }
 

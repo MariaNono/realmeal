@@ -1,5 +1,6 @@
 .section-title {
-  margin-top: 50px;
+  margin: 50px 0 25px 0;
+  // font-family: 'Calistoga', 'Georgia', serif;
 }
 
 .section-subtitle {
@@ -22,8 +23,34 @@
 
 .event-name {
   font-family: 'Calistoga', 'Georgia', serif;
+  font-size: 24px;
 }
 
 .underline {
-  // border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.event-date {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.host_bookings_link {
+  margin-bottom: 15px;
+  // display: block;
+  color: black;
+  font-weight: 600;
+}
+
+.block {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.status {
+  color: $red;
+}
+
+.status-confirmed {
+  color: $green;
 }
