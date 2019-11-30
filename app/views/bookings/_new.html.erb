@@ -7,14 +7,16 @@
     <p id="total-price">Total Price:<%= event.price_per_guest %>€</p>
     <%#= f.label :date, 'Date' %>
     <%#= f.input :date, label: false, required: false, input_html: {value: event.event_date, class: "datepicker"} %>
-    <%= f.submit "Reserve now", class: "btn btn-danger", id: "reserve-button" %>
+    <%= f.submit "Reserve now", class: "btn btn-danger" %>
   <% end %>
 </div>
 
 
-<div id="message" class="hidden">
-   <p>Your booking has been sent to the host and is awaiting confirmation. We will inform you when it gets accepted. You can also check the booking details in your profile.</p>
+<div id="show-message" class="hidden">
+  <span class="close">&times;</span>
+   <p class="popuptext">Your booking has been sent to <%= "#{event.user.first_name.capitalize}" %>. We will inform you when your booking gets accepted. You can also check the booking details in your profile.</p>
 </div>
+
 
 
 

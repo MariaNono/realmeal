@@ -1,0 +1,10 @@
+<% if event.bookings.any? %>
+  <% event.bookings.each do |booking| %>
+    <%= link_to "", profile_path(booking.user), class: "link" %>
+    <%if booking.user.photo? %>
+      <%= cl_image_tag (booking.user.photo) %>
+    <% else %>
+      <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture"%>
+    <% end %>
+  <% end %>
+<% end %>

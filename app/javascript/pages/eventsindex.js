@@ -2,7 +2,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 const buttonActivationMap = () => {
   const mapButton = document.querySelector('#events-map-button');
-  console.log(mapButton.innerText);
+  // console.log(mapButton.innerText);
   const mapShow = document.querySelector('#map-container');
   console.log(mapShow)
   const listShow = document.querySelector('#events-list-show');

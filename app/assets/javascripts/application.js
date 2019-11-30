@@ -1,9 +1,6 @@
 //= require rails-ujs
 //= require_tree .
-
 const numberOfGuests = document.querySelector('#booking_number_of_guests');
-console.log(numberOfGuests);
-
 
 const calculatePrice = () => {
     console.log("hi");
@@ -20,6 +17,8 @@ const calculatePrice = () => {
   };
 
 numberOfGuests.addEventListener('change', calculatePrice);
+
+
 
 // export { calculatePrice };
 
