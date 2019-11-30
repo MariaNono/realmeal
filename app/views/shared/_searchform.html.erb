@@ -1,5 +1,5 @@
 <div class="search-form">
-  <h3 class='section-title'>Find an experience near you in Berlin</h3>
+  <h3 class='section-title'>Find an experience in Berlin</h3>
   <%= simple_form_for :events, url: events_path, method: "get" do |f| %>
     <%= f.label :cuisine, 'Cuisine type' %>
     <%= f.input :cuisine, as: :select, label: false, required: false, input_html: {class: "select2"}, collection: ['', 'Chinese', 'French', 'German', 'Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Portugese', 'Spanish'] %>
