@@ -6,6 +6,11 @@
     <div class="cards-grid">
       <% @pending.each do |booking| %>
         <div class="request-card">
+          <% if booking.user.profile_picture? %>
+            <%= cl_image_tag (booking.user.profile_picture), class: "avatar-large" %>
+          <% else %>
+            <%= image_tag "https://i.pinimg.com/originals/c5/e5/18/c5e5189feb92faedbf368bea32475299.jpg", class: "avatar-large" %>
+          <% end %>
           <div class="infos">
             <p style='font-weight: 600;'><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
             <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>

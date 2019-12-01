@@ -10,7 +10,7 @@
        <%= simple_form_for @event do |f| %>
           <%= f.label :cuisine %>
           <%= f.input :cuisine, as: :select, label: false, required: false, input_html: { class: "select2"},
-           collection: ['', 'Chinese', 'French', 'German',' Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Portugese', 'Spanish']%>
+           collection: ['', 'Chinese', 'French', 'German', 'Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Portuguese', 'Spanish']%>
           <%= f.input :event_date %>
           <%= f.input :name %>
           <%= f.input :address %>

@@ -38,7 +38,7 @@ user3 = User.new(
    password: '123456',
    password_confirmation: '123456',
    username: "mary14",
-   description: "Born and raised in Lisbon, I'm a huge food lover. I love spending quality time with food lovers and cook and eat authentic Portugese food together"
+   description: "Born and raised in Lisbon, I'm a huge food lover. I love spending quality time with food lovers and cook and eat authentic Portuguese food together"
    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm")
 user3.save!
 
