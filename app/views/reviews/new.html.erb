@@ -5,7 +5,15 @@
         <%= f.label :content, "Tell us about your experience." %>
         <%= f.input :content, label: false %>
         <%= f.label :rating, 'How would you rate it?' %>
-        <%= f.input :rating, label: false, required: true, input_html: {class: "select2"} %>
+        <%#= f.input :rating, label: false, required: true, input_html: {class: "select2"} %>
+        <div>
+          <i class="far fa-star" id="star-one"></i>
+          <i class="far fa-star" id="star-two"></i>
+          <i class="far fa-star" id="star-three"></i>
+          <i class="far fa-star" id="star-four"></i>
+          <i class="far fa-star" id="star-five"></i>
+        </div>
+        <br>
         <%= f.submit "Post review", class: "btn btn-info" %>
         <%= link_to "Cancel", mybookings_path, class: "btn outline-btn btn-cancel" %>
       <% end %>
