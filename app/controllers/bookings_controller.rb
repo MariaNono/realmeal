@@ -21,9 +21,9 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @booking.user = current_user
     @booking.event = @event
-    if @booking.save
-      redirect_to mybookings_path
-    else
+    unless @booking.save
+      # redirect_to mybookings_path
+      # shows a popuup message on the same page if booking.save is successful
       render :new
     end
   end
