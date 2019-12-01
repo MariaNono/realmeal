@@ -165,10 +165,10 @@ event5 = Event.new(
   event5.save!
 
   event6 = Event.new(
-    name: "Enjoy traditional Portugese food",
+    name: "Enjoy traditional Portuguese food",
     event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
-    cuisine: 'Portugese',
+    cuisine: 'Portuguese',
     max_guests: (1..10).to_a.sample,
     booked_guests: (4..8).to_a.sample,
     price_per_guest: (5..20).to_a.sample,
@@ -262,7 +262,7 @@ end
 review11 = Review.new(
    booking_id: booking11.id,
    rating: (4..5).to_a.sample,
-   content: "Paulo and his family were such a joy to spend time with. We got to know them personally and learn more about Portugese history. There were so many amazing courses that we could barely walk out afterwards."
+   content: "Paulo and his family were such a joy to spend time with. We got to know them personally and learn more about Portuguese history. There were so many amazing courses that we could barely walk out afterwards."
    )
 review11.save!
 
