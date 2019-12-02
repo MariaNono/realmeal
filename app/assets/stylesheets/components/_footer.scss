@@ -1,14 +1,13 @@
-
 .footer {
-  background: #F4F4F4;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
   bottom: 0;
   padding: 0px 30px;
   color: rgba(0,0,0,0.3);
   width: 100%;
+  position: absolute;
 }
 
 .footer-links {
@@ -17,7 +16,7 @@
 }
 
 .footer-links a {
-  color: black;
+  color: white;
   opacity: 0.3;
   text-decoration: none;
   font-size: 24px;
@@ -26,9 +25,10 @@
 
 .footer-links a:hover {
   opacity: 1;
+  color: $yellow;
 }
 
-.footer .fa-angrycreative {
-  color: black;
-  margin-left: 10px;
+.footer-copyright {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
 }
