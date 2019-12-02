@@ -12,5 +12,6 @@
       <p class='event-date'><%= event.event_date.strftime('%a, %B %d, %I:%M %p') %></p>
     </div>
     <p class="price">€<%='%.2f' % event.price_per_guest.to_f%> / Guest</p>
+    <!-- <p class="price"><%= humanized_money_with_symbol(event.price_per_guest)%> / Guest</p> -->
   </div>
 </div>

@@ -19,9 +19,28 @@
             <p class='status'>Awaiting confirmation from host</p>
           <% elsif b.status == "accepted" %>
             <p>Address: <%= b.event.address %></p>
-            <p class='status-confirmed'>Booking confirmed</p>
+            <p class='status-confirmed'>Request accepted by <%= b.event.user.first_name %></p>
+            <%#= form_tag ([b.event, b]) do %>
+              <%#= hidden_field :payment, value: "true " %>
+              <%#= submit_tag 'Pay Now', class: 'btn btn-primary mb-3 zindex' %>
+            <%# end %>
+            <% if b.state = "pending" %>
+              <%= simple_form_for([b.event, b]) do |f| %>
+                <%= f.hidden_field :payment, value: "true" %>
+                <%= f.button :submit, 'Pay Now', class: 'btn btn-info zindex mb-3', id: "pay" %>
+              <% end %>
+            <% end %>
+            <!-- <script>
+              const paymentButton = document.getElementById('pay');
+              paymentButton.addEventListener('click', () => {
+                const stripe = Stripe('<%#= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                stripe.redirectToCheckout({
+                  sessionId: '<%= b.checkout_session_id %>'
+                });
+              });
+            </script> -->
           <% else %>
-            <p class='status'>Booking declined </p>
+            <p class='status'>Request declined by <%= b.event.user.first_name %></p>
           <% end %>
           <%= link_to 'Cancel booking', booking_path(b), method: 'delete', class: "btn outline-btn zindex" %>
         </div>
