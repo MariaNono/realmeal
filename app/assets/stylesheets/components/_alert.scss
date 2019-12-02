@@ -4,3 +4,15 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-info {
+  color: #000;
+  background-color: #fff;
+  border: 1px black solid;
+}
+
+.alert .close {
+  opacity: 1;
+  text-shadow: none;
+  font-weight: 400;
+}
