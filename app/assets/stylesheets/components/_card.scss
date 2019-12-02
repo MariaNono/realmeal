@@ -234,3 +234,24 @@ color: #000000;
   margin-left: 8px;
 }
 
+// .guest-card {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+
+.user-card-grid {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-column-gap: 18px;
+  grid-row-gap: 15px;
+}
+
+.cards-for-all-guests {
+  text-align: center;
+  padding: 0 16px 16px 0;
+  width: 100px;
+  margin-top: 5px;
+}
+

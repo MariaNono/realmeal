@@ -51,8 +51,8 @@
                 <i class="fas fa-star"></i>
               <% end %>
             <% else %>
-              <%#= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-info zindex" %>
-              <%= link_to 'Review Host', new_booking_review_path(e.id) , class: "btn btn-info zindex" %>
+              <%= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-info zindex" %>
+              <%#= link_to 'Review Host', profile_path(e.event.user) , class: "btn btn-info zindex" %>
             <% end %>
           </div>
         </div>
