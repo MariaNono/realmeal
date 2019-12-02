@@ -22,18 +22,48 @@ window.addEventListener('click', (event) => {
 
 // Show guest profile as popup
 
-const cards = document.getElementsByClassName("card-guest");
-const guestProfile = document.getElementById("guest-profile-modal");
-console.log(guestProfile);
-// console.log(cards);
-for (var i = 0; i < cards.length; i++) {
-  // console.log(cards[i]);
-  const guestImage = document.getElementById("guest-picture");
-  console.log(guestImage);
-  guestImage.addEventListener("click", event => {
-    modal.style.display = "block";
+const cards = document.querySelectorAll(".cards-for-all-guests");
+
+const guestProfilePage = document.querySelectorAll("#guest-profile-page");
+const closeGuestProfile = document.querySelectorAll(".close-guest-profile");
+
+cards.forEach((card, index) => {
+  card.addEventListener("click", (e) => {
+    guestProfilePage[index].style.display = "block"
+  })
+  closeGuestProfile.forEach((close, index) => {
+    close.addEventListener("click", event => {
+      closeWindow(guestProfilePage[index]);
+    });
+  })
+  window.addEventListener('click', (event) => {
+    if (event.target == guestProfilePage[index]) {
+      closeWindow(guestProfilePage[index]);
+    }
   });
-};
+})
+
+
+// Show host profile as popup
+
+const host = document.querySelector("#host-card");
+const hostProfilePage = document.querySelector("#host-profile-page");
+const closeHostProfile = document.querySelector(".close-host-profile");
+
+host.addEventListener("click", (event) => {
+  hostProfilePage.style.display = "block";
+});
+
+closeHostProfile.addEventListener("click", event => {
+  closeWindow(hostProfilePage);
+  // hostProfilePage.style.display = "none";
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target == hostProfilePage) {
+    closeWindow(hostProfilePage);
+  }
+});
 
 
 

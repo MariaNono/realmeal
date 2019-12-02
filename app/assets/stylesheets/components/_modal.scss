@@ -21,3 +21,21 @@
   width: 800px;
   z-index: 25;
 }
+
+
+.guest-content {
+  margin: 5% auto;
+  padding: 25px 40px;
+  background-color: $body-bg;
+  width: 800px;
+  z-index: 25;
+  overflow: scroll;
+}
+
+.guest-content-message {
+  width: 100%;
+  text-align: center;
+}
+
+
+

@@ -1,17 +1,26 @@
 <% if event.bookings.any? %>
+  <div class="user-card-grid">
   <% event.bookings.each do |booking| %>
     <%#= link_to "", profile_path(booking.user), class: "link" %>
-    <div class="card-guest">
+    <div class="cards-for-all-guests">
       <%if booking.user.photo? %>
         <%= cl_image_tag (booking.user.photo), id: "guest-picture" %>
       <% else %>
         <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture", id: "guest-picture"%>
       <% end %>
-      <div class="text-center">
-        <%= "#{booking.user.first_name.capitalize}" %>
+      <!-- <div class="text-center"> -->
+      <p><%= "#{booking.user.first_name.capitalize}" %></p>
+     <!--  </div> -->
+    </div>
+    <div id="guest-profile-page" class="modal">
+      <div class="guest-content">
+        <!-- <span class="close-guest-profile">&times;</span> -->
+        <i class="fas fa-times close-guest-profile close"></i>
+        <%= render 'shared/guest', user: booking.user %>
       </div>
     </div>
   <% end %>
+  </div>
 <% end %>
 
-<%= render 'profiles/show', user: booking.user %>
+
