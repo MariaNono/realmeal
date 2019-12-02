@@ -9,6 +9,9 @@ import { buttonActivationMap } from 'pages/eventsindex'
 import { initMapbox } from 'plugins/init_mapbox';
 import { initSelect2 } from 'components/dropdown';
 //import { calculatePrice } from 'pages/newbooking';
+import { initStarRating } from 'plugins/init_star_rating';
+
+initStarRating();
 
 buttonActivationMap();
 // showMessage();

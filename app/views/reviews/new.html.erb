@@ -5,7 +5,7 @@
         <%= f.label :content, "Tell us about your experience." %>
         <%= f.input :content, label: false %>
         <%= f.label :rating, 'How would you rate it?' %>
-        <%= f.input :rating, label: false, required: true, collection: 1..5, input_html: {class: "select2"} %>
+        <%= f.input :rating, collection: (1..5).to_a, label: false %>
         <!-- <div>
           <i class="far fa-star" id="star-one"></i>
           <i class="far fa-star" id="star-two"></i>

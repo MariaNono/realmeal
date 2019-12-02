@@ -6,10 +6,10 @@
     <div class="cards-grid">
       <% @pending.each do |booking| %>
         <div class="request-card">
-          <% if booking.user.profile_picture? %>
-            <%= cl_image_tag (booking.user.profile_picture), class: "avatar-large" %>
+          <% if booking.user.photo? %>
+            <%= cl_image_tag (booking.user.photo), class: "avatar-large" %>
           <% else %>
-            <%= image_tag "https://i.pinimg.com/originals/c5/e5/18/c5e5189feb92faedbf368bea32475299.jpg", class: "avatar-large" %>
+            <%= image_tag "https://myspace.com/common/images/user.png", class: "avatar-large" %>
           <% end %>
           <div class="infos">
             <p style='font-weight: 600;'><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
@@ -36,7 +36,12 @@
   <% if @accepted.any? %>
     <div class="cards-grid">
       <% @accepted.each do |booking| %>
-        <div class="event-card">
+        <div class="request-card">
+          <% if booking.user.photo? %>
+            <%= cl_image_tag (booking.user.photo), class: "avatar-large" %>
+          <% else %>
+            <%= image_tag "https://myspace.com/common/images/user.png", class: "avatar-large" %>
+          <% end %>
           <div class="infos">
             <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
             <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
@@ -53,7 +58,12 @@
   <% if @declined.any? %>
     <div class="cards-grid">
       <% @declined.each do |booking| %>
-        <div class="event-card">
+        <div class="request-card">
+          <% if booking.user.photo? %>
+            <%= cl_image_tag (booking.user.photo), class: "avatar-large" %>
+          <% else %>
+            <%= image_tag "https://myspace.com/common/images/user.png", class: "avatar-large" %>
+          <% end %>
           <div class="infos">
             <p><%= "#{booking.user.first_name.capitalize}  #{booking.user.last_name.capitalize}" %></p>
             <p>Number of guests: <strong><%= booking.number_of_guests %></strong></p>
