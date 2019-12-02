@@ -1,10 +1,17 @@
 <% if event.bookings.any? %>
   <% event.bookings.each do |booking| %>
-    <%= link_to "", profile_path(booking.user), class: "link" %>
-    <%if booking.user.photo? %>
-      <%= cl_image_tag (booking.user.photo) %>
-    <% else %>
-      <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture"%>
-    <% end %>
+    <%#= link_to "", profile_path(booking.user), class: "link" %>
+    <div class="card-guest">
+      <%if booking.user.photo? %>
+        <%= cl_image_tag (booking.user.photo), id: "guest-picture" %>
+      <% else %>
+        <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture", id: "guest-picture"%>
+      <% end %>
+      <div class="text-center">
+        <%= "#{booking.user.first_name.capitalize}" %>
+      </div>
+    </div>
   <% end %>
 <% end %>
+
+<%= render 'profiles/show', user: booking.user %>
