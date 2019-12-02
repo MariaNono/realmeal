@@ -280,6 +280,6 @@ review13 = Review.new(
    )
 review13.save!
 
-# puts "🎉 Added reviews"
+puts "🎉 Added reviews"
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_30_155642) do
+ActiveRecord::Schema.define(version: 2019_12_02_140138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
     t.integer "number_of_guests"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "checkout_session_id"
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -33,7 +35,6 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
     t.string "cuisine"
     t.integer "max_guests"
     t.integer "booked_guests", default: 0
-    t.float "price_per_guest"
     t.string "status", default: "open"
     t.string "address"
     t.float "latitude"
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.integer "price_per_guest_cents", default: 0, null: false
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
