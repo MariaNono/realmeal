@@ -110,6 +110,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     msgpack (1.3.1)
+    nationality (1.0.3)
     netrc (0.11.0)
     nio4r (2.5.2)
     nokogiri (1.10.5)
@@ -230,6 +231,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  nationality (~> 1.0.3)
   pg (~> 0.21)
   pry-byebug
   pry-rails

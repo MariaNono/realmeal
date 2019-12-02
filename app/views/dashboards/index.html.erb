@@ -44,19 +44,20 @@
             <%= image_tag ("https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
           <% end %>
           <div class="infos">
-            <p> <%= e.event.name %> </p>
-            <p> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
+            <p class="event-name"> <%= e.event.name %> </p>
+            <p class='event-date'> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
             <% if e.review %>
               <% e.review.rating.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
             <% else %>
               <%#= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-info zindex" %>
-              <%= link_to 'Review Host', profile_path(e.event.user) , class: "btn btn-info zindex" %>
+              <%= link_to 'Review Host', new_booking_review_path(e.id) , class: "btn btn-info zindex" %>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
   <% end %>
+
 </div>
