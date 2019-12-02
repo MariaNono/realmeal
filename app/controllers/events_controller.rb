@@ -27,6 +27,14 @@ class EventsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
+
+    cuisines = Event.select(:cuisine).uniq
+    @cuisines = []
+    cuisines.each do |c|
+      @cuisines << c.cuisine
+    end
+
+    @cuisines.sort!
   end
 
   def show

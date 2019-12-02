@@ -1,21 +1,14 @@
 <div class="container">
-  <h3 class="text-left">Add a review</h3>
-    <div class="form-review">
+  <h3 class="section-title">Add Review for <%= @booking.event.user.first_name.capitalize %></h3>
+    <div class='review-form'>
       <%= simple_form_for [@booking, @review] do |f| %>
-        <%= f.label :content, "Tell us about your experience." %>
+        <%= f.label :content, "Tell us about your experience 🍷" %>
         <%= f.input :content, label: false %>
         <%= f.label :rating, 'How would you rate it?' %>
         <%= f.input :rating, collection: (1..5).to_a, label: false %>
-        <!-- <div>
-          <i class="far fa-star" id="star-one"></i>
-          <i class="far fa-star" id="star-two"></i>
-          <i class="far fa-star" id="star-three"></i>
-          <i class="far fa-star" id="star-four"></i>
-          <i class="far fa-star" id="star-five"></i>
-        </div> -->
-        <br>
-        <%= f.submit "Post review", class: "btn btn-info" %>
-        <%= link_to "Cancel", mybookings_path, class: "btn outline-btn btn-cancel" %>
+
+        <%= f.submit "Post review", class: "btn btn-info block full-width" %>
       <% end %>
+      <%= link_to "Cancel", mybookings_path, class: "btn outline-btn btn-cancel block" %>
     </div>
 </div>
