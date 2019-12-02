@@ -6,9 +6,11 @@
 .container-red {
   width: 50%;
   height: 100%;
-  background-color: $red;
+  // background-color: $red;
   float: left;
   text-align: center;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Giampietrino-Last-Supper-ca-1520.jpg/1600px-Giampietrino-Last-Supper-ca-1520.jpg');
+  background-position: center top;
 }
 
 .container-yellow {

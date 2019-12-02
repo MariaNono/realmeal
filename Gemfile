@@ -22,6 +22,7 @@ gem 'geocoder'
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
+gem 'nationality', '~> 1.0.3'
 
 
 group :development do

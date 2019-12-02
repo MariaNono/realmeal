@@ -5,7 +5,7 @@
       <div class="search-form">
         <%= simple_form_for :events, url: events_path, method: "get" do |f| %>
           <%= f.label :cuisine, 'Cuisine type' %>
-          <%= f.input :cuisine, as: :select, label: false, required: false, input_html: { class: "select2"}, collection: ['', 'Chinese', 'French', 'German',' Italian', 'Indian', 'Japanese', 'Korean', 'Peruvian', 'Portuguese', 'Spanish'], selected: params[:events][:cuisine] %>
+          <%= f.input :cuisine, as: :select, label: false, required: false, input_html: { class: "select2"}, prompt: " ", collection: @cuisines, selected: params[:events][:cuisine] %>
           <%= f.label :date, 'Dates' %>
           <%= f.input :date, label: false, required: false, input_html: {value: date, class: "datepicker"} %>
           <%= f.label :number_of_guests, 'Number of guests' %>

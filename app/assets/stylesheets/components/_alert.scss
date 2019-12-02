@@ -11,7 +11,8 @@
   border: 1px black solid;
 }
 
-.alert .close {
+.close {
+  float: right;
   opacity: 1;
   text-shadow: none;
   font-weight: 400;

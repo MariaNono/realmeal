@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,7 +31,6 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: #ffec42;;
 }
-
 
 .navbar-brand {
   display: flex;
