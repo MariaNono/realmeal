@@ -1,0 +1,122 @@
+.container-instruction {
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn-instruction {
+  background-color: white;
+  border: 1px solid;
+  color: black;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.cards-instruction {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards__item_instruction {
+  display: flex;
+  padding: 1rem;
+  @media(min-width: 40rem) {
+    width: 50%;
+  }
+  @media(min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+
+.card-instruction {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &:hover {
+    .card__image {
+      filter: contrast(70%);
+    }
+  }
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(100%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
+}
+
+
+.card__image--river {
+  background-image: url(https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
+}
+
+.card__image--record {
+  background-image: url(https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=660&q=80);
+}
+
+.card__image--fence {
+  background-image: url(https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1287&q=80);
+}
+
+.card__title {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: 'Calistoga';
+  text-align: center;
+}
+
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  text-align: block;
+  font-family: 'Montserrat', sans-serif;
+}
+
