@@ -1,0 +1,44 @@
+<div class="guest-content-message">
+  <div class="user-info">
+    <%if user.photo? %>
+      <%= cl_image_tag (user.photo), class: "avatar-large" %>
+    <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60", class: "avatar-large" %>
+    <% end %>
+    <div class="panel-title">
+      <%= "#{user.first_name.capitalize} #{user.last_name.capitalize}" %><br>
+    </div>
+  </div>
+
+
+  <div class="panel-Description"><br>
+    <%= user.description %>
+  </div>
+
+  <section>
+    <h3 class="section-title">Reviews</h3>
+    <% @reviews = [] %>
+    <% @user_events = user.events %>
+    <% @user_events.each do |event| %>
+      <% event.reviews.each do |review| %>
+        <%  @reviews << review %>
+      <% end %>
+    <% end %>
+    <% if @reviews.any? %>
+      <% @reviews.each do |review| %>
+        <div class="review">
+          <div class='review-stars'>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+          <p class='review-content'><%= review.content %></p>
+          <p class='section-subtitle'><%= review.booking.user.first_name %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p>There are no reviews for the host yet</p>
+    <% end %>
+  </section>
+</div>
+

@@ -3,8 +3,8 @@
   <%= simple_form_for [event, booking], url: event_bookings_path(event), method: "post" do |f| %>
     <%= f.label :number_of_guests, 'Number of guests' %>
     <%= f.input :number_of_guests, label: false, collection: 1..10, selected: params[:events][:number_of_guests].to_i %>
-    <p id="price-per-guest">Price:<span id="event-price"><%= event.price_per_guest %></span>€/person</p>
-    <p id="total-price">Total Price:<%= event.price_per_guest %>€</p>
+    <p id="price-per-guest">Price:<span id="event-price"><%='%.2f' % event.price_per_guest.to_f%>€/ Guest</p>
+    <p id="total-price">Total Price:<%='%.2f' % event.price_per_guest.to_f%>€</p>
     <%= f.button :submit, "Reserve now", class: "btn btn-danger", id: "reserve_button" %>
   <% end %>
 </div>
@@ -12,7 +12,6 @@
 <div id="show-message" class="modal">
   <div class="message-content">
    <span class="close">&times;</span>
-   <!-- <i class="fas fa-times modal-close close-button"></i> -->
    <p class="popuptext" style="text-align: center;">Your booking has been sent to <%= "#{event.user.first_name.capitalize}" %>.<br>We will inform you when your booking gets accepted.<br>You can also check the booking status and details in <%= link_to 'My Bookings', mybookings_path %> .</p>
   </div>
 </div>
