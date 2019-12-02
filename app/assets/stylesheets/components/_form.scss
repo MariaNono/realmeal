@@ -37,20 +37,29 @@
   width: 50%;
   float: left;
   padding-left: 50px;
-
 }
 
-.form-review {
-  border: 1px solid #ffe231;
-  width: 350px;
+.review-form {
+  // border: 1px solid $yellow;
+  width: 400px;
   padding: 25px;
-  margin-top: 20px;
-  text-align: left;
+  margin: 50px auto;
+}
+
+.event-form {
+  // border: 1px solid $yellow;
+  width: 600px;
+  padding: 25px;
+  margin: 20px auto;
+}
+
+.form-control {
+  border: 1px solid black;
 }
 
 // .br-theme-fontawesome-stars .br-widget a {
 //   color: $yellow !important;
 // }
-// .br-theme-fontawesome-stars .br-widget a.br-selected {
+// .br-theme-fontawesome-stars .br-widget a.br-selected:after {
 //   color: $yellow;
 // }

@@ -28,6 +28,14 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url('spoon.png')
       }
     end
+
+    cuisines = Event.select(:cuisine).uniq
+    @cuisines = []
+    cuisines.each do |c|
+      @cuisines << c.cuisine
+    end
+
+    @cuisines.sort!
   end
 
   def show
