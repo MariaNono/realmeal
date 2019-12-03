@@ -25,24 +25,27 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.event = @event
 
+
     #already create a payment session when booking is created
     if @booking.save
       item = {
-        name: @event.description,
-        images: [@event.photo],
-        amount: @event.price_per_guest_cents,
+        name: @event.name,
+        images: [@event.pictures[0].photo],
+        amount: @event.price_per_guest_cents * @booking.number_of_guests,
         currency: 'eur',
         quantity: 1
       }
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
-        success_url: event_booking_url(@event, @booking),
-        cancel_url: event_booking_url(@event, @booking),
+        # success_url: event_booking_url(@event, @booking),
+        # cancel_url: event_booking_url(@event, @booking),
+        success_url: mybookings_url,
+        cancel_url: mybookings_url,
         line_items: [item]
       )
       @booking.update!(checkout_session_id: session.id)
       # updates booked_guests when booking is created to block seats
-      @event.booked_guests = params[:booking][:number_of_guests].to_i
+      @event.booked_guests += params[:booking][:number_of_guests].to_i
       @event.save
       # shows a popuup message on the same page if booking.save is successful
     else

@@ -15,23 +15,30 @@
           <p class="event-name"><strong><%= b.event.name %></strong></p>
           <p class='event-date'> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
           <p> Booked for <strong><%= b.number_of_guests %></strong> guests </p>
+          <p><strong>Total Price: </strong>€<%= '%.2f' % "#{b.event.price_per_guest.to_f * b.number_of_guests}" %>
           <% if b.status == "pending" %>
             <p class='status'>Awaiting confirmation from host</p>
           <% elsif b.status == "accepted" %>
             <p>Address: <%= b.event.address %></p>
-            <p class='status-confirmed'>Request accepted by <%= b.event.user.first_name %></p>
             <% if b.state == "pending" %>
-              <%= link_to 'Pay Now', payment_path(b), class: 'btn btn-info zindex mb-3' %>
-            <% end %>
-            <!-- <script>
-              const paymentButton = document.getElementById('pay');
-              paymentButton.addEventListener('click', () => {
-                const stripe = Stripe('<%#= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-                stripe.redirectToCheckout({
-                  sessionId: '<%= b.checkout_session_id %>'
+              <p class='status-confirmed'>Request accepted by <%= b.event.user.first_name %></p>
+              <%#= link_to 'Pay Now', payment_path(b), class: 'btn btn-info zindex mb-3', id: "pay" %>
+              <button id="pay" class="btn btn-info zindex">Pay</button>
+              <script src="https://js.stripe.com/v3/"></script>
+              <script>
+                const paymentButton = document.getElementById('pay');
+                console.log(paymentButton);
+                paymentButton.addEventListener('click', () => {
+                  const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                  stripe.redirectToCheckout({
+                    sessionId: '<%= b.checkout_session_id %>'
+                  });
                 });
-              });
-            </script> -->
+              </script>
+            <% else %>
+              <p class='status-confirmed'>Your booking is confirmed!</p>
+              <p><strong>Booking-id: </strong><%= b.id %></p>
+            <% end %>
           <% else %>
             <p class='status'>Request declined by <%= b.event.user.first_name %></p>
           <% end %>
