@@ -8,4 +8,5 @@ class Event < ApplicationRecord
   has_many :reviews, through: :bookings
   validates :name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, presence: true
   mount_uploader :photo, PhotoUploader
+  monetize :price_per_guest_cents
 end
