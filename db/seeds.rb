@@ -93,7 +93,7 @@ puts "🎉 Added users"
 puts '🌱 Creating events...'
 
   event1 = Event.new(
-    name: "Taiwanese Family Dinner",
+    name: "Taste Of China!",
     event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
     description: "You will be eating home comfort food, which you may not be able to eat it if you are not invited to a Taiwanese family.It will be vegetarian and vegan since we need to also share our love and care to the environment and animals. However, don't you worry, it will still be very delicious!",
     cuisine: 'Chinese',
