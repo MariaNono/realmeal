@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_30_155642) do
+ActiveRecord::Schema.define(version: 2019_12_02_171353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.bigint "pictures_id"
+    t.index ["pictures_id"], name: "index_events_on_pictures_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -54,6 +56,14 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_notifications_on_booking_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_pictures_on_event_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -86,8 +96,10 @@ ActiveRecord::Schema.define(version: 2019_11_30_155642) do
 
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
+  add_foreign_key "events", "pictures", column: "pictures_id"
   add_foreign_key "events", "users"
   add_foreign_key "notifications", "bookings"
   add_foreign_key "notifications", "users"
+  add_foreign_key "pictures", "events"
   add_foreign_key "reviews", "bookings"
 end

@@ -6,8 +6,8 @@
     <% @upcoming_bookings.each do |b| %>
       <div class="event-card relative">
         <%= link_to "", event_path(id: b.event.id, events: {guests: ''}), class:"link" %>
-        <% if b.event.photo? %>
-          <%= cl_image_tag (b.event.photo) %>
+        <% if b.event.pictures %>
+          <%= cl_image_tag b.event.pictures[0].photo %>
         <% else %>
           <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
         <% end %>
@@ -35,19 +35,19 @@
     <h3 class='section-title'>Past events</h3>
 
     <div class="cards-grid">
-      <% @past_events.each do |e| %>
+      <% @past_events.each do |b| %>
         <div class="event-card relative">
-          <%= link_to "", event_path(id: e.event.id, events: {guests: ''}), class:"link" %>
-          <% if e.event.photo? %>
-            <%= cl_image_tag (e.event.photo) %>
+          <%= link_to "", event_path(id: b.event.id, events: {guests: ''}), class:"link" %>
+          <% if b.event.pictures %>
+            <%= cl_image_tag b.event.pictures[0].photo %>
           <% else %>
-            <%= image_tag ("https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
+            <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
           <% end %>
           <div class="infos">
-            <p class="event-name"> <%= e.event.name %> </p>
-            <p class='event-date'> <%= e.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-            <% if e.review %>
-              <% e.review.rating.times do %>
+            <p class="event-name"> <%= b.event.name %> </p>
+            <p class='event-date'> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
+            <% if b.review %>
+              <% b.review.rating.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
             <% else %>
