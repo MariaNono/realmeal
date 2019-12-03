@@ -70,6 +70,14 @@
 .container-panel-Description {
   width: 100%;
   float: left;
-  margin: 2%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+.footer-links-profle a {
+  padding: 5px;
+  color: black;
+  &:hover {
+    color: $yellow;
+  }
+}
