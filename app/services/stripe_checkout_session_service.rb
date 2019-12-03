@@ -1,6 +1,5 @@
 class StripeCheckoutSessionService
   def call(event)
-    raise
     booking = Booking.find_by(checkout_session_id: event.data.object.id)
     booking.update(state: 'paid')
   end
