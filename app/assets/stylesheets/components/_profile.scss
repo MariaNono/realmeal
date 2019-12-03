@@ -1,0 +1,75 @@
+// Specific CSS for your home-page
+.profile-banner {
+  display: block;
+  height: 250vh;
+  position: relative;
+}
+
+.profile-grey {
+  width: 50%;
+  height: 100%;
+  // background-color: $red;
+  background-color: $light-gray;
+  float: left;
+}
+
+.profile-yellow {
+  width: 50%;
+  height: 100%;
+  background-color: $yellow;
+  float: left;
+}
+
+.profile-description {
+  position: absolute;
+  z-index: auto;
+  background-color: white;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.panel-title {
+  width: 50%;
+  height: 350px;
+  float: left;
+  position: relative;
+}
+
+.container-title {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.panel-title h2 {
+   font-family: 'Calistoga';
+}
+
+.panel-title p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profile-image {
+  width: 50%;
+  height: 350px;
+  float: right;
+}
+
+.profile-img {
+  width: 70%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.container-panel-Description {
+  width: 100%;
+  float: left;
+  margin: 2%;
+}
+

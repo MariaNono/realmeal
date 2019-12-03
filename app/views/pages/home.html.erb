@@ -28,7 +28,7 @@
         <p class="card__text">Explorer dinners, lunches, aperitifs and so much more...
          Book one of our exceptional dining experiences with unique people from different countries
        and create unique memories that will last you a lifetime!</p>
-        <button class="btn-instruction btn--block card__btn">Browse all events</button>
+       <%= link_to "Browse all events", events_path(events: {address: ''}), class: 'btn-instruction btn--block card__btn' %>
       </div>
     </div>
   </li>
@@ -40,7 +40,7 @@
         <p class="card__text">Enjoy the the spirit of other cultures, or meet
         people from your home country. After your wonderful experience
         you get the possibility to review the host or be a host yourself</p>
-        <button class="btn-instruction btn--block card__btn">Enjoy & Review</button>
+        <%= link_to "Enjoy & Reveiw", mybookings_path, class: 'btn-instruction btn--block card__btn' %>
       </div>
     </div>
   </li>
@@ -49,10 +49,10 @@
       <div class="card__image card__image--fence"></div>
       <div class="card__content">
         <div class="card__title">Become a host</div>
-        <p class="card__text">Enjoy the the spirit of other cultures, or meet
-        people from your home country. After your wonderful experience
-        you get the possibility to review the host or be a host yourself</p>
-        <button class="btn-instruction btn--block card__btn">Become a host</button>
+        <p class="card__text">Why not becoming a host yourself? If you like to be
+        surrounded by interesting and hungry people, add your event and share your
+        traditional food specialities.</p>
+        <%= link_to "Become a host", new_event_path, class: 'btn-instruction btn--block card__btn' %>
       </div>
     </div>
   </li>
