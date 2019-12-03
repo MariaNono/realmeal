@@ -1,0 +1,4 @@
+<%= simple_form_for([ event, message ], remote: true) do |form| %>
+  <%= form.input :content, as: :text, id: 'new_message' %>
+  <%= form.button :submit %>
+<% end %>
