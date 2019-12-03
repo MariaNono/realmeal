@@ -20,15 +20,8 @@
           <% elsif b.status == "accepted" %>
             <p>Address: <%= b.event.address %></p>
             <p class='status-confirmed'>Request accepted by <%= b.event.user.first_name %></p>
-            <%#= form_tag ([b.event, b]) do %>
-              <%#= hidden_field :payment, value: "true " %>
-              <%#= submit_tag 'Pay Now', class: 'btn btn-primary mb-3 zindex' %>
-            <%# end %>
-            <% if b.state = "pending" %>
-              <%= simple_form_for([b.event, b]) do |f| %>
-                <%= f.hidden_field :payment, value: "true" %>
-                <%= f.button :submit, 'Pay Now', class: 'btn btn-info zindex mb-3', id: "pay" %>
-              <% end %>
+            <% if b.state == "pending" %>
+              <%= link_to 'Pay Now', payment_path(b), class: 'btn btn-info zindex mb-3' %>
             <% end %>
             <!-- <script>
               const paymentButton = document.getElementById('pay');
@@ -71,7 +64,6 @@
               <% end %>
             <% else %>
               <%= link_to 'Review Host', new_booking_review_path(e) , class: "btn btn-info zindex" %>
-              <%#= link_to 'Review Host', profile_path(e.event.user) , class: "btn btn-info zindex" %>
             <% end %>
           </div>
         </div>

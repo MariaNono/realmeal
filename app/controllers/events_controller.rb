@@ -40,6 +40,8 @@ class EventsController < ApplicationController
 
   def show
     @booking = Booking.new
+    # check if current user has already registered for the event
+    @booked_event = Booking.where(user_id: current_user, event_id: @event)
   end
 
   def new
@@ -86,7 +88,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :photo)
+    params.require(:event).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :photo, :booked_guests)
   end
 
   def sort_by_date(events)

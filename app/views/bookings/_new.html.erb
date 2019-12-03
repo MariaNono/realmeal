@@ -5,6 +5,9 @@
     <%= f.input :number_of_guests, label: false, collection: 1..10, selected: params[:events][:number_of_guests].to_i %>
     <p id="price-per-guest">Price:<span id="event-price"><%='%.2f' % event.price_per_guest.to_f%>€/ Guest</p>
     <p id="total-price">Total Price:<%='%.2f' % event.price_per_guest.to_f%>€</p>
+    <%#= f.simple_fields_for :events do |m| %>
+      <%#= f.input :booked_guests, as: :hidden, input_html: { value: :number_of_guests } %>
+    <%# end %>
     <%= f.button :submit, "Reserve now", class: "btn btn-danger", id: "reserve_button" %>
   <% end %>
 </div>
