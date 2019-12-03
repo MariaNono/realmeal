@@ -48,6 +48,8 @@ can find in Portugal, especially during holiday seasons. </p>
   <% unless @event.user == current_user %>
     <% if @booked_event.any? %>
       <p>You have already registered for the event</p>
+    <% elsif @event.max_guests == @event.booked_guests %>
+      <p>You just missed this event! We are fully boooked.</p>
     <% else %>
       <div class="booking-form">
         <%= render "bookings/new", event: @event, booking: @booking %>

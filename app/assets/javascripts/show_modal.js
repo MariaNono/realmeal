@@ -54,9 +54,8 @@ host.addEventListener("click", (event) => {
   hostProfilePage.style.display = "block";
 });
 
-closeHostProfile.addEventListener("click", event => {
+closeHostProfile.addEventListener("click", (event) => {
   closeWindow(hostProfilePage);
-  // hostProfilePage.style.display = "none";
 });
 
 window.addEventListener('click', (event) => {

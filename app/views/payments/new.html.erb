@@ -5,7 +5,7 @@
       <h1>Checkout summary</h1>
       <!-- <p>Book <strong><%#= @booking.event.name %></strong> for <strong><%= humanized_money_with_symbol @booking.event.price_per_guest_cents %></strong></p> -->
       <p>Book <strong><%= @booking.event.name %></strong> for €<strong><%='%.2f' % @booking.event.price_per_guest.to_f%></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <!-- <button id="payment" class="btn btn-primary">Pay</button> -->
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
