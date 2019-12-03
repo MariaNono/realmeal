@@ -40,6 +40,8 @@ class EventsController < ApplicationController
 
   def show
     @booking = Booking.new
+    # check if current user has already registered for the event
+    @booked_event = Booking.where(user_id: current_user, event_id: @event)
   end
 
   def new
