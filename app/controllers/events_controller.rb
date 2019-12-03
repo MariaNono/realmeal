@@ -36,10 +36,12 @@ class EventsController < ApplicationController
     end
 
     @cuisines.sort!
+    @message = Message.new
   end
 
   def show
     @booking = Booking.new
+    @message = Message.new
     # check if current user has already registered for the event
     @booked_event = Booking.where(user_id: current_user, event_id: @event)
   end

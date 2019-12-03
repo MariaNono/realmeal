@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Picture.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Event.destroy_all
@@ -35,7 +36,7 @@ end
 
 user6 = User.new(
     email: "johnmathew@example.com",
-    first_name: "John",
+    first_name: "Jane",
     last_name: "Mathew",
     password: '123456',
     password_confirmation: '123456',
@@ -219,116 +220,116 @@ puts '🎉 Added Events'
 
 puts '🌱 Creating Pictures...'
 
-p11 = Picture.new(event_id: 1)
+p11 = Picture.new(event: event1)
 p11.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p11.save!
-p12 = Picture.new(event_id: 1)
+p12 = Picture.new(event: event1)
 p12.remote_photo_url = 'https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p12.save!
-p13 = Picture.new(event_id: 1)
+p13 = Picture.new(event: event1)
 p13.remote_photo_url = 'https://images.unsplash.com/photo-1542990254-7174ee186dd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p13.save!
 
-# Picture.new(event_id: 1, photo: 'https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 1, photo: 'https://images.unsplash.com/photo-1542990254-7174ee186dd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event1, photo: 'https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event1, photo: 'https://images.unsplash.com/photo-1542990254-7174ee186dd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
-p21 = Picture.new(event_id: 2)
+p21 = Picture.new(event: event2)
 p21.remote_photo_url = 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p21.save!
-p22 = Picture.new(event_id: 2)
+p22 = Picture.new(event: event2)
 p22.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg/1584px-Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg'
 p22.save!
-p23 = Picture.new(event_id: 2)
+p23 = Picture.new(event: event2)
 p23.remote_photo_url = 'https://cdn.pixabay.com/photo/2015/11/09/23/21/food-1036132_960_720.jpg'
 p23.save!
 
-# Picture.new(event_id: 2, photo: 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 2, photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg/1584px-Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg').save!
-# Picture.new(event_id: 2, photo: 'https://cdn.pixabay.com/photo/2015/11/09/23/21/food-1036132_960_720.jpg').save!
+# Picture.new(event: event2, photo: 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event2, photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg/1584px-Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg').save!
+# Picture.new(event: event2, photo: 'https://cdn.pixabay.com/photo/2015/11/09/23/21/food-1036132_960_720.jpg').save!
 
-p31 = Picture.new(event_id: 3)
+p31 = Picture.new(event: event3)
 p31.remote_photo_url = 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p31.save!
-p32 = Picture.new(event_id: 3)
+p32 = Picture.new(event: event3)
 p32.remote_photo_url = 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p32.save!
-p33 = Picture.new(event_id: 3)
+p33 = Picture.new(event: event3)
 p33.remote_photo_url = 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p33.save!
 
-# Picture.new(event_id: 3, photo: 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 3, photo: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 3, photo: 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event3, photo: 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event3, photo: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event3, photo: 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
-p41 = Picture.new(event_id: 4)
+p41 = Picture.new(event: event4)
 p41.remote_photo_url = 'https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p41.save!
-p42 = Picture.new(event_id: 4)
+p42 = Picture.new(event: event4)
 p42.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p42.save!
-p43 = Picture.new(event_id: 4)
+p43 = Picture.new(event: event4)
 p43.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p43.save!
 
-# Picture.new(event_id: 4, photo: 'https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 4, photo: 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 4, photo: 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event4, photo: 'https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event4, photo: 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event4, photo: 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
-p51 = Picture.new(event_id: 5)
+p51 = Picture.new(event: event5)
 p51.remote_photo_url = 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p51.save!
-p52 = Picture.new(event_id: 5)
+p52 = Picture.new(event: event5)
 p52.remote_photo_url = 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p52.save!
-p53 = Picture.new(event_id: 5)
+p53 = Picture.new(event: event5)
 p53.remote_photo_url = 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p53.save!
 
-# Picture.new(event_id: 5, photo: 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 5, photo: 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 5, photo: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
-p61 = Picture.new(event_id: 6)
+p61 = Picture.new(event: event6)
 p61.remote_photo_url = 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p61.save!
-p62 = Picture.new(event_id: 6)
+p62 = Picture.new(event: event6)
 p62.remote_photo_url = 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg'
 p62.save!
-p63 = Picture.new(event_id: 6)
+p63 = Picture.new(event: event6)
 p63.remote_photo_url = 'https://images.food52.com/wLI5es1lZKgegjqE2CaLHxrJ3cc=/1556x1037/ba9e4f40-4eff-4de8-818f-9e373251e9c6--2017-1116_portuguese-pesticitos_rocky-luten_038.jpg'
 p63.save!
 
-# Picture.new(event_id: 6, photo: 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 6, photo: 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg').save!
-# Picture.new(event_id: 6, photo: 'https://images.food52.com/wLI5es1lZKgegjqE2CaLHxrJ3cc=/1556x1037/ba9e4f40-4eff-4de8-818f-9e373251e9c6--2017-1116_portuguese-pesticitos_rocky-luten_038.jpg').save!
+# Picture.new(event: event6, photo: 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event6, photo: 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg').save!
+# Picture.new(event: event6, photo: 'https://images.food52.com/wLI5es1lZKgegjqE2CaLHxrJ3cc=/1556x1037/ba9e4f40-4eff-4de8-818f-9e373251e9c6--2017-1116_portuguese-pesticitos_rocky-luten_038.jpg').save!
 
-p71 = Picture.new(event_id: 7)
+p71 = Picture.new(event: event7)
 p71.remote_photo_url = 'https://images.unsplash.com/photo-1547424450-75ec164925ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p71.save!
-p72 = Picture.new(event_id: 7)
+p72 = Picture.new(event: event7)
 p72.remote_photo_url = 'https://images.unsplash.com/photo-1531097023973-44a8761c85e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p72.save!
-p73 = Picture.new(event_id: 7)
+p73 = Picture.new(event: event7)
 p73.remote_photo_url = 'https://images.unsplash.com/photo-1552913903-2cffa1962dc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p73.save!
 
-# Picture.new(event_id: 7, photo: 'https://images.unsplash.com/photo-1547424450-75ec164925ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 7, photo: 'https://images.unsplash.com/photo-1531097023973-44a8761c85e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 7, photo: 'https://images.unsplash.com/photo-1552913903-2cffa1962dc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event7, photo: 'https://images.unsplash.com/photo-1547424450-75ec164925ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event7, photo: 'https://images.unsplash.com/photo-1531097023973-44a8761c85e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event7, photo: 'https://images.unsplash.com/photo-1552913903-2cffa1962dc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
-p81 = Picture.new(event_id: 8)
+p81 = Picture.new(event: event8)
 p81.remote_photo_url = 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p81.save!
-p82 = Picture.new(event_id: 8)
+p82 = Picture.new(event: event8)
 p82.remote_photo_url = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p82.save!
-p83 = Picture.new(event_id: 8)
+p83 = Picture.new(event: event8)
 p83.remote_photo_url = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p83.save!
 
-# Picture.new(event_id: 8, photo: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-# Picture.new(event_id: 8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
+# Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
 puts '🎉 Added Pictures'
 

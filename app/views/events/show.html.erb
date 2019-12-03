@@ -97,6 +97,24 @@ can find in Portugal, especially during holiday seasons. </p>
   <% end %>
 
   </div>
+
+  <div class="messages">
+    <h2>
+      <%= pluralize @event.messages.size, "message" %>
+    </h2>
+
+    <%= render 'messages/form', event: @event, message: @message %>
+
+    <div id="messages">
+      <% if @event.messages.blank? %>
+        Be the first to leave a message for <%= @event.name %>
+      <% else %>
+        <% @event.messages.each do |message| %>
+        <%= render 'messages/show', message: message %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
