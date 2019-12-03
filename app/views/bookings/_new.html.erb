@@ -2,7 +2,7 @@
   <p><strong>Booking for <%= event.name %> on <%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></strong></p>
   <%= simple_form_for [event, booking], url: event_bookings_path(event), method: "post" do |f| %>
     <%= f.label :number_of_guests, 'Number of guests' %>
-    <%= f.input :number_of_guests, label: false, collection: 1..10, selected: params[:events][:number_of_guests].to_i %>
+    <%= f.input :number_of_guests, label: false, collection: 1..seats_left(event), selected: params[:events][:number_of_guests].to_i %>
     <p id="price-per-guest">Price:<span id="event-price"><%='%.2f' % event.price_per_guest.to_f%>€/ Guest</p>
     <p id="total-price">Total Price:<%='%.2f' % event.price_per_guest.to_f%>€</p>
     <%#= f.simple_fields_for :events do |m| %>

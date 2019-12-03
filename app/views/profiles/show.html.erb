@@ -1,45 +1,88 @@
-<div class="container">
-  <!-- <div class="user-info-card"> -->
-  <!-- <div class="user-info"> -->
-  <div class="user-info">
-    <%if @user.photo? %>
-      <%= cl_image_tag (@user.photo), class: "avatar-large" %>
-    <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60", class: "avatar-large" %>
-    <% end %>
-    <div class="panel-title">
-      <%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %><br>
+<div class="container-profile">
+
+  <div class="profile-banner">
+
+    <div class="profile-grey">
     </div>
-  </div>
-    <!-- </div> -->
-  <!-- </div> -->
 
-  <div class="panel-Description"><br>
-    <%= @user.description %>
-  </div>
+    <div class="profile-yellow">
+    </div>
 
-  <section>
-    <h3 class="section-title">Reviews</h3>
-    <% @reviews = [] %>
-    <% @user_events.each do |event| %>
-      <% event.reviews.each do |review| %>
-        <%  @reviews << review %>
-      <% end %>
-    <% end %>
-    <% if @reviews.any? %>
-      <% @reviews.each do |review| %>
-        <div class="review">
-          <div class='review-stars'>
-            <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
+    <div class="profile-description">
+      <div class="profile-image">
+        <%if @user.photo? %>
+          <%= cl_image_tag (@user.photo) %>
+        <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60", class: "profile-img" %>
+        <% end %>
+      </div>
+
+        <div class="panel-title">
+          <div class="container-title">
+          <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
+          <p>If more of us valued food and cheer and song above hoarded gold,<br> it would be a merrier world</p>
+            <div class="footer-links-profle">
+              <a href="#"><i class="fab fa-github fa-sm"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-sm"></i></a>
+              <a href="#"><i class="fab fa-facebook fa-sm"></i></a>
+            </div>
           </div>
-          <p class='review-content'><%= review.content %></p>
-          <p class='section-subtitle'><!-- <strong>Posted by:</strong> --> <%= review.booking.user.first_name %></p>
+      </div>
+
+
+
+      <div class="container-panel-Description"><br>
+        <%= @user.description %>
+       <p>I'm a passionate freelancer and foodie.</p>
+       <p>I love to travel all over the world and share my traditions</p>
+       <p>and personal value with other people from different countries.<br>
+        I really enjoy french and mexican cuisines and a well chosen selection
+        <br>of different herbs and spices</p>
+
+      </div>
+
+      <div class="container-pictures">
+        <div class="row justify-content-center">
+        <%#if @event.photo? %>
+        <%#= cl_image_tag @event.photo %>
+        <%# else %>
+          <div class="col-3">
+            <%= image_tag ("https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
+          </div>
+          <div class="col-3">
+            <%= image_tag ("https://images.unsplash.com/photo-1533959938354-70634c231c21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
+          </div>
+          <div class="col-3">
+            <%= image_tag ("https://images.unsplash.com/photo-1543807669-0d0730e95cb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
+          </div>
         </div>
-      <% end %>
-    <% else %>
-      <p>There are no reviews for the host yet</p>
-    <% end %>
-  </section>
-</div>
+        <%# end %>
+      </div>
+
+        <section>
+          <h3 class="section-title">Reviews</h3>
+          <% @reviews = [] %>
+          <% @user_events.each do |event| %>
+            <% event.reviews.each do |review| %>
+              <%  @reviews << review %>
+            <% end %>
+          <% end %>
+          <% if @reviews.any? %>
+            <% @reviews.each do |review| %>
+              <div class="review">
+                <div class='review-stars'>
+                  <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+                <p class='review-content'><%= review.content %></p>
+                <p class='section-subtitle'><!-- <strong>Posted by:</strong> --> <%= review.booking.user.first_name %></p>
+              </div>
+            <% end %>
+          <% else %>
+            <p>There are no reviews for the host yet</p>
+          <% end %>
+        </section>
+        </div>
+      </div>
+    </div>

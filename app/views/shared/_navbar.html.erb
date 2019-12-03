@@ -29,6 +29,8 @@
             <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture"%>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <% user_guest = User.find_by(id: current_user) %>
+            <%= link_to "My profile", profile_path(user_guest.id), class: "dropdown-item" %>
             <%#= link_to "My bookings", "#", class: "dropdown-item" %>
             <%#= link_to "My hosting", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

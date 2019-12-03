@@ -15,6 +15,11 @@
   width: 40px;
 }
 
+.navbar-nav img {
+  margin-left: 15px;
+}
+
+
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -47,8 +52,4 @@
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.navbar-nav img {
-  margin-left: 15px;
 }
