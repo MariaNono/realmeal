@@ -20,8 +20,8 @@
         <div class="panel-title">
           <div class="container-title">
           <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
-          <p>Lorem ipsum dolor sit amet, <br>consectetuer adipiscing elit. </p>
-            <div class="footer-links">
+          <p>If more of us valued food and cheer and song above hoarded gold,<br> it would be a merrier world</p>
+            <div class="footer-links-profle">
               <a href="#"><i class="fab fa-github fa-sm"></i></a>
               <a href="#"><i class="fab fa-instagram fa-sm"></i></a>
               <a href="#"><i class="fab fa-facebook fa-sm"></i></a>
@@ -33,13 +33,12 @@
 
       <div class="container-panel-Description"><br>
         <%= @user.description %>
-       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-       <p>Mauris ante neque, vehicula quis, convallis sit amet,
-          vestibulum ornare, arcu. </p>
-       <p>Donec at lorem et elit congue dictum. Cras sapien ligula,
-          rutrum quis, posuere id, faucibus id, risus. <br>Maecenas sed est
-          volutpat arcu adipiscing tempus. Sed dictum mauris euismod
-          mauris.</p>
+       <p>I'm a passionate freelancer and foodie.</p>
+       <p>I love to travel all over the world and share my traditions</p>
+       <p>and personal value with other people from different countries.<br>
+        I really enjoy french and mexican cuisines and a well chosen selection
+        <br>of different herbs and spices</p>
+
       </div>
 
       <div class="container-pictures">
@@ -51,10 +50,10 @@
             <%= image_tag ("https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
           </div>
           <div class="col-3">
-            <%= image_tag ("https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
+            <%= image_tag ("https://images.unsplash.com/photo-1533959938354-70634c231c21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
           </div>
           <div class="col-3">
-            <%= image_tag ("https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
+            <%= image_tag ("https://images.unsplash.com/photo-1543807669-0d0730e95cb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
           </div>
         </div>
         <%# end %>
