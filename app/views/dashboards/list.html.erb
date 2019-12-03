@@ -1,5 +1,5 @@
 <div class='container'>
-  <h3 class='section-title'>Events you are hosting</h3>
+  <h3 class='section-title'>Experiences you are hosting</h3>
   <% if @upcoming_hostings.any? %>
     <div class="cards-grid">
       <% @upcoming_hostings.each do |event| %>
@@ -33,7 +33,7 @@
   <% end %>
 
   <% if @past_hostings.any? %>
-    <h3 class='section-title'>Events you've hosted</h3>
+    <h3 class='section-title'>Experiences you've hosted</h3>
     <div class="cards-grid">
       <% @past_hostings.each do |event| %>
         <div class="event-card relative">

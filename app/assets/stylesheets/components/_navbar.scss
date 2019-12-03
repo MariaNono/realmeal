@@ -5,6 +5,7 @@
   top: 0;
   z-index: 999;
   width: 100%;
+  padding: 0px 30px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,12 +22,15 @@
 
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .navbar-light .navbar-nav .nav-link {
-   color: white;
+  color: white;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .navbar-expand-sm .navbar-nav {
