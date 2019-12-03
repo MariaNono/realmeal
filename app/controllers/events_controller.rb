@@ -51,7 +51,11 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     #@event = Event.find(params[:event_id])
     @event.user = current_user
+
     if @event.save!
+      create_pictures
+      p '##############################'
+      p @event
       redirect_to myhostings_path, notice: "Event created successfully"
     else
       render :new
@@ -87,5 +91,12 @@ class EventsController < ApplicationController
 
   def sort_by_date(events)
     events.sort_by { |event| event.event_date }
+  end
+
+  def create_pictures
+    photos = params.dig(:event, :pictures) || []
+    photos.each do |photo|
+      @event.pictures.create(photo: photo)
+    end
   end
 end

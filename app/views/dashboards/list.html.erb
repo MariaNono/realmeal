@@ -5,8 +5,8 @@
       <% @upcoming_hostings.each do |event| %>
         <div class="event-card relative">
           <%= link_to "", event_path(id: event, events: {guests: ''}), class:"link" %>
-          <% if event.photo? %>
-            <%= cl_image_tag event.photo %>
+          <% if event.pictures %>
+            <%= cl_image_tag event.pictures[0].photo %>
           <% else %>
             <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
           <% end %>
@@ -28,7 +28,7 @@
   <% else %>
     <div style="padding: 50px 0;">
       <p style="margin-bottom: 30px;">You are not hosting any events in the future.</p>
-      <%= link_to 'Create a new event', new_event_path, class: "btn-padding btn btn-danger"%> %>
+      <%= link_to 'Create a new event', new_event_path, class: "btn-padding btn btn-danger"%>
     </div>
   <% end %>
 
@@ -38,8 +38,8 @@
       <% @past_hostings.each do |event| %>
         <div class="event-card relative">
           <%= link_to "", event_path(id: event, events: {guests: ''}), class:"link" %>
-          <% if event.photo? %>
-            <%= cl_image_tag event.photo, height: 700, width: 500, crop: :fill %>
+          <% if event.pictures %>
+            <%= cl_image_tag event.pictures[0].photo %>
           <% else %>
             <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
           <% end %>
