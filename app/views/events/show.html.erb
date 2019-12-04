@@ -1,4 +1,4 @@
-<div class="card-event">
+<div class="container showpage">
   <% if @event.pictures %>
     <%= cl_image_tag @event.pictures[0].photo %>
   <% else %>
@@ -64,7 +64,7 @@ can find in Portugal, especially during holiday seasons. </p>
     <%if @event.user.photo? %>
       <%= cl_image_tag @event.user.photo %>
     <% else %>
-      <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture"%>
+      <%= image_tag ("https://myspace.com/common/images/user.png"), class: "avatar show-picture" %>
     <% end %>
     <div class="card-product-infos">
       <h2><%= "#{@event.user.first_name.capitalize}  #{@event.user.last_name.capitalize}" %></h2>
@@ -99,15 +99,15 @@ can find in Portugal, especially during holiday seasons. </p>
   </div>
 
   <div class="messages">
-    <h2>
-      <%= pluralize @event.messages.size, "message" %>
-    </h2>
+    <h3>Discussion
+
+    </h3>
 
     <%= render 'messages/form', event: @event, message: @message %>
 
     <div id="messages">
       <% if @event.messages.blank? %>
-        Be the first to leave a message for <%= @event.name %>
+        <p>Be the first to leave a message</p>
       <% else %>
         <% @event.messages.each do |message| %>
         <%= render 'messages/show', message: message %>
@@ -116,10 +116,6 @@ can find in Portugal, especially during holiday seasons. </p>
     </div>
   </div>
 </div>
-
-
-
-
 
       <!--div class="listing-map">
         <%# render 'map' %>

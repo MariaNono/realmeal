@@ -5,8 +5,8 @@
   justify-content: space-between;
   bottom: 0;
   padding: 0px 30px;
-  color: rgba(0,0,0,0.3);
   width: 100%;
+  position: fixed;
 }
 
 .footer-links {
@@ -29,5 +29,9 @@
 
 .footer-copyright {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
 }

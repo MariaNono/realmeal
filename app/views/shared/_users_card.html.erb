@@ -4,9 +4,9 @@
     <%#= link_to "", profile_path(booking.user), class: "link" %>
     <div class="cards-for-all-guests">
       <%if booking.user.photo? %>
-        <%= cl_image_tag (booking.user.photo), id: "guest-picture" %>
+        <%= cl_image_tag (booking.user.photo), class: 'avatar', id: "guest-picture" %>
       <% else %>
-        <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture", id: "guest-picture"%>
+        <%= image_tag ("https://myspace.com/common/images/user.png"), class: "show-picture", class: 'avatar', id: "guest-picture"%>
       <% end %>
       <!-- <div class="text-center"> -->
       <p><%= "#{booking.user.first_name.capitalize}" %></p>

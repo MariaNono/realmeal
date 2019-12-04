@@ -13,3 +13,9 @@ ul {
 .review {
   margin: 40px 0;
 }
+
+.showpage > img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+}
