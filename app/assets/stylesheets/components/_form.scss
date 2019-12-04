@@ -55,7 +55,54 @@
 
 .form-control {
   border: 1px solid black;
+  max-width: 170px !important;
 }
+
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+.form-group .select2-container--classic .select2-selection--single {
+  height: calc(1.5em + 0.75rem + 2px);
+  border: 1px solid #000;
+  border-radius: 0;
+  background-color: #fff;
+  background-image: none;
+  // min-width: 60px !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+  border-left: 1px solid #000 !important;
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  height: calc(100% - 2px) !important;
+  top: 1 !important;
+  right: 1 !important;
+  // min-width: 30px !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow b {
+  border-color: #000 transparent transparent transparent !important;
+}
+
+.select2-container--classic .select2-selection--single:focus {
+  border: 1px solid #000 !important;
+}
+
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  min-width: 60px !important;
+  padding-top: 5px !important;
+  padding-right: 32px !important;
+}
+
+.form-control:focus {
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
 
 // .br-theme-fontawesome-stars .br-widget a {
 //   color: $yellow !important;
