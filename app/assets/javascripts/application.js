@@ -15,5 +15,7 @@ const calculatePrice = () => {
     }
   };
 
-numberOfGuests.addEventListener('change', calculatePrice);
+if (numberOfGuests) {
+  numberOfGuests.addEventListener('change', calculatePrice);
+}
 
