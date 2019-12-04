@@ -5,7 +5,8 @@
   top: 0;
   z-index: 999;
   width: 100%;
-  padding: 0px 30px;
+  padding: 5px 30px;
+  align-items: center
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,10 +17,14 @@
   width: 40px;
 }
 
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-nav img {
   margin-left: 15px;
 }
-
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
   color: white;
@@ -38,18 +43,17 @@
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #ffec42;;
+  color: $yellow;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 200px;
 }
 
 .brand-name {
-  margin: 0 20px;
   font-weight: 700;
   font-size: 21px;
   z-index: 10;
