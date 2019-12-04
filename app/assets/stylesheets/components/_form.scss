@@ -53,7 +53,7 @@
   margin: 20px auto;
 }
 
-.form-control {
+.search-form .form-control {
   border: 1px solid black;
   max-width: 170px !important;
 }
@@ -103,6 +103,12 @@
   box-shadow: none !important;
 }
 
+form.simple_form.events {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 10px;
+}
 
 // .br-theme-fontawesome-stars .br-widget a {
 //   color: $yellow !important;
