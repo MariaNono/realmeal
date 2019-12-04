@@ -17,8 +17,8 @@
         <% end %>
       </div>
 
-        <div class="panel-title">
-          <div class="container-title">
+        <div class="panel-title-container">
+          <div class="panel-title">
           <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
           <p>If more of us valued food and cheer and song above hoarded gold,<br> it would be a merrier world</p>
             <div class="footer-links-profle">
@@ -26,22 +26,20 @@
               <a href="#"><i class="fab fa-instagram fa-sm"></i></a>
               <a href="#"><i class="fab fa-facebook fa-sm"></i></a>
             </div>
-          </div>
-      </div>
 
 
 
-      <div class="container-panel-Description"><br>
+
+
+        <h2>User description</h2>
         <%= @user.description %>
-       <p>I'm a passionate freelancer and foodie.</p>
-       <p>I love to travel all over the world and share my traditions</p>
-       <p>and personal value with other people from different countries.<br>
-        I really enjoy french and mexican cuisines and a well chosen selection
-        <br>of different herbs and spices</p>
-
       </div>
+    </div>
 
-      <div class="container-pictures">
+
+
+    <div class="picture-container">
+      <h3>Past event pictures</h3>
         <div class="row justify-content-center">
         <%#if @event.photo? %>
         <%#= cl_image_tag @event.photo %>
@@ -56,11 +54,12 @@
             <%= image_tag ("https://images.unsplash.com/photo-1543807669-0d0730e95cb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"), class: "show-picture"%>
           </div>
         </div>
-        <%# end %>
       </div>
+        <%# end %>
 
-        <section>
-          <h3 class="section-title">Reviews</h3>
+
+        <section class="section-profile">
+          <h3 class="section-title-profile">Reviews</h3>
           <% @reviews = [] %>
           <% @user_events.each do |event| %>
             <% event.reviews.each do |review| %>
