@@ -14,7 +14,11 @@
         <div class="infos">
           <p class="event-name"><strong><%= b.event.name %></strong></p>
           <p class='event-date'> <%= b.event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %> </p>
-          <p> Booked for <strong><%= b.number_of_guests %></strong> guests </p>
+          <% if b.number_of_guests == 1 %>
+            <p> Booked for <strong><%= b.number_of_guests %></strong> guest </p>
+          <% else %>
+             <p> Booked for <strong><%= b.number_of_guests %></strong> guests </p>
+          <% end %>
           <p><strong>Total Price: </strong>€<%= '%.2f' % "#{b.event.price_per_guest.to_f * b.number_of_guests}" %>
           <% if b.status == "pending" %>
             <p class='status'>Awaiting confirmation from host</p>
@@ -36,7 +40,7 @@
                 });
               </script>
             <% else %>
-              <p>Payment: ✅ </p>
+              <p class="status">Payment: ✅ </p>
               <p><strong>Booking confirmation id: #</strong><%= b.id %></p>
             <% end %>
           <% else %>

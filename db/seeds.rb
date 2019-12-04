@@ -75,7 +75,7 @@ user5 = User.new(
     password: '123456',
     password_confirmation: '123456',
     username: "nika14",
-    description: "I am a passionate cook. I loved everything about cooking from my grandmother whom I have seen cook fresh lunches and dinners everyday. "
+    description: "I am a passionate cook. I learned everything about cooking from my grandmother whom I have seen cook fresh lunches and dinners everyday. "
   )
 user5.remote_photo_url = "https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 user5.save!
