@@ -6,7 +6,7 @@ function refreshForm(innerHTML) {
 
 function addMessage(messageHTML) {
   const messages = document.getElementById('messages');
-  messages.insertAdjacentHTML('beforeend', messageHTML);
+  messages.insertAdjacentHTML('afterbegin', messageHTML);
   console.log('messagehtml')
 }
 
