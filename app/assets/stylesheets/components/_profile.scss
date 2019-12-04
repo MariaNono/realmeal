@@ -32,18 +32,19 @@
   padding-right: 5%;
 }
 
-.panel-title {
+.panel-title-container {
   height: 100%;
 }
 
-.panel-title h2 {
+.panel-title-container h2 {
    font-family: 'Calistoga';
    padding-top: 60px;
 }
 
-.panel-title p {
+.panel-title-container p {
   font-family: 'Montserrat', sans-serif;
 }
+
 
 .profile-description {
   position: absolute;
@@ -113,4 +114,16 @@
   &:hover {
     color: $yellow;
   }
+}
+
+.picture-container {
+  float: right;
+}
+
+  .picture-container h3 {
+  font-family: 'Calistoga';
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
 }
