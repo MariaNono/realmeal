@@ -1,7 +1,11 @@
-<%if message.user.photo? %>
-  <%= cl_image_tag message.user.photo, class: "avatar" %>
-<% else %>
-  <%= image_tag ("https://myspace.com/common/images/user.png"), class: "avatar"%>
-<% end %>
-<p>Posted by <%= message.user.first_name %> on <%= message.created_at.strftime('%a, %B %d, %I:%M %p') %></p>
-<p><%= message.content %></p>
+<div class="message-item">
+  <%if message.user.photo? %>
+    <%= cl_image_tag message.user.photo, class: "avatar-md" %>
+  <% else %>
+    <%= image_tag ("https://myspace.com/common/images/user.png"), class: "avatar-md"%>
+  <% end %>
+  <div class="message-infos">
+    <p><%= message.content %></p>
+    <p class='small-uppercase message-date'>Posted by <%= message.user.first_name %> on <%= message.created_at.strftime('%a, %B %d, %I:%M %p') %></p>
+  </div>
+</div>
