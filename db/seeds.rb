@@ -534,14 +534,14 @@ puts "🎉 Added reviews"
 puts '🌱 Creating messages...'
 
 message11 = Message.new(
-  content: "Hey Paulo, I am allergic to sour cream. It would be really nice if you can confirm whether you are using sour cream in any of the dishes? Thanks!"
+  content: "Hey Paulo, I am allergic to sour cream. It would be really nice if you can confirm whether you are using sour cream in any of the dishes? Thanks!",
   user_id: user1.id,
   event_id: event6.id
   )
 message11.save!
 
 message12 = Message.new(
-  content: "Hello Lin. Don't worry at all! There won't be sour cream in any of the dishes."
+  content: "Hello Lin. Don't worry at all! There won't be sour cream in any of the dishes.",
   user_id: user1.id,
   event_id: event6.id
   )
