@@ -36,8 +36,8 @@
                 });
               </script>
             <% else %>
-              <p class='status-confirmed'>Your booking is confirmed!</p>
-              <p><strong>Booking-id: </strong><%= b.id %></p>
+              <p>Payment: ✅ </p>
+              <p><strong>Booking confirmation id: #</strong><%= b.id %></p>
             <% end %>
           <% else %>
             <p class='status'>Request declined by <%= b.event.user.first_name %></p>

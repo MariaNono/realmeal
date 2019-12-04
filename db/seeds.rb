@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Message.destroy_all
 Picture.destroy_all
 Review.destroy_all
 Booking.destroy_all
@@ -19,72 +19,116 @@ districts = ['Neukölln', 'Mitte', 'Kreuzberg', 'Wedding', 'Charlottenburg', 'Mo
 
 puts '🌱 Creating users...'
 
-5.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+
+user1 = User.new(
+    email: "lin@example.com",
+    first_name: "Lin",
+    last_name: "Huiyin",
     password: '123456',
     password_confirmation: '123456',
-    username: Faker::Internet.username,
-    description: Faker::Restaurant.description,
-    #profile_picture: "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+    username: "lin14",
+    description: "I come from a beautiful island country - Taiwan, famous with bubble tea, beef noodles, stinky tofu, and many more delicious street foods. I am a vegetarian for more than 15 years since I was in high school. I love to cook and EAT!"
   )
-  user.remote_photo_url = "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  user.save!
-end
+user1.remote_photo_url = "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+user1.save!
+
+user2 = User.new(
+    email: "nathalie@example.com",
+    first_name: "Nathalie",
+    last_name: "Kelley",
+    password: '123456',
+    password_confirmation: '123456',
+    username: "nathalie14",
+    description: "I studied Biology and graduated from a PhD in 2010. Creative cooking has always been a big part of my life, as I love researching on new concepts and always make my own plates.Looking forward to meeting you and hosting you at my home!"
+  )
+user2.remote_photo_url = "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+user2.save!
+
+user3 = User.new(
+    email: "angela@example.com",
+    first_name: "Angela",
+    last_name: "Ferrari",
+    password: '123456',
+    password_confirmation: '123456',
+    username: "angela14",
+    description: "I love chatting and travelling. I love my children and my house, and I maniacally take care my sourdough, the heart of many of my dishes! I love the sea and winter Sundays spent on the couch with the remote in my hand and a good tea."
+  )
+user3.remote_photo_url = "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+user3.save!
+
+user4 = User.new(
+    email: "aki@example.com",
+    first_name: "Aki",
+    last_name: "Nakamura",
+    password: '123456',
+    password_confirmation: '123456',
+    username: "aki14",
+    description: "Konnichiwa !! Hello, My name is Aki. I lived in Paris, Tokyo and tours for work. Nowadays, I am in Berlin and decided to work free-lance. I am a fusion chef at home. I invite you to come share a meal with me at home: a great time to talk while you discover the taste of Japanese cuisine 😃 "
+  )
+user4.remote_photo_url = "https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
+user4.save!
+
+user5 = User.new(
+    email: "veronika@example.com",
+    first_name: "Veronika",
+    last_name: "Lewandowski",
+    password: '123456',
+    password_confirmation: '123456',
+    username: "nika14",
+    description: "I am a passionate cook. I loved everything about cooking from my grandmother whom I have seen cook fresh lunches and dinners everyday. "
+  )
+user5.remote_photo_url = "https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+user5.save!
 
 user6 = User.new(
-    email: "johnmathew@example.com",
-    first_name: "Jane",
-    last_name: "Mathew",
-    password: '123456',
-    password_confirmation: '123456',
-    username: 'John',
-    description: 'During the day I work as a Tax advisor but on my free time I am passionate about cooking. I like to mix the new with the old.',
-    #profile_picture: "https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
-  )
-user6.remote_photo_url = "https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-user6.save!
-
-user7 = User.new(
-  email: "monica@example.com",
-    first_name: "Monica",
-    last_name: "Geller",
-    password: '123456',
-    password_confirmation: '123456',
-    username: 'Monica',
-    description: 'I moved here with my husband and we longed to share our gastronomic culture with our new friends.',
-    #profile_picture: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1"
-  )
-user7.remote_photo_url = "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-user7.save!
-
-user8 = User.new(
-  email: "ross@example.com",
-    first_name: "Ross",
-    last_name: "Geller",
-    password: '123456',
-    password_confirmation: '123456',
-    username: 'Ross',
-    description: 'I have been in Berlin for over 5 years. My background is in Tech but I become a cooking hobbist when I started to miss food from home.',
-    #profile_picture: "https://images.unsplash.com/photo-1523419409543-a5e549c1faa8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
-  )
-user8.remote_photo_url = "https://images.unsplash.com/photo-1523419409543-a5e549c1faa8?ixlib=rb-1.2.1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-user8.save!
-
-user9 = User.new(
   email: "paulo@example.com",
     first_name: "Paulo",
     last_name: "Silva",
     password: '123456',
     password_confirmation: '123456',
     username: 'Paulo',
-    description: "I'm a 39 year old Chef. I am passionate about food, travel, and music. I love to talk about different cuisines, culture and traditions.",
-    #profile_picture: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+    description: "I'm a 39 year old Chef. I am passionate about food, travel, and music. I love to talk about different cuisines, culture and traditions."
   )
-user9.remote_photo_url = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+user6.remote_photo_url = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+user6.save!
+
+user7 = User.new(
+    email: "axel@example.com",
+    first_name: "Axel",
+    last_name: "Weber",
+    password: '123456',
+    password_confirmation: '123456',
+    username: 'axel14',
+    description: "An avid traveler, passionate about cooking. A recruiter by profession, I find cooking for friends and family meditative as it helps me relax. I am super excited to share German cuisine and culture with people from all over the world."
+  )
+user7.remote_photo_url = "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+user7.save!
+
+user8 = User.new(
+  email: "elizabeth@example.com",
+    first_name: "Elizabeth",
+    last_name: "Martinez",
+    password: '123456',
+    password_confirmation: '123456',
+    username: 'jose14',
+    description: 'I moved here with my husband and we longed to share our gastronomic culture with our new friends.'
+  )
+user8.remote_photo_url = "https://images.unsplash.com/photo-1509955252650-8f558c2b8735?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+user8.save!
+
+user9 = User.new(
+  email: "rutuja@example.com",
+    first_name: "Rutuja",
+    last_name: "Deshkar",
+    password: '123456',
+    password_confirmation: '123456',
+    username: 'rutu14',
+    description: 'Namaste! I am from the beautiful city of dreams, Mumbai. As a child, my love for poha(beaten rice with spices) has made me curious about cooking. I am excited to share stories about the food, culture and lifestyle of the people living in different parts of India.',
+  )
+user9.remote_photo_url = "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
 user9.save!
+
+
 
 puts "🎉 Added users"
 
@@ -94,13 +138,13 @@ puts '🌱 Creating events...'
 
   event1 = Event.new(
     name: "Taste Of China!",
-    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    event_date: DateTime.new(2019, 12, 8, 18, [0, 30].sample, 0),
     description: "You will be eating home comfort food, which you may not be able to eat it if you are not invited to a Taiwanese family.It will be vegetarian and vegan since we need to also share our love and care to the environment and animals. However, don't you worry, it will still be very delicious!",
     cuisine: 'Chinese',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: User.all.sample.id,
+    user_id: user1.id,
     status: 'open',
     address: districts.sample
   )
@@ -109,13 +153,13 @@ puts '🌱 Creating events...'
 
   event2 = Event.new(
     name: "Traditional Peruvian dinner",
-    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    event_date: DateTime.new(2019, 12, 9, 18, [0, 30].sample, 0),
     description: "Eric and I welcome you to our home! You will enjoy your amuse bouche with a piano and electronics live performance from Eric in our home studio-living room. Afterwards, we will go to the dining room, where you will enjoy the rest of the Menu. The menu is inspired on some of the most emblematic dishes from Perú, my native country.",
     cuisine: 'Peruvian',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: User.all.sample.id,
+    user_id: user2.id,
     status: 'open',
     address: districts.sample
   )
@@ -124,14 +168,14 @@ puts '🌱 Creating events...'
 
 
   event3 = Event.new(
-    name: "Welcome to Italy!",
-    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    name: "Don't be upsetti, eat some spaghetti!",
+    event_date: DateTime.new(2019, 12, 12, 19, [0, 30].sample, 0),
     description: "Ossobuco with risotto or pasta. Start with some appetizer and then you will be amazed if you eat our ossobuco with risotto or garlic oil pasta. ",
     cuisine: 'Italian',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: User.all.sample.id,
+    user_id: user3.id,
     status: 'open',
     address: districts.sample
   )
@@ -139,14 +183,14 @@ puts '🌱 Creating events...'
   event3.save!
 
   event4 = Event.new(
-    name: "Japanese Dinner",
-    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    name: "Keep calm and eat sushi",
+    event_date: DateTime.new(2019, 12, 15, 19, [0, 30].sample, 0),
     description: "Discover and taste the individual and characteristic peculiarities and flavors of the Orange Wine in combination with the Japanese menu.",
     cuisine: 'Japanese',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: User.all.sample.id,
+    user_id: user4.id,
     status: 'open',
     address: districts.sample
   )
@@ -156,13 +200,13 @@ puts '🌱 Creating events...'
 
 event5 = Event.new(
     name: "Enjoy the dumplings",
-    event_date: DateTime.new([2018,2019,2020, 2021].sample, (1..12).to_a.sample, (1..28).to_a.sample, (12..23).to_a.sample, [0, 30].sample, 0),
+    event_date: DateTime.new(2019, 12, 18, 18, [0, 30].sample, 0),
     description: "Savor the Pierogi which is made by wrapping unleavened dough around a sweet filling.",
     cuisine: 'Polish',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: User.all.sample.id,
+    user_id: user5.id,
     status: 'open',
     address: districts.sample
   )
@@ -170,14 +214,14 @@ event5 = Event.new(
   event5.save!
 
   event6 = Event.new(
-    name: "Enjoy traditional Portuguese food",
-    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    name: "Get cosy with Bacalhau!",
+    event_date: DateTime.new(2019, 12, 20, 19, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Portuguese',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 3,
     price_per_guest: (5..20).to_a.sample,
-    user_id: user9.id,
+    user_id: user6.id,
     status: 'open',
     address: districts.sample
   )
@@ -185,14 +229,14 @@ event5 = Event.new(
   event6.save!
 
   event7 = Event.new(
-    name: "Let's eat a sausage together!",
-    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    name: "Let's eat sausages together!",
+    event_date: DateTime.new(2019, 11, 30, 18, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'German',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 3,
     price_per_guest: (5..20).to_a.sample,
-    user_id: user9.id,
+    user_id: user7.id,
     status: 'open',
     address: districts.sample
   )
@@ -201,18 +245,33 @@ event5 = Event.new(
 
   event8 = Event.new(
     name: "Friends don't let friends go Taco-less!",
-    event_date: DateTime.new(2019, 12, (1..28).to_a.sample, (18..20).to_a.sample, [0, 30].sample, 0),
+    event_date: DateTime.new(2019, 11, 12, 18, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Mexican',
-    max_guests: (1..10).to_a.sample,
-    booked_guests: (4..8).to_a.sample,
+    max_guests: 10,
+    booked_guests: 0,
     price_per_guest: (5..20).to_a.sample,
-    user_id: user9.id,
+    user_id: user8.id,
     status: 'open',
     address: districts.sample
   )
   event8.remote_photo_url = "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   event8.save!
+
+  event9 = Event.new(
+    name: "The Royal Thali",
+    event_date: DateTime.new(2020, 01, 10, 18, [0, 30].sample, 0),
+    description: "The evening will be filled with interesting conversations, culinary discoveries, wagging tails (courtesy my dogs) and new friendships. The meal will be served in the family dining room, after which guests can lounge with a cup of tea or coffee while we test you on culinary games (if you aren't in a food coma)! Come and let us pamper your taste buds.",
+    cuisine: 'Indian',
+    max_guests: 10,
+    booked_guests: 3,
+    price_per_guest: (5..20).to_a.sample,
+    user_id: user9.id,
+    status: 'open',
+    address: districts.sample
+  )
+  event9.remote_photo_url = "http://blog.byoh.in/wp-content/uploads/2016/04/Starter2.jpeg"
+  event9.save!
 
 puts '🎉 Added Events'
 
@@ -327,6 +386,16 @@ p83 = Picture.new(event: event8)
 p83.remote_photo_url = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p83.save!
 
+p91 = Picture.new(event: event9)
+p91.remote_photo_url = 'https://images.unsplash.com/photo-1542367592-8849eb950fd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'
+p91.save!
+p92 = Picture.new(event: event9)
+p92.remote_photo_url = 'https://images.unsplash.com/photo-1572099107898-46f22b3af4f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80'
+p92.save!
+p93 = Picture.new(event: event9)
+p93.remote_photo_url = 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+p93.save!
+
 # Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 # Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 # Picture.new(event: event8, photo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
@@ -337,35 +406,63 @@ puts '🎉 Added Pictures'
 
 puts '🌱 Creating bookings...'
 
-10.times do
-  booking = Booking.new(
-    user_id: User.all.sample.id,
-    event_id: Event.all.sample.id,
-    number_of_guests: (1..3).to_a.sample,
-  )
-  booking.save!
-end
+# 10.times do
+#   booking = Booking.new(
+#     user_id: User.all.sample.id,
+#     event_id: Event.all.sample.id,
+#     number_of_guests: (1..3).to_a.sample,
+#   )
+#   booking.save!
+# end
 
 booking11 = Booking.new(
-  user_id: user6.id,
+  user_id: user1.id,
   event_id: event6.id,
-  number_of_guests: (1..3).to_a.sample,
+  number_of_guests: 1
   )
 booking11.save!
 
 booking12 = Booking.new(
-  user_id: user7.id,
+  user_id: user2.id,
   event_id: event6.id,
-  number_of_guests: (1..3).to_a.sample,
+  number_of_guests: 1
   )
 booking12.save!
 
 booking13 = Booking.new(
-  user_id: user8.id,
+  user_id: user3.id,
   event_id: event6.id,
-  number_of_guests: (1..3).to_a.sample,
+  number_of_guests: 1
   )
 booking13.save!
+
+booking14 = Booking.new(
+  user_id: user9.id,
+  event_id: event9.id,
+  number_of_guests: 1
+  )
+booking14.save!
+
+booking15 = Booking.new(
+  user_id: user9.id,
+  event_id: event9.id,
+  number_of_guests: 2
+  )
+booking15.save!
+
+booking16 = Booking.new(
+  user_id: user8.id,
+  event_id: event7.id,
+  number_of_guests: 1
+  )
+booking16.save!
+
+booking17 = Booking.new(
+  user_id: user9.id,
+  event_id: event7.id,
+  number_of_guests: 2
+  )
+booking17.save!
 
 puts "🎉 Added bookings"
 
@@ -373,14 +470,14 @@ puts "🎉 Added bookings"
 
 puts '🌱 Creating reviews...'
 
-10.times do
-  review = Review.new(
-    booking_id: Booking.all.sample.id,
-    rating: (3..5).to_a.sample,
-    content: Faker::Restaurant.review,
-  )
-  review.save!
-end
+# 10.times do
+#   review = Review.new(
+#     booking_id: Booking.all.sample.id,
+#     rating: (3..5).to_a.sample,
+#     content: Faker::Restaurant.review,
+#   )
+#   review.save!
+# end
 
 review11 = Review.new(
    booking_id: booking11.id,
@@ -403,6 +500,52 @@ review13 = Review.new(
    )
 review13.save!
 
+review14 = Review.new(
+   booking_id: booking14.id,
+   rating: (4..5).to_a.sample,
+   content: "Rutuja was the perfect host. She took great pride in serving us authentic dishes from her Maharashtra region. Her passion to share her knowledge for local procedure and cooking technique gave us a very memorable experience."
+   )
+review14.save!
+
+review15 = Review.new(
+   booking_id: booking15.id,
+   rating: (4..5).to_a.sample,
+   content: "Rutuja was very cheerful and explained us the uses of several spices and their significance to Indian cooking, which she is very passionate about."
+   )
+review15.save!
+
+review16 = Review.new(
+   booking_id: booking16.id,
+   rating: (4..5).to_a.sample,
+   content: "Axel served different types of sausages and they were terrific and of super high quality."
+   )
+review16.save!
+
+review17 = Review.new(
+   booking_id: booking16.id,
+   rating: (4..5).to_a.sample,
+   content: "The white asparagus appetizer served with Hollandaise sauce was a perfect combination with the sausages. Absolutely loved the food!"
+   )
+review17.save!
+
+
 puts "🎉 Added reviews"
+
+puts '🌱 Creating messages...'
+
+message11 = Message.new(
+  content: "Hey Paulo, I am allergic to sour cream. It would be really nice if you can confirm whether you are using sour cream in any of the dishes? Thanks!"
+  user_id: user1.id,
+  event_id: event6.id
+  )
+message11.save!
+
+message12 = Message.new(
+  content: "Hello Lin. Don't worry at all! There won't be sour cream in any of the dishes."
+  user_id: user1.id,
+  event_id: event6.id
+  )
+message12.save!
+
 
 
