@@ -1,3 +1,4 @@
+<div class="event-pictures">
 <% if @event.pictures %>
   <div class="picture-container">
     <%= cl_image_tag @event.pictures[0].photo, class: 'event-picture' %>
@@ -7,7 +8,7 @@
 <% else %>
   <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
 <% end %>
-
+</div>
 <div class="container showpage">
   <h3 class="event-name" style='font-size: 30px;'><%= @event.name %></h3>
   <h4 class="event-location small-uppercase"><%= @event.address %></h4>
