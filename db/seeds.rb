@@ -29,7 +29,7 @@ user1 = User.new(
     username: "lin14",
     description: "I come from a beautiful island country - Taiwan, famous with bubble tea, beef noodles, stinky tofu, and many more delicious street foods. I am a vegetarian for more than 15 years since I was in high school. I love to cook and EAT!"
   )
-user1.remote_photo_url = "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+user1.remote_photo_url = "https://images.unsplash.com/photo-1555922927-32479f120fbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"
 user1.save!
 
 user2 = User.new(
@@ -99,9 +99,9 @@ user7 = User.new(
     password: '123456',
     password_confirmation: '123456',
     username: 'axel14',
-    description: "An avid traveler, passionate about cooking. A recruiter by profession, I find cooking for friends and family meditative as it helps me relax. I am super excited to share German cuisine and culture with people from all over the world."
+    description: "An avid traveler, free-lancer and a passionate foodie. I love to share German tradition and personal values with people from all over the world. Apart from German cusine, I really enjoy French and Mexican cuisines and a well chosen selection of different herbs and spices."
   )
-user7.remote_photo_url = "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+user7.remote_photo_url = "https://images.unsplash.com/photo-1496346236646-50e985b31ea4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
 user7.save!
 
 user8 = User.new(
@@ -437,14 +437,14 @@ booking13 = Booking.new(
 booking13.save!
 
 booking14 = Booking.new(
-  user_id: user9.id,
+  user_id: user4.id,
   event_id: event9.id,
   number_of_guests: 1
   )
 booking14.save!
 
 booking15 = Booking.new(
-  user_id: user9.id,
+  user_id: user5.id,
   event_id: event9.id,
   number_of_guests: 2
   )
