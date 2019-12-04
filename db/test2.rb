@@ -16,7 +16,7 @@ user1 = User.new(
    password: '123456',
    password_confirmation: '123456',
    username: "priya14",
-   description: "Noopur is a baker and chef,
+   description: "Noopur is a baker and chef",
    profile_picture: "https://kitt.lewagon.com/placeholder/users/arthur-littm")
 user1.save!
 
