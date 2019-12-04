@@ -3,5 +3,5 @@
 <% else %>
   <%= image_tag ("https://myspace.com/common/images/user.png"), class: "avatar"%>
 <% end %>
-<p><%= message.user.first_name %></p>
+<p>Posted by <%= message.user.first_name %> on <%= message.created_at.strftime('%a, %B %d, %I:%M %p') %></p>
 <p><%= message.content %></p>
