@@ -17,28 +17,27 @@
     <p class="description"><%= @event.description %></p>
     <br>
     <div class="menu-content">
-      <h3 style="text-decoration: underline;">MENU</h3>
+      <h3 style="text-decoration: underline; font-size: 21px; margin-bottom: 20px;">MENU</h3>
 
       <h4>Appetizers</h4>
-      <p>CHORIZO WITH GRILLED BREAD</p>
-      <p>Traditional sausage from Portuguese countryside</p>
+      <p class='no-bottom-margin'>CHOURIÇO WITH GRILLED BREAD</p>
+      <p>Traditional sausage from the countryside</p>
 
       <h4>Starters</h4>
-      <p>CLASSIC CALDO VERDE</p>
+      <p class='no-bottom-margin'>CLASSIC CALDO VERDE</p>
       <p>A basic, and basically delicious, Portuguese soup</p>
 
       <h4>Main courses</h4>
-      <p>SALTED COD WITH CREAM (BACALHAU COM NATAS)</p>
-      <p>Salted Cod or bacalhau is probably the most traditional ingredient you <br>
-      can find in Portugal, especially during holiday seasons. </p>
+      <p class='no-bottom-margin'>BACALHAU COM NATAS</p>
+      <p>Salted Cod or bacalhau is probably the most traditional ingredient you
+      can find in Portugal, especially during holiday seasons.</p>
 
       <h4>Dessert</h4>
       <p>ARROZ DOCE</p>
 
       <h4>Drinks & Beverages</h4>
-      <p>CASAL GARCIA WINE</p>
+      <p class='no-bottom-margin'>CASAL GARCIA WINE</p>
       <p>SAGRES BEER</p>
-      <br>
     </div>
   </div>
 
@@ -49,8 +48,8 @@
       <%#= render "bookings/new", event: @event, booking: @booking %>
     </div>
   <%# end %> -->
-  <div class="booking-form-container">
     <% unless @event.user == current_user %>
+        <div class="booking-form-container">
       <% if @booked_event.any? %>
         <p>You have already registered for the event</p>
       <% elsif @event.max_guests == @event.booked_guests %>
@@ -60,8 +59,8 @@
           <%= render "bookings/new", event: @event, booking: @booking %>
         </div>
       <% end %>
+        </div>
     <% end %>
-  </div>
 
 
   <div id="host-card">
@@ -94,11 +93,11 @@
     <% end %>
   <% else %>
     <div class="event-member relative">
-        <h2 class='right-container-title' style='margin-bottom: 25px;'>See who else is attending the event</h2>
+        <h2 class='right-container-title'>See who else is joining<br>the experience</h2>
         <% if !@event.bookings.empty?  %>
           <%= render "shared/users_card", event: @event %>
         <% else %>
-           <p>There are no bookings yet. Be the first one to reserve your place!</p>
+           <p>There are no bookings yet.<br>Be the first one to reserve your place!</p>
         <% end %>
     </div>
   <% end %>
@@ -111,7 +110,7 @@
 <div class="container">
 
     <div class="messages">
-      <h2 class='right-container-title'>Discussion</h2>
+      <h2 class='right-container-title'>Message Board 📪</h2>
       <%= render 'messages/form', event: @event, message: @message %>
       <div id="messages">
         <% messages = @event.messages.sort { |a,b| b.created_at <=> a.created_at } %>
