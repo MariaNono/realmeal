@@ -307,7 +307,8 @@ p23.save!
 # Picture.new(event: event2, photo: 'https://cdn.pixabay.com/photo/2015/11/09/23/21/food-1036132_960_720.jpg').save!
 
 p31 = Picture.new(event: event3)
-p31.remote_photo_url = "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+# p31.remote_photo_url = "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+p31.remote_photo_url = "https://images.unsplash.com/photo-1567423285116-c31e6a93e939?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 p31.save!
 p32 = Picture.new(event: event3)
 p32.remote_photo_url = 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
@@ -339,7 +340,7 @@ p43.save!
 
 p51 = Picture.new(event: event5)
 # p51.remote_photo_url = 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-p51.remote_photo_url = 'https://cdn.pixabay.com/photo/2018/05/29/00/49/dumplings-3437689_960_720.jpg'
+p51.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/19/17/56/goulash-1605840_960_720.jpg"
 p51.save!
 p52 = Picture.new(event: event5)
 # p52.remote_photo_url = 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
@@ -347,7 +348,7 @@ p52.remote_photo_url = 'https://cdn.pixabay.com/photo/2016/04/14/13/09/country-s
 p52.save!
 p53 = Picture.new(event: event5)
 # p53.remote_photo_url = 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-p53.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/19/17/56/goulash-1605840_960_720.jpg"
+p53.remote_photo_url = 'https://cdn.pixabay.com/photo/2018/05/29/00/49/dumplings-3437689_960_720.jpg'
 p53.save!
 
 # Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!

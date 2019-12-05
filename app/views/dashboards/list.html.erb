@@ -18,7 +18,7 @@
               <%= link_to "View all bookings", event_bookings_path(event), class: "host_bookings_link underline zindex"%>
             </div>
             <div class="buttons">
-              <%= link_to "Update", edit_event_path(event) , class: "btn-padding btn outline-btn zindex" %>
+              <%= link_to "Update", edit_event_path(event) , class: "btn-padding btn outline-btn zindex mr-3" %>
               <%= link_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-padding outline-btn zindex" %>
             </div>
           </div>

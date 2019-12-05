@@ -49,6 +49,11 @@
   font-weight: 600;
 }
 
+.host_bookings_link:hover {
+  text-decoration: none;
+  color: red;
+}
+
 .red-text {
   color: $red;
 }
@@ -57,6 +62,7 @@
   display: block;
   margin-bottom: 25px;
 }
+
 
 .status {
   color: $red;
