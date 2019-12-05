@@ -16,7 +16,11 @@
 
 
 #map .event-card {
-  width: 100%;
+  width: 280px;
+}
+
+.mapboxgl-popup-content {
+  width: 300px;
 }
 
 .event-card img {
@@ -207,10 +211,10 @@
 
 
 .user-card-grid {
-  margin-top: 5px;
+  margin-top: 15px;
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
-  grid-column-gap: 18px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-column-gap: 10px;
   grid-row-gap: 15px;
 }
 
@@ -218,6 +222,9 @@
   text-align: center;
   padding: 0 16px 16px 0;
   width: 100px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
+.cards-for-all-guests p {
+  margin-top: 5px;
+}
