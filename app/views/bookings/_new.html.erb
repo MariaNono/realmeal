@@ -18,7 +18,7 @@
 <div id="show-message" class="open-modal">
   <div class="message-content">
    <span class="close">&times;</span>
-   <p class="popuptext" style="text-align: center;">Your booking has been sent to <%= "#{event.user.first_name.capitalize}" %>.<br>We will inform you when your booking gets accepted.<br>You can also check the booking status and details in <%= link_to 'My Bookings', mybookings_path, class: 'text-link' %> .</p>
+   <p class="popuptext" style="text-align: center; margin-top: 15px;"><span style='font-size: 24px;'><strong>Your booking request has been sent to <%= "#{event.user.first_name.capitalize}" %>.</strong></span><br><span style='font-size: 33px;'>🎉🎉🎉</span><br>We will inform you when your booking gets accepted.<br>You can also check the booking status and details in <strong><%= link_to 'My Bookings', mybookings_path, class: 'text-link' %></strong>.</p>
   </div>
 </div>
 
