@@ -286,14 +286,14 @@ p12 = Picture.new(event: event1)
 p12.remote_photo_url = 'https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p12.save!
 p13 = Picture.new(event: event1)
-p13.remote_photo_url = 'https://images.unsplash.com/photo-1542990254-7174ee186dd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p13.remote_photo_url = 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
 p13.save!
 
 # Picture.new(event: event1, photo: 'https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 # Picture.new(event: event1, photo: 'https://images.unsplash.com/photo-1542990254-7174ee186dd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
 p21 = Picture.new(event: event2)
-p21.remote_photo_url = 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p21.remote_photo_url = 'https://www.quasarex.com/wp-content/uploads/2018/10/Peruvian-foods-3.jpg'
 p21.save!
 p22 = Picture.new(event: event2)
 p22.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg/1584px-Ceviche_with_cancha_at_Peruvian_Market%2C_Caracas.jpg'
@@ -307,13 +307,15 @@ p23.save!
 # Picture.new(event: event2, photo: 'https://cdn.pixabay.com/photo/2015/11/09/23/21/food-1036132_960_720.jpg').save!
 
 p31 = Picture.new(event: event3)
-p31.remote_photo_url = 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p31.remote_photo_url = "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 p31.save!
 p32 = Picture.new(event: event3)
-p32.remote_photo_url = 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p32.remote_photo_url = 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+# p32.remote_photo_url = 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p32.save!
 p33 = Picture.new(event: event3)
-p33.remote_photo_url = 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p33.remote_photo_url = 'https://images.unsplash.com/photo-1458644267420-66bc8a5f21e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1493&q=80'
+# p33.remote_photo_url = 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p33.save!
 
 # Picture.new(event: event3, photo: 'https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
@@ -321,13 +323,14 @@ p33.save!
 # Picture.new(event: event3, photo: 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
 p41 = Picture.new(event: event4)
+# p41.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p41.remote_photo_url = 'https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p41.save!
 p42 = Picture.new(event: event4)
-p42.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p42.remote_photo_url = "https://images.unsplash.com/photo-1568096889942-6eedde686635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
 p42.save!
 p43 = Picture.new(event: event4)
-p43.remote_photo_url = 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p43.remote_photo_url = 'https://images.unsplash.com/photo-1559589311-5f288a90d311?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80'
 p43.save!
 
 # Picture.new(event: event4, photo: 'https://images.unsplash.com/photo-1563245370-cd55e7c95ff4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
@@ -335,27 +338,33 @@ p43.save!
 # Picture.new(event: event4, photo: 'https://images.unsplash.com/photo-1516211881327-e5120a941edc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 
 p51 = Picture.new(event: event5)
-p51.remote_photo_url = 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+# p51.remote_photo_url = 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p51.remote_photo_url = 'https://cdn.pixabay.com/photo/2018/05/29/00/49/dumplings-3437689_960_720.jpg'
 p51.save!
 p52 = Picture.new(event: event5)
-p52.remote_photo_url = 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+# p52.remote_photo_url = 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p52.remote_photo_url = 'https://cdn.pixabay.com/photo/2016/04/14/13/09/country-sausage-1328865_960_720.jpg'
 p52.save!
 p53 = Picture.new(event: event5)
-p53.remote_photo_url = 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+# p53.remote_photo_url = 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p53.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/19/17/56/goulash-1605840_960_720.jpg"
 p53.save!
 
 # Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1513862153653-f8b7324e1779?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 # Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 # Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
-
 p61 = Picture.new(event: event6)
-p61.remote_photo_url = 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+
+# p61.remote_photo_url = 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p61.remote_photo_url = "https://res.cloudinary.com/dfmcf9wdw/image/upload/v1575543808/n85xpnnhqhwjs5rhr5cw.jpg"
 p61.save!
 p62 = Picture.new(event: event6)
-p62.remote_photo_url = 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg'
+# p62.remote_photo_url = 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg'
+p62.remote_photo_url = 'https://images.food52.com/wLI5es1lZKgegjqE2CaLHxrJ3cc=/1556x1037/ba9e4f40-4eff-4de8-818f-9e373251e9c6--2017-1116_portuguese-pesticitos_rocky-luten_038.jpg'
+# p62.remote_photo_url = "https://images.food52.com/gOAUDOJcvS-_x7w2n8otUk_qglk=/1536x1022/2603a942-a607-4062-aea8-59179de6aa6a--2015_1006_simple-seafood-stew_bobbi-lin_12742.jpg"
 p62.save!
 p63 = Picture.new(event: event6)
-p63.remote_photo_url = 'https://images.food52.com/wLI5es1lZKgegjqE2CaLHxrJ3cc=/1556x1037/ba9e4f40-4eff-4de8-818f-9e373251e9c6--2017-1116_portuguese-pesticitos_rocky-luten_038.jpg'
+p63.remote_photo_url = "https://images.unsplash.com/photo-1448043552756-e747b7a2b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1249&q=80"
 p63.save!
 
 # Picture.new(event: event6, photo: 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
@@ -383,7 +392,7 @@ p82 = Picture.new(event: event8)
 p82.remote_photo_url = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
 p82.save!
 p83 = Picture.new(event: event8)
-p83.remote_photo_url = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+p83.remote_photo_url = 'https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80'
 p83.save!
 
 p91 = Picture.new(event: event9)

@@ -1,5 +1,5 @@
-const closeWindow = (window) => {
-  window.style.display="none";
+const closeWindow = (element) => {
+  element.style.display="none";
 }
 
 const button = document.getElementById("reserve_button");
@@ -8,6 +8,9 @@ const span = document.getElementsByClassName("close")[0];
 
 if (button) {
   button.addEventListener("click", event => {
+    if(button.innerText == "reserve now") {
+      button.innerText = "Reserved";
+    }
     modal.style.display = "block";
   });
 
@@ -53,14 +56,16 @@ if (cards) {
 const host = document.querySelector("#host-card");
 const hostProfilePage = document.querySelector("#host-profile-page");
 const closeHostProfile = document.querySelector(".close-host-profile");
-console.log(closeHostProfile)
 
 if (host) {
   host.addEventListener("click", (event) => {
-    hostProfilePage.style.display = "block";
+    // if (event.target !== closeHostProfile) {
+      hostProfilePage.style.display = "block";
+    // }
   });
 
   closeHostProfile.addEventListener("click", (event) => {
+    event.stopPropagation();
     closeWindow(hostProfilePage);
   });
 
