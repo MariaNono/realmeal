@@ -11,13 +11,16 @@ class EventsController < ApplicationController
       if params[:events][:cuisine].present?
         @events = @events.select { |event| event.cuisine.capitalize == params[:events][:cuisine]}
       end
+      if params[:events][:date].present?
+        @events = @events.select { |event| event.event_date >= params[:events][:date]}
+      end
     end
     # @events = @events.select { |event| event.status == "open" }
-    if params[:events][:date].present?
-      @events = @events.select { |event| event.event_date >= params[:events][:date]}
-    else
-      @events = @events.select { |event| event.event_date >= DateTime.now }
-    end
+    # if params[:events][:date].present?
+    #   @events = @events.select { |event| event.event_date >= params[:events][:date]}
+    # else
+    @events = @events.select { |event| event.event_date >= DateTime.now }
+    # end
 
     @events = sort_by_date(@events)
 
@@ -35,6 +38,8 @@ class EventsController < ApplicationController
     cuisines.each do |c|
       @cuisines << c.cuisine
     end
+
+    @event = Event.new
 
     @cuisines.sort!
     @message = Message.new

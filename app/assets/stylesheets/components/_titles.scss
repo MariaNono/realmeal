@@ -13,6 +13,7 @@
   text-transform: lowercase;
   font-variant: small-caps;
   letter-spacing: 2px;
+  margin-top: 20px;
 }
 
 .review-stars {
@@ -21,6 +22,11 @@
 
 .small-uppercase {
   text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+.regular-uppercase {
+  text-transform: uppercase;
   font-variant: small-caps;
 }
 
