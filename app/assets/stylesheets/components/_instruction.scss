@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.container-instruction h2 {
+  font-weight: bold;
+}
+
+
 *,
 *::before,
 *::after {
@@ -112,7 +117,7 @@ img {
   color: black;
   font-size: 1.25rem;
   font-weight: 300;
-  font-family: 'Calistoga';
+    font-weight: bold;
   text-align: center;
 }
 
@@ -120,7 +125,8 @@ img {
   flex: 1 1 auto;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;
+  margin-bottom: 8px;
+  margin-top: 8px;
   text-align: block;
 }
 
