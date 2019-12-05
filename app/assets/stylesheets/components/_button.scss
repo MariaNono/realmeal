@@ -12,6 +12,12 @@
   text-transform: lowercase;
   font-variant: small-caps;
   letter-spacing: 1px;
+  &:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid;
+  text-decoration: none;
+}
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus {
