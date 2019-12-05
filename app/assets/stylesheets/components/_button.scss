@@ -30,6 +30,9 @@
   background-color: none;
   border: 1px black solid;
   transform: translateY(-5px);
+  &:hover {
+    background-color: $yellow;
+  }
 }
 
 .btn-padding {
@@ -50,4 +53,9 @@
   color: black;
   background-color: $yellow;
 }
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem $yellow !important;
 }
