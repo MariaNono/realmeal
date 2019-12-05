@@ -64,8 +64,6 @@ class EventsController < ApplicationController
 
     if @event.save!
       create_pictures
-      p '##############################'
-      p @event
       redirect_to myhostings_path, notice: "Event created successfully"
     else
       render :new
