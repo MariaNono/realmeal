@@ -74,8 +74,8 @@
         <%= image_tag ("https://myspace.com/common/images/user.png"), class: "avatar-large show-picture" %>
       <% end %>
       <div class="host-infos">
-        <p class='host-name'><%= "#{@event.user.first_name.capitalize}  #{@event.user.last_name.capitalize}" %></p>
-        <p>Hey I am <%= "#{@event.user.first_name.capitalize}" %></p>
+        <p class='host-name'>Hey I am <%= "#{@event.user.first_name.capitalize}  #{@event.user.last_name.capitalize}" %>!
+          <br>Find out more about me</p>
       </div>
     </div>
     <div id="host-profile-page" class="open-modal">

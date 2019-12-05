@@ -32,14 +32,14 @@
 
 
         <h2>About me</h2>
-        <%= @user.description %>
+        <p><%= @user.description %></p>
       </div>
     </div>
 
 
 
     <div class="picture-container-profile">
-      <h3>Past event pictures</h3>
+      <h2>Past event pictures</h2>
         <div class="row justify-content-center">
         <%#if @event.photo? %>
         <%#= cl_image_tag @event.photo %>
@@ -59,7 +59,7 @@
 
 
         <section class="section-profile">
-          <h3 class="section-title-profile">Reviews</h3>
+          <h2 class="section-title-profile">Reviews</h2>
           <% @reviews = [] %>
           <% @user_events.each do |event| %>
             <% event.reviews.each do |review| %>
