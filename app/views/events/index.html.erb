@@ -9,7 +9,7 @@
           <%= f.label :date, 'Dates' %>
           <%= f.input :date, label: false, required: false, input_html: {value: date, class: "datepicker"} %>
           <%= f.label :number_of_guests, 'Number of guests' %>
-          <%= f.input :number_of_guests, label: false, input_html: { class: "select2" }, collection: 1..10, selected: params[:events][:number_of_guests] %>
+          <%= f.input :number_of_guests, label: false, input_html: { class: "select2" }, collection: 1..10, selected: params[:events] %>
           <%= f.button :submit, "Find experiences", class: "btn btn-danger" %>
         <% end %>
       </div>
@@ -32,6 +32,7 @@
       </div>
     </div>
 </div>
+
 
 
 
