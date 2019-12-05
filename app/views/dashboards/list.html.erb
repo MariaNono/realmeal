@@ -13,7 +13,7 @@
           <div class="infos">
             <p class='event-name'><strong><%= event.name %></strong></p>
             <%#= link_to event.name, event_path(id: event, events: {guests: ''}) %>
-            <p class='event_date'> <%= event.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
+            <p class='event-date'> <%= event.event_date.strftime('%a, %B %d, %I:%M %p') %> </p>
             <div class="block">
               <%= link_to "View all bookings", event_bookings_path(event), class: "host_bookings_link underline zindex"%>
             </div>

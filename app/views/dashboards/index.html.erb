@@ -19,15 +19,15 @@
           <% else %>
              <p> Booked for <strong><%= b.number_of_guests %></strong> guests </p>
           <% end %>
-          <p><strong>Total Price: </strong>€<%= '%.2f' % "#{b.event.price_per_guest.to_f * b.number_of_guests}" %>
+          <p>Total Price: <strong>€<%= '%.2f' % "#{b.event.price_per_guest.to_f * b.number_of_guests}" %></strong></p>
           <% if b.status == "pending" %>
             <p class='status'>Awaiting confirmation from host</p>
           <% elsif b.status == "accepted" %>
-            <p>Address: <%= b.event.address %></p>
+            <p>Address: <strong><%= b.event.address %></strong></p>
             <% if b.state == "pending" %>
               <p class='status-confirmed'>Request accepted by <%= b.event.user.first_name %></p>
               <%#= link_to 'Pay Now', payment_path(b), class: 'btn btn-info zindex mb-3', id: "pay" %>
-              <button id="pay" class="btn btn-info zindex">Pay</button>
+              <button id="pay" class="btn btn-info full-width zindex" style='margin-bottom: 15px;'>Pay</button>
               <script src="https://js.stripe.com/v3/"></script>
               <script>
                 const paymentButton = document.getElementById('pay');
