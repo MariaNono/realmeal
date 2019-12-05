@@ -1,14 +1,17 @@
-<div class="form-booking">
-  <p><strong>Booking for <%= event.name %> on <%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></strong></p>
+<div class="form-booking"> <span>
+  <p><strong>Booking for <br> <span class='red-text'><%= event.name %></span> <br>on <%= event.event_date.strftime('%a, %B %d %Y, %I:%M %p') %></strong></p>
+  <p id="price-per-guest"><span id="event-price" class='small-uppercase bold'><%='%.2f' % event.price_per_guest.to_f%> € / Guest</p>
   <%= simple_form_for [event, booking], url: event_bookings_path(event), method: "post" do |f| %>
     <%= f.label :number_of_guests, 'Number of guests' %>
     <%= f.input :number_of_guests, label: false, collection: 1..seats_left(event), selected: params[:events][:number_of_guests].to_i %>
-    <p id="price-per-guest">Price:<span id="event-price"><%='%.2f' % event.price_per_guest.to_f%>€/ Guest</p>
-    <p id="total-price">Total Price:<%='%.2f' % event.price_per_guest.to_f%>€</p>
+
+    <!-- <p id="price-per-guest">Price:<span id="event-price"><%='%.2f' % event.price_per_guest.to_f%>€/ Guest</p> -->
+    <p id="total-price" style='margin: 20px 0 20px 0;' class='red-text small-uppercase bold'><span class='small-uppercase'>Total Price: </span><%='%.2f' % event.price_per_guest.to_f%>€</p>
     <%#= f.simple_fields_for :events do |m| %>
       <%#= f.input :booked_guests, as: :hidden, input_html: { value: :number_of_guests } %>
     <%# end %>
-    <%= f.button :submit, "Reserve now", class: "btn btn-danger", id: "reserve_button" %>
+    <%#= f.button :submit, "Reserve now", class: "btn btn-danger full-width", id: "reserve_button" %>
+    <button class="btn btn-danger full-width" id="reserve_button">Reserve Now</button>
   <% end %>
 </div>
 

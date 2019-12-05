@@ -54,7 +54,13 @@
 }
 
 .form-control {
-  border: 1px solid black !important;
+  border: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+
+
+.booking-form .form-control {
+  border: none !important;
   border-radius: 0 !important;
 }
 
@@ -114,6 +120,13 @@ form.simple_form.events {
   justify-content: space-between;
   align-items: baseline;
   padding: 0 10px;
+}
+
+.booking-form-container .form-group {
+  display: inline-block !important;
+  border-radius: 0 !important;
+  margin: 0 15px;
+  border: 1px solid black;
 }
 
 .zindex {

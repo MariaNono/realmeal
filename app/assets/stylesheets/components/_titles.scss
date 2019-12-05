@@ -6,6 +6,7 @@
 .section-subtitle {
   text-transform: lowercase;
   font-variant: small-caps;
+  letter-spacing: 2px;
 }
 
 .review-stars {
@@ -42,6 +43,10 @@
   font-weight: 600;
 }
 
+.red-text {
+  color: $red;
+}
+
 .block {
   display: block;
   margin-bottom: 25px;
@@ -57,4 +62,10 @@
 
 .text-link {
   color: $red !important;
+}
+
+p.no-bottom-margin {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-variant: small-caps;
 }
