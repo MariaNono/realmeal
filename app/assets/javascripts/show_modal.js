@@ -8,6 +8,9 @@ const span = document.getElementsByClassName("close")[0];
 
 if (button) {
   button.addEventListener("click", event => {
+    if(button.innerText == "reserve now") {
+      button.innerText = "Reserved";
+    }
     modal.style.display = "block";
   });
 
@@ -53,7 +56,6 @@ if (cards) {
 const host = document.querySelector("#host-card");
 const hostProfilePage = document.querySelector("#host-profile-page");
 const closeHostProfile = document.querySelector(".close-host-profile");
-console.log(closeHostProfile)
 
 if (host) {
   host.addEventListener("click", (event) => {

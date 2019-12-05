@@ -1,0 +1,5 @@
+meta_product_name: "Real Meal"
+meta_title: "Real Meal - Experience.Eat.Enjoy."
+meta_description: "Real Meal helps you to discover an authentic culinary experience with the best home cooks in Berlin."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
