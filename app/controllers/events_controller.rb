@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = Event.geocoded
+    # @events = Event.geocoded
+    @events = Event.all
     unless params[:events].nil?
       if params[:events][:cuisine].present?
         @events = @events.select { |event| event.cuisine.capitalize == params[:events][:cuisine]}

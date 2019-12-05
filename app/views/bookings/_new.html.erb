@@ -15,7 +15,7 @@
   <% end %>
 </div>
 
-<div id="show-message" class="modal">
+<div id="show-message" class="open-modal">
   <div class="message-content">
    <span class="close">&times;</span>
    <p class="popuptext" style="text-align: center;">Your booking has been sent to <%= "#{event.user.first_name.capitalize}" %>.<br>We will inform you when your booking gets accepted.<br>You can also check the booking status and details in <%= link_to 'My Bookings', mybookings_path, class: 'text-link' %> .</p>
