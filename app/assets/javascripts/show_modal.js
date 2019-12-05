@@ -1,5 +1,5 @@
-const closeWindow = (window) => {
-  window.style.display="none";
+const closeWindow = (element) => {
+  element.style.display="none";
 }
 
 const button = document.getElementById("reserve_button");
@@ -57,10 +57,13 @@ console.log(closeHostProfile)
 
 if (host) {
   host.addEventListener("click", (event) => {
-    hostProfilePage.style.display = "block";
+    // if (event.target !== closeHostProfile) {
+      hostProfilePage.style.display = "block";
+    // }
   });
 
   closeHostProfile.addEventListener("click", (event) => {
+    event.stopPropagation();
     closeWindow(hostProfilePage);
   });
 

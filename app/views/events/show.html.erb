@@ -79,7 +79,7 @@
         <p>Hey I am <%= "#{@event.user.first_name.capitalize}" %></p>
       </div>
     </div>
-    <div id="host-profile-page" class="modal">
+    <div id="host-profile-page" class="open-modal">
       <div class="guest-content">
         <i class="fas fa-times close-host-profile close"></i>
         <%= render 'shared/guest', user: @event.user %>
