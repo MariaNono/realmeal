@@ -39,3 +39,15 @@
 .full-width {
   width: 100%;
 }
+
+.btn-black {
+  background-color: black;
+  font-size:18px;
+  padding: 10px 20px;
+  color: #fff;
+  margin-top: 10px;
+  &:hover {
+  color: black;
+  background-color: $yellow;
+}
+}

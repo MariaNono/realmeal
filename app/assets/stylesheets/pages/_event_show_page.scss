@@ -12,10 +12,11 @@
   width: 100%;
 }
 .showpage .container-content {
-  padding: 40px;
-  text-align: left;
+  padding: 40px 20px 40px 0px;
+  text-align: justify;
   width: 50%;
   float: left;
+  font-size: 1.1rem !important;
 }
 
 .showpage .container-content .menu-content {
@@ -35,7 +36,7 @@
 .menu-content p {
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 19px;
   color: #000;
 }
@@ -45,7 +46,7 @@
 }
 
 .right-container {
-  padding: 40px;
+  padding: 40px 0px 40px 20px;
   width: 50%;
   float: right;
 }
@@ -53,7 +54,7 @@
 .booking-form-container {
   border: 1px solid #000;
   margin-bottom: 50px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .booking-form-container .form-group {
@@ -113,7 +114,7 @@ h2.right-container-title {
 }
 
 .message-item p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin: 8px 15px;
