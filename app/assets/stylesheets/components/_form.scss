@@ -102,11 +102,11 @@
   border: 1px solid #000 !important;
 }
 
-
 .select2-container .select2-selection--single .select2-selection__rendered {
-  width: 60px !important;
+  min-width: 40px !important;
   padding-top: 5px !important;
-  padding-right: 32px !important;
+  padding-left: 3px !important;
+  //padding-right: 46px !important;
 }
 
 .form-control:focus {
@@ -129,11 +129,10 @@ form.simple_form.events {
   border: 1px solid black;
 }
 
-.zindex {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
+// .zindex {
+//   width: 100%;
+//   margin-bottom: 15px;
+// }
 
 // .br-theme-fontawesome-stars .br-widget a {
 //   color: $yellow !important;
