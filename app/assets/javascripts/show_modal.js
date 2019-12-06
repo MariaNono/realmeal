@@ -11,6 +11,7 @@ if (button) {
     if(button.innerText == "reserve now") {
       button.innerText = "Reserved";
     }
+    event.currentTarget.setAttribute("disabled", "");
     modal.style.display = "block";
   });
 

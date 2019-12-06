@@ -117,9 +117,9 @@ user8.remote_photo_url = "https://images.unsplash.com/photo-1509955252650-8f558c
 user8.save!
 
 user9 = User.new(
-  email: "rutuja@example.com",
-    first_name: "Rutuja",
-    last_name: "Deshkar",
+  email: "kiara@example.com",
+    first_name: "Kiara",
+    last_name: "Malhotra",
     password: '123456',
     password_confirmation: '123456',
     username: 'rutu14',
@@ -127,6 +127,18 @@ user9 = User.new(
   )
 user9.remote_photo_url = "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
 user9.save!
+
+user10 = User.new(
+  email: "rich@example.com",
+    first_name: "Rich",
+    last_name: "O' Grady",
+    password: '123456',
+    password_confirmation: '123456',
+    username: 'rich14',
+    description: 'I love to travel and very passionate about my work and food.',
+  )
+user10.remote_photo_url = "https://ca.slack-edge.com/T02NE0241-U7EQKD1U1-f702e41763fd-512"
+user10.save!
 
 
 
@@ -447,7 +459,7 @@ booking13 = Booking.new(
 booking13.save!
 
 booking14 = Booking.new(
-  user_id: user4.id,
+  user_id: user10.id,
   event_id: event9.id,
   number_of_guests: 1
   )
@@ -513,14 +525,14 @@ review13.save!
 review14 = Review.new(
    booking_id: booking14.id,
    rating: (4..5).to_a.sample,
-   content: "Rutuja was the perfect host. She took great pride in serving us authentic dishes from her Maharashtra region. Her passion to share her knowledge for local procedure and cooking technique gave us a very memorable experience."
+   content: "Kiara was the perfect host. She took great pride in serving us authentic dishes from her Maharashtra region. Her passion to share her knowledge for local procedure and cooking technique gave us a very memorable experience."
    )
 review14.save!
 
 review15 = Review.new(
    booking_id: booking15.id,
    rating: (4..5).to_a.sample,
-   content: "Rutuja was very cheerful and explained us the uses of several spices and their significance to Indian cooking, which she is very passionate about."
+   content: "Kiara was very cheerful and explained us the uses of several spices and their significance to Indian cooking, which she is very passionate about."
    )
 review15.save!
 
@@ -552,7 +564,7 @@ message11.save!
 
 message12 = Message.new(
   content: "Hello Lin. Don't worry at all! There won't be sour cream in any of the dishes.",
-  user_id: user1.id,
+  user_id: user6.id,
   event_id: event6.id
   )
 message12.save!
