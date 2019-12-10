@@ -5,13 +5,20 @@
     <%= f.label :number_of_guests, 'Number of guests' %>
     <%= f.input :number_of_guests, label: false, collection: 1..seats_left(event), selected: params[:events][:number_of_guests].to_i %>
 
-    <!-- <p id="price-per-guest">Price:<span id="event-price"><%#='%.2f' % event.price_per_guest.to_f%>€/ Guest</p> -->
-    <p id="total-price" style='margin: 20px 0 20px 0;' class='red-text regular-uppercase bold'><span>Total Price: </span><%='%.2f' % event.price_per_guest.to_f%>€</p>
-    <%#= f.simple_fields_for :events do |m| %>
-      <%#= f.input :booked_guests, as: :hidden, input_html: { value: :number_of_guests } %>
-    <%# end %>
+    <% unless params[:events][:number_of_guests].nil? %>
+      <% if params[:events][:number_of_guests].to_i == 1 %>
+        <p id="total-price" style='margin: 20px 0 20px 0;' class='red-text regular-uppercase bold'><span>Total Price: </span><%='%.2f' % event.price_per_guest.to_f%>€</p>
+      <% else %>
+        <p id="total-price" style='margin: 20px 0 20px 0;' class='red-text regular-uppercase bold'><span>Total Price: </span><%='%.2f' % "#{event.price_per_guest.to_f * params[:events][:number_of_guests].to_i}" %>€</p>
+      <% end %>
+    <% else %>
+      <p id="total-price" style='margin: 20px 0 20px 0;' class='red-text regular-uppercase bold'><span>Total Price: </span><%='%.2f' % event.price_per_guest.to_f%>€</p>
+    <% end %>
     <%#= f.button :submit, "Reserve now", class: "btn btn-danger full-width", id: "reserve_button" %>
-    <button class="btn btn-danger full-width" id="reserve_button">Reserve Now</button>
+    <!-- the below button  works for JS  -->
+    <!-- <button class="btn btn-danger full-width" id="reserve_button">Reserve Now</button> -->
+    <!-- below button_tag will save the booking first and then disable the button -->
+    <%= button_tag "Reserve now", class: "btn btn-danger full-width", data: { disable_with: "Reserved" } , id: "reserve_button" %>
   <% end %>
 </div>
 

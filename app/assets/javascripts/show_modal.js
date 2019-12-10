@@ -8,9 +8,9 @@ const span = document.getElementsByClassName("close")[0];
 
 if (button) {
   button.addEventListener("click", event => {
-    if(button.innerText == "reserve now") {
-      button.innerText = "Reserved";
-    }
+    // if(button.innerText == "reserve now") {
+    //   button.innerText = "Reserved";
+    // }
     // event.currentTarget.setAttribute("disabled", "");
     modal.style.display = "block";
   });
