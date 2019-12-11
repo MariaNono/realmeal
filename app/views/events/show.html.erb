@@ -1,9 +1,9 @@
 <div class="event-pictures">
 <% if @event.pictures %>
   <div class="picture-container">
-    <%= cl_image_tag @event.pictures[0].photo, class: 'event-picture' %>
-    <%= cl_image_tag @event.pictures[1].photo, class: 'event-picture' %>
-    <%= cl_image_tag @event.pictures[2].photo,class: 'event-picture' %>
+    <% @event.pictures.each do |picture| %>
+      <%= cl_image_tag picture.photo, class: 'event-picture' %>
+    <% end %>
   </div>
 <% else %>
   <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
