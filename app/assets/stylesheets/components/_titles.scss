@@ -5,8 +5,8 @@
 
 .search-form {
   .section-title {
-  margin-top: 15px !important;
-}
+    margin-top: 15px !important;
+  }
 }
 
 .section-subtitle {
@@ -40,11 +40,11 @@
 }
 
 .underline {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black !important;
 }
 
 .underline-white {
-  text-decoration: white underline;
+  text-decoration: white underline !important;
 }
 
 .event-date {
@@ -96,3 +96,12 @@ p.no-bottom-margin {
   font-size: 18px;
 }
 
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $red;
+}
