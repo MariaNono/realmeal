@@ -1,6 +1,6 @@
 <div class="event-card relative">
   <%= link_to "", event_path(event, request.query_parameters), class:"link" %>
-  <% if event.pictures %>
+  <% if event.pictures.present? %>
     <%= cl_image_tag event.pictures[0].photo %>
   <% else %>
     <%= image_tag ("https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9") %>
