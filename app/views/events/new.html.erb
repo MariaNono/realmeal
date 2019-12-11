@@ -3,16 +3,16 @@
   <div class="event-form">
     <%= simple_form_for @event do |f| %>
       <%= f.label :cuisine %>
-      <%= f.input :cuisine, as: :select, label: false, required: false, input_html: { class: "select2"},
+      <%= f.input :cuisine, as: :select, label: false, required: true, input_html: { class: "select2"},
        collection: Nationality::NATIONALITY %>
-      <%= f.input :event_date, input_html: { class: "datepicker" } %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :description %>
+      <%= f.input :event_date, input_html: { class: "datepicker" }, required:true %>
+      <%= f.input :name, required:true %>
+      <%= f.input :address, required:true %>
+      <%= f.input :description, required:true %>
       <%= f.label :max_guests %>
-      <%= f.input :max_guests, label: false, input_html: { class: "select2" }, collection: 1..10 %>
-      <%= f.input :price_per_guest %>
-      <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+      <%= f.input :max_guests, label: false, input_html: { class: "select2" }, collection: 1..10, required:true %>
+      <%= f.input :price_per_guest, required:true %>
+      <%= f.input :pictures, as: :file, input_html: { multiple: true }, required:true %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit "Create Event", class: "btn btn-info block full-width" %>
     <% end %>
