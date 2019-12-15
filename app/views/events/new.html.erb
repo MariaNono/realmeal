@@ -13,7 +13,7 @@
       <%= f.input :max_guests, label: false, input_html: { class: "select2" }, collection: 1..10, required:true %>
       <%= f.input :price_per_guest, required:true %>
       <%= f.input :pictures, as: :file, input_html: { multiple: true }, required:true %>
-      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :photo_cache, as: :hidden, required: true %>
       <%= f.submit "Create Event", class: "btn btn-info block full-width" %>
     <% end %>
   </div>

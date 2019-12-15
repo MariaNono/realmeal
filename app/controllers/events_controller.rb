@@ -62,9 +62,13 @@ class EventsController < ApplicationController
     #@event = Event.find(params[:event_id])
     @event.user = current_user
 
-    if @event.save
-      create_pictures
-      redirect_to myhostings_path, notice: "Event created successfully"
+    unless params[:pictures].nil?
+      if @event.save
+        create_pictures
+        redirect_to myhostings_path, notice: "Event created successfully"
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -94,7 +98,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :photo, :booked_guests)
+    params.require(:event).permit(:name, :event_date, :description, :cuisine, :price_per_guest, :max_guests, :address, :booked_guests)
   end
 
   def sort_by_date(events)
