@@ -61,7 +61,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     #@event = Event.find(params[:event_id])
     @event.user = current_user
-
+    byebug
     if @event.save
       create_pictures
       redirect_to myhostings_path, notice: "Event created successfully"

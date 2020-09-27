@@ -150,7 +150,7 @@ puts '🌱 Creating events...'
 
   event1 = Event.new(
     name: "Enjoy the scrumptious momos!",
-    event_date: DateTime.new(2020, 8, 15, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 12, 15, 18, [0, 30].sample, 0),
     description: "You will be eating home comfort food, which you may not be able to eat it if you are not invited to a Taiwanese family.It will be vegetarian and vegan since we need to also share our love and care to the environment and animals. However, don't you worry, it will still be very delicious!",
     cuisine: 'Chinese',
     max_guests: 10,
@@ -165,7 +165,7 @@ puts '🌱 Creating events...'
 
   event2 = Event.new(
     name: "Peruvian dinner",
-    event_date: DateTime.new(2020, 8, 07, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 11, 07, 18, [0, 30].sample, 0),
     description: "Eric and I welcome you to our home! You will enjoy your amuse bouche with a piano and electronics live performance from Eric in our home studio-living room. Afterwards, we will go to the dining room, where you will enjoy the rest of the Menu. The menu is inspired on some of the most emblematic dishes from Perú, my native country.",
     cuisine: 'Peruvian',
     max_guests: 10,
@@ -181,7 +181,7 @@ puts '🌱 Creating events...'
 
   event3 = Event.new(
     name: "Don't be upsetti, eat some spaghetti!",
-    event_date: DateTime.new(2020, 8, 10, 19, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 11, 10, 19, [0, 30].sample, 0),
     description: "Ossobuco with risotto or pasta. Start with some appetizer and then you will be amazed if you eat our ossobuco with risotto or garlic oil pasta. ",
     cuisine: 'Italian',
     max_guests: 10,
@@ -196,7 +196,7 @@ puts '🌱 Creating events...'
 
   event4 = Event.new(
     name: "Keep calm and eat sushi",
-    event_date: DateTime.new(2020, 9, 02, 19, [0, 30].sample, 0),
+    event_date: DateTime.new(2021, 01, 02, 19, [0, 30].sample, 0),
     description: "Discover and taste the individual and characteristic peculiarities and flavors of the Orange Wine in combination with the Japanese menu.",
     cuisine: 'Japanese',
     max_guests: 10,
@@ -212,7 +212,7 @@ puts '🌱 Creating events...'
 
 event5 = Event.new(
     name: "Enjoy the dumplings",
-    event_date: DateTime.new(2020, 9, 18, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2021, 01, 18, 18, [0, 30].sample, 0),
     description: "Savor the Pierogi which is made by wrapping unleavened dough around a sweet filling.",
     cuisine: 'Polish',
     max_guests: 10,
@@ -227,7 +227,7 @@ event5 = Event.new(
 
   event6 = Event.new(
     name: "Get cosy with Bacalhau!",
-    event_date: DateTime.new(2020, 10, 06, 19, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 12, 06, 19, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Portuguese',
     max_guests: 10,
@@ -242,7 +242,7 @@ event5 = Event.new(
 
   event7 = Event.new(
     name: "Let's eat sausages together!",
-    event_date: DateTime.new(2020, 9, 24, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 11, 24, 18, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'German',
     max_guests: 10,
@@ -257,7 +257,7 @@ event5 = Event.new(
 
   event8 = Event.new(
     name: "Friends don't let friends go Taco-less!",
-    event_date: DateTime.new(2020, 9, 12, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 12, 12, 18, [0, 30].sample, 0),
     description: "Enjoy a 3-course meal which includes a fish dish, a meat dish, and, of course, dessert—this course is not suitable for vegans or vegetarians. Talk about cooking techniques and delicious meals made out of fresh ingredients. Enjoy wine and olive oils while communicating about the history of Portuguese cuisine. Sit down and break bread with your fellow foodies. Leave the course with the knowledge to prepare the meal at home and a belly full of food and memories.",
     cuisine: 'Mexican',
     max_guests: 10,
@@ -272,7 +272,7 @@ event5 = Event.new(
 
   event9 = Event.new(
     name: "The Royal Thali",
-    event_date: DateTime.new(2020, 8, 19, 18, [0, 30].sample, 0),
+    event_date: DateTime.new(2020, 12, 19, 18, [0, 30].sample, 0),
     description: "The evening will be filled with interesting conversations, culinary discoveries, wagging tails (courtesy my dogs) and new friendships. The meal will be served in the family dining room, after which guests can lounge with a cup of tea or coffee while we test you on culinary games (if you aren't in a food coma)! Come and let us pamper your taste buds.",
     cuisine: 'Indian',
     max_guests: 10,
