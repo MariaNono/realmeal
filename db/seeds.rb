@@ -368,8 +368,8 @@ p53.save!
 # Picture.new(event: event5, photo: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80').save!
 p61 = Picture.new(event: event6)
 
-# p61.remote_photo_url = 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-p61.remote_photo_url = "https://res.cloudinary.com/dfmcf9wdw/image/upload/v1575543808/n85xpnnhqhwjs5rhr5cw.jpg"
+p61.remote_photo_url = 'https://images.unsplash.com/photo-1567056602606-6172dedda3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+# p61.remote_photo_url = "https://res.cloudinary.com/dfmcf9wdw/image/upload/v1575543808/n85xpnnhqhwjs5rhr5cw.jpg"
 p61.save!
 p62 = Picture.new(event: event6)
 # p62.remote_photo_url = 'https://www.maxpixel.net/static/photo/2x/Food-Cooking-Lisbon-Egg-Sausage-Flavor-Portugal-4161518.jpg'
